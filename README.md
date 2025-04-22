@@ -1,2 +1,21 @@
-# frontend-practice-projects
- A collection of frontend practice exercises and projects built with HTML, CSS, and JavaScript to showcase my web development skills.
+# Web Practice & Projects
+
+این مخزن شامل مجموعه‌ای از تمرین‌ها و پروژه‌های من در مسیر یادگیری توسعه وب هست.
+
+## 📁 html-css
+تمرین‌های پایه‌ای HTML و CSS شامل مواردی مثل:
+- طراحی دکمه‌ها
+- چیدمان با Flexbox و Grid
+- ساختار صفحات وب
+
+## 📁 javascript
+تمرین‌های مربوط به یادگیری جاوااسکریپت شامل:
+- توابع
+- کار با DOM
+- رویدادها
+
+## 📁 projects
+پروژه‌های کامل‌تری که طراحی کردم. مثل:
+- Landing Page
+- Portfolio
+- صفحات ریسپانسیو
