@@ -1,0 +1,66 @@
+img {
+  margin: 10px;
+  border: 3px solid red;
+}
+
+#i1 {
+  width: 150px;
+}
+#i2 {
+  width: 150px;
+  height: 150px;
+}
+#i3 {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+/* *********************** */
+
+#i4 {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+#i5 {
+  width: 150px;
+  height: 150px;
+  object-fit: none;
+}
+/* *********************** */
+
+#i6 {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: right;
+}
+#i7 {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: left;
+}
+#i8 {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: 40%;
+}
+/* *********************** */
+
+#i9 {
+  width: 150px;
+  mask-image: url(../images/bc.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+#i10 {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: 60%;
+  mask-image: url(../images/pinktree.png);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}

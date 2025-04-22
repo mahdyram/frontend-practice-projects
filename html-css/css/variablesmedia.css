@@ -1,0 +1,54 @@
+/* motahgayyer haye global:
+ mitvanim ba taghir motaghayyer, braie tmame jahaii ke in motahayyer estfade shode ast an hara taghir dahim */
+
+:root {
+  --sefid: #fff;
+  --aabi: #66a9f1;
+  --soorati: #f66af8;
+  --sabz: #5bf668;
+  --mystandard-size: 20px;
+}
+
+#p1 {
+  background-color: var(--aabi);
+  font-size: var(--mystandard-size);
+  color: var(--sefid);
+  padding: var(--mystandard-size);
+}
+
+#p2 {
+  background-color: var(--aabi);
+  font-size: var(--mystandard-size);
+  padding: var(--mystandard-size);
+}
+
+/* motaghayyer haye mahalli:
+faghat hamanjaii ke motaghayyer sakhte shode ast ghabele estfade ast*/
+
+#p3 {
+  --ghermez: #ed3423;
+  background-color: var(--aabi);
+  font-size: var(--mystandard-size);
+  padding: var(--mystandard-size);
+  color: var(--ghermez);
+}
+
+/* *********** media => screen ********** */
+
+@media screen and (max-width: 450px) {
+  body {
+    background-color: var(--aabi);
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 700px) {
+  body {
+    background-color: var(--soorati);
+  }
+}
+
+@media screen and (min-width: 701px) {
+  body {
+    background-color: var(--sabz);
+  }
+}

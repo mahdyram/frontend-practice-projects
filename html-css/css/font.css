@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "yekan";
+  src: url("fonts/Yekan-Regular.ttf");
+}
+@font-face {
+  font-family: "dirooz";
+  src: url("fonts/Dirooz-Regular.ttf");
+}
+h1 {
+  background-color: aquamarine;
+}
+#one {
+  color: rgb(150, 18, 150);
+  text-align: center;
+}
+#tow {
+  color: rgb(98, 37, 159);
+  text-align: center;
+  font-family: "yekan";
+}
+#three {
+  color: rgb(15, 97, 22);
+  text-align: center;
+  font-family: "dirooz";
+}
+p {
+  text-indent: 20px;
+}
+.ital {
+  font-style: italic;
+}
+#per {
+  background-color: antiquewhite;
+  color: darkgreen;
+  font-family: "dirooz";
+  font-weight: bold;
+}
+#per2 {
+  font-variant: small-caps;
+}
+#p2 {
+  word-spacing: 15px;
+  letter-spacing: 5px;
+  line-height: 30px;
+}

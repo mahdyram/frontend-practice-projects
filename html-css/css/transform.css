@@ -1,0 +1,29 @@
+body {
+  height: 2000px;
+}
+div {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  margin: 120px;
+  font-size: 30px;
+}
+
+#d1:hover {
+  transform: translate(20px, 15px);
+}
+#d2:hover {
+  transform: rotate(-45deg);
+}
+#d3:hover {
+  transform: scale(2);
+}
+#d4:hover {
+  transform: scale(3, 2);
+}
+#d5:hover {
+  transform: skew(30deg);
+}
+#d6:hover {
+  transform: skew(0, 30deg);
+}

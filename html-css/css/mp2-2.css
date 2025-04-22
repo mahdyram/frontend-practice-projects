@@ -1,0 +1,38 @@
+#heart {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transform: rotate(45deg);
+  margin: 200px auto 0 auto;
+}
+#heart::before,
+#heart::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+}
+#heart::before {
+  top: -50px;
+}
+#heart::after {
+  left: -50px;
+}
+/* ************************* */
+
+#heart,
+#heart::before,
+#heart::after {
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: heart 1.5s ease 0s infinite normal;
+}
+
+@keyframes heart {
+  50% {
+    width: 110px;
+    height: 110px;
+    background-color: rgb(198, 29, 29);
+  }
+}

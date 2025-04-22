@@ -1,0 +1,57 @@
+/* dastresi be kolle faile html */
+* {
+  background-color: rgb(241, 249, 196);
+}
+
+/* dastresi be navadegan */
+p {
+  text-decoration: underline;
+}
+#test p {
+  background-color: darkturquoise;
+  text-decoration: none;
+}
+.par {
+  color: crimson;
+}
+#test .par {
+  background-color: burlywood;
+}
+
+/* dastresi be serfan farzandan */
+#test2 > p {
+  background-color: darkturquoise;
+  text-decoration: none;
+}
+#test2 > .par2 {
+  background-color: burlywood;
+}
+
+/* **************** */
+#test3 + p {
+  background-color: blueviolet;
+}
+
+/* **************** */
+#test4 + p {
+  background-color: blue;
+}
+#test4 ~ p {
+  background-color: brown;
+}
+
+/* **************** */
+/* Attribute Selector */
+
+[href] {
+  color: white;
+}
+ul > li [href] {
+  background-color: palevioletred;
+}
+ul > li[title] {
+  background-color: coral;
+}
+ul > li[title="bb"] {
+  color: rgb(0, 255, 128);
+}

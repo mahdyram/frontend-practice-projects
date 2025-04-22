@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title> 
+    </head>
+
+    <body>
+        <form action="" method="">
+
+            <!-- 
+            <input type="">
+            <textarea name="" id=""></textarea>
+            <select name="" id=""></select>
+            <fieldset></fieldset> 
+            -->
+            
+            <!-------------------------- input -------------------------->
+
+            <!-- date -->
+            
+            date:
+            <input type="date" size="15">
+            <hr width="40%" align="left" color="A1D6CB">
+            
+            <!-- password -->
+
+            password:
+            <input type="password" size="15">
+            <hr width="40%" align="left" color="A1D6CB">
+
+            <!-- text -->
+
+            username:
+            <input type="text" size="15" maxlength="7">
+            <br><br>
+
+            bazkhorde kootah:
+            <input type="text" name="bazkhord" value="Daraje yek">
+            <br><br>
+
+            bazkhorde kootah:
+            <input type="text" name="bazkhord" placeholder="???">
+            <hr width="40%" align="left" color="A1D6CB">
+
+            <!-- email -->
+
+            Email:
+            <input type="email" name="usermail">
+            <hr width="40%" align="left" color="A1D6CB">
+
+            <!-- range -->
+            
+            range
+            <input type="range" min="1" max="5" name="rang">
+            <hr width="40%" align="left" color="A1D6CB">
+            
+            <!-- number -->
+
+            inter your favorite number:
+            <input type="number" value="7" min="0">
+            <hr width="40%" align="left" color="A1D6CB">
+
+            <!-- button -->
+
+            push below button:
+            <input type="button" value="Ersal">
+            <hr width="40%" align="left" color="A1D6CB">
+
+            <!-- file -->
+
+            select your file
+            <input type="file" name="userfile">
+            <br><br>
+
+            select your file
+            <input type="file" name="userfile">
+            <input type="image" src="images/ارسال.png" name="userfile" width="100">
+            <hr width="40%" align="left" color="A1D6CB">
+
+            <!-- checkbox -->
+
+            agree our police? <br>
+            <input type="checkbox" name="agreement" value="first-police" checked> first <br>
+            <input type="checkbox" name="agreement" value="second-police"> second <br>
+            <br><br>
+
+            which social media do you have? <br>
+            telegram<input type="checkbox" name="socialmedia" value="tel">
+            instagram<input type="checkbox" name="socialmedia" value="insta"> 
+            watsapp<input type="checkbox" name="socialmedia3" value="wats"> 
+            <hr width="40%" align="left" color="A1D6CB"> 
+            
+            <!-- radio -->
+
+            please select your gender: <br>
+            male<input type="radio" name="gen" value="Agha">
+            femal<input type="radio" name="gen" value="Khanoom">
+            <br><br>
+            
+            <!-- label -->
+            
+            please select your gender1: <br>
+            <label>
+                male <input type="radio" name="gen1" value="Agha">
+            </label>
+            <label>
+                femal <input type="radio" name="gen1" value="Khanoom">
+            </label>
+            <br><br>
+
+            please select your gender2: <br>
+            <label for="ma">male</label>
+            <input type="radio" name="gen2" value="Agha" id="ma">
+            <label for="fe">femal</label>
+            <input type="radio" name="gen2" value="Khanoom" id="fe">
+
+            <label for="age">| Age</label>
+            <input type="text" name="ageuser" id="age">
+            <hr width="40%" align="left" color="A1D6CB"><br>
+
+            <!-- search -->
+
+            <label for="sb">Search Bar</label>
+            <input type="search" name="usersearch" id="sb" placeholder="search here...">
+
+            <button type="submit">Submit</button>
+
+            <hr color="A19AD3">
+
+            <!-------------------------- textarea -------------------------->
+
+            <label for="ta">please inter your comment:</label> <br><br>
+            <textarea name="coment" id="ta" placeholder="type here..."></textarea><br>
+            
+            <button type="submit">Submit</button>
+
+            <hr color="A19AD3">
+
+            <!-------------------------- select -------------------------->
+
+            <label for="sel">how are you from ?</label>
+            <select name="city" id="sel">
+                <option value="Tehran" selected>تهران</option>
+                <option value="Isfahan">اصفهان</option>
+                <option value="Kerman">کرمان</option>
+            </select>
+            <hr width="40%" align="left" color="A1D6CB"> 
+
+            <label for="sel2">which cities did you go to ?</label>
+            <select name="city" id="sel2" multiple size="2">
+                <option value="Isfahan">اصفهان</option>
+                <option value="Tehran">تهران</option>
+                <option value="Kerman">کرمان</option>
+            </select>
+            <br>
+
+            <button type="submit">Submit</button>
+
+            <hr color="A19AD3">
+
+            <!-------------------------- fieldset ---------------------->
+
+            <fieldset>
+                <legend>login form</legend>
+
+                <label for="us">Username</label>
+                <input type="text" name="usernam" id="us" required>
+
+                <label for="pas">Password</label>
+                <input type="password" name="paswor" id="pas" required>
+
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+</html>

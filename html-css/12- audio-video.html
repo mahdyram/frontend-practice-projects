@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Audio & Video</title>
+    </head>
+
+    <body>
+        <!-------------------------- audio -------------------------->
+
+        <audio src="media/Hamechi.mp3" controls>
+            Audio element not supported by your browser!
+        </audio>
+        <hr />
+
+        <!-- estfade az tag source baraye be kar bordane type haye bishtar jahate sazgari ba moroorgar haye bishtar -->
+
+        <audio controls loop>
+            <source src="media/Hamechi.mp3" type="audio/ogg" />
+            <source src="media/Hamechi.mp3" type="audio/mpeg" />
+            Audio element not supported by your browser!
+        </audio>
+        <hr />
+
+        <!-------------------------- video -------------------------->
+
+        <video src="media/binary.mp4" width="400" controls>
+            Video element not supported by your browser!</video
+        ><br />
+
+        
+        <video src="media/binary.mp4" width="400" controls autoplay muted>
+            Video element not supported by your browser!</video
+        ><br />
+        
+        <video src="media/binary.mp4" width="400" autoplay muted>
+            Video element not supported by your browser!</video
+        ><br />
+        
+        <video src="media/binary.mp4" width="400" autoplay muted loop>
+        Video element not supported by your browser!</video
+        ><br />
+
+        <video
+            src="media/binary.mp4"
+            width="400"
+            controls
+            poster="images/binary-poster.jpg"
+        >
+            Video element not supported by your browser!
+        </video>
+        <hr />
+
+        <!-- use source tag -->
+
+        <video width="400" controls loop>
+            <source src="media/binary.ogg" type="video/ogg" />
+            <source src="media/binary.mp4" type="video/mp4" />
+            Video element not supported by your browser!
+        </video>
+    </body>
+</html>

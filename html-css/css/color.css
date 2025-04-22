@@ -1,0 +1,72 @@
+body {
+  height: 2500px;
+}
+#test1 {
+  background-color: blueviolet;
+  width: 200px;
+  height: 100px;
+}
+#test2 {
+  background-color: rgb(130, 0, 0);
+  width: 200px;
+  height: 100px;
+}
+#test3 {
+  background-color: rgba(130, 0, 0, 0.8);
+  width: 200px;
+  height: 100px;
+}
+#test4 {
+  background-color: rgba(130, 0, 0, 0.6);
+  width: 200px;
+  height: 100px;
+}
+#test5 {
+  background-color: rgba(130, 0, 0, 0.4);
+  width: 200px;
+  height: 100px;
+}
+#test6 {
+  background-color: rgb(130, 0, 0, 0.2);
+  width: 200px;
+  height: 100px;
+}
+#test7 {
+  background-color: hsl(230, 80%, 50%);
+  width: 200px;
+  height: 100px;
+}
+#test8 {
+  background-color: hsl(230, 80%, 50%, 0.7);
+  width: 200px;
+  height: 100px;
+}
+#test9 {
+  background-color: hwb(140 20% 40%);
+  width: 200px;
+  height: 100px;
+}
+#test10 {
+  background-color: hwb(140 20% 40% / 0.7);
+  width: 200px;
+  height: 100px;
+}
+/* ********************************** */
+
+p {
+  width: 200px;
+  height: 100px;
+  background-color: black;
+}
+#p1 {
+  opacity: 1;
+}
+#p2 {
+  opacity: 0.8;
+}
+#p3 {
+  opacity: 0.6;
+}
+#p4 {
+  opacity: 0.4;
+}

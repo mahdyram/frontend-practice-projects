@@ -1,0 +1,19 @@
+# Node.js dependencies 
+node_modules/
+
+# فایل‌های سیستم
+.DS_Store
+Thumbs.db
+
+# فایل‌های IDE
+.vscode/
+
+# فایل‌های log و backup
+*.log
+*.bak
+
+# پوشه‌های build یا dist 
+build/
+dist/
+
+Courses/
