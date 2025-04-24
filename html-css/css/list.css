@@ -4,6 +4,7 @@ ol {
 
 #ul1 {
   list-style-type: circle;
+  padding: 6px;
 }
 
 #ul2 {

@@ -20,6 +20,9 @@ th {
 tr.even {
   background-color: rgb(126, 231, 196);
 }
+tbody tr:nth-child(even) {
+  color: rgb(3, 91, 61);
+}
 .money {
   text-align: center;
 }

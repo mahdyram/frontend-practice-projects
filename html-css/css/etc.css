@@ -95,3 +95,24 @@ span {
   display: inline-block;
   background-color: #f78a06;
 }
+
+/* alline text */
+
+#p2 {
+  text-align: center;
+}
+#p3 {
+  text-align: right;
+}
+
+#sp1 {
+  text-align: center; /* az shekl moshakhas ast ke fazaii brai jabejaii be vasat ya rast nadarad*/
+}
+#sp2 {
+  display: block;
+  text-align: center;
+}
+
+#di1 {
+  text-align: center;
+}

@@ -64,3 +64,23 @@ div {
 #d50 {
   box-shadow: inset 0 0 10px;
 }
+
+#d100 {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: 20px;
+  border: 5px solid black;
+  color: white;
+  background-color: #e02525;
+}
+#d200 {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: 20px;
+  border: 5px solid black;
+  color: white;
+  background-color: #e02525;
+  box-sizing: border-box; /*see diference in Inspect->Elements->Styles*/
+}
