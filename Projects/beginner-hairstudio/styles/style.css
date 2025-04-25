@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 2000px;
+}
+#banner {
+  background-image: linear-gradient(
+      90deg,
+      rgba(2, 87, 151, 0.76) 0%,
+      rgba(87, 199, 134, 0.151) 50%,
+      rgba(54, 132, 2, 0.794) 100%
+    ),
+    url("../images/banner2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+#log {
+  width: 80px;
+  border-radius: 5px;
+  padding: 1px 11px;
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  box-shadow: inset 0 0 3px white;
+}
+#banner-text {
+  position: relative;
+  top: 23vh;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+h1 {
+  font-size: 130px;
+  font-family: "Kaushan Script", cursive;
+}
+#banner-text p {
+  font-size: 20px;
+  font-style: italic;
+}
+#buttons {
+  margin-top: 40px;
+}
+#buttons a {
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  width: 110px;
+  height: 40px;
+  margin-left: 10px;
+  line-height: 40px;
+  /* 
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;  
+  => be jaye estfadh az line-height*/
+}
