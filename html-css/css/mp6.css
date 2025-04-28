@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 2000px;
+}
+
+/*
+1- ba hover kardane yek sheie faghat mitonim: hamoon sheie, tag haie dakhele oon sheie va tage badie oon sheie(ba +) ro dastkhoshe taghir konim.
+2- agar bkhvahim ba hover kardane yek sheie boxi havie link namayan shavad va betavan roi link ha klik kard bayad hatman oon link ha dakhele tag hover shode bashand. 
+ */
+
+nav {
+  position: fixed;
+  right: 2%;
+  top: 5%;
+  font-size: 25px;
+  padding: 2px 12px;
+  border-radius: 3px;
+  color: white;
+  background-color: #565656;
+  box-shadow: 0 0 3px white;
+  transition: 0.3s;
+  cursor: default;
+}
+nav ul {
+  display: none;
+  text-transform: uppercase;
+}
+nav:hover {
+  width: 17vw;
+  height: 100%;
+  right: 0;
+  top: 0;
+  font-size: 2vw;
+  padding: 0.5vh 2vw;
+  color: #11111100;
+  background-color: rgba(36, 80, 0, 0.656);
+}
+nav:hover ul {
+  display: inline-block;
+  text-align: center;
+  margin-top: 15vh;
+  position: relative;
+  right: 1vw;
+}
+nav:hover li {
+  margin-top: 3vh;
+}
+nav:hover a {
+  display: inline-block;
+  width: 15vw;
+  height: 6vh;
+  line-height: 6vh;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 5px;
+}
