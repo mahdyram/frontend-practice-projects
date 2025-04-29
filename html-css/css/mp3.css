@@ -5,7 +5,7 @@
 }
 
 .blok {
-  flex: 1 1 30%;
+  flex: 1 1 30%; /* grow=1, shrink=1, basis=30% */
   border: 1px solid #666;
   padding: 5px;
   box-sizing: border-box;

@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  height: 2000px;
+  height: 3000px;
 }
 
 /* --------------> header <---------------- */
@@ -22,7 +22,7 @@ header span {
   box-shadow: 0 0 3px white;
   cursor: default;
   transition: 0.2s;
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 header:hover span {
   opacity: 0;
@@ -39,7 +39,7 @@ nav {
   color: #11111100;
   background-color: rgba(36, 80, 0, 0.782);
   transition: 0.3s;
-  transition-delay: 0.2s;
+  transition-delay: 0.15s;
 }
 header:hover nav {
   right: 0;
@@ -145,15 +145,113 @@ nav a {
 /* --------------> section(feature) <---------------- */
 #feature {
   height: 100vh;
-  background-color: rgba(215, 137, 35, 0.443);
-}
-#featureHead {
+  background-color: rgb(255, 255, 255);
+  position: relative;
   text-align: center;
 }
+#featureHead {
+  position: relative;
+  top: 10vh;
+  font-size: 2vw;
+  font-style: italic;
+}
+#featureHead p {
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  color: rgb(7, 54, 67);
+  font-weight: bold;
+}
+#featureHead p::after {
+  content: "";
+  width: 5vw;
+  height: 3vw;
+  background: linear-gradient(rgb(1, 56, 71), rgb(212, 213, 217));
+  position: absolute;
+  top: -1.5vw;
+  left: 0;
+  z-index: -1;
+  border-radius: 70px 0;
+  transform: rotate(4deg);
+}
+
+#featureHead h2 {
+  text-transform: capitalize;
+  color: rgb(7, 38, 46);
+}
+
 #featureBody {
   display: flex;
+  align-items: center;
+  position: relative;
+  top: 25vh;
+  margin-right: 20vw;
 }
-#featureBody img {
+#fBImg img {
   width: 20vw;
+  border-radius: 5px;
+}
+#fBTxt {
+  padding: 0 5vw;
+  font-size: 1.8vw;
+  margin-left: 6vw;
+}
+#fBTxt h2 {
+  text-transform: capitalize;
+  color: rgb(9, 72, 89);
+}
+#fBTxt p {
+  margin-top: 3vw;
+  line-height: 2.3vw;
+  color: #565656;
+}
+
+/* --------------> section(service) <---------------- */
+#service {
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  text-align: center;
+}
+#serviceHead {
+  position: relative;
+  top: 10vh;
+  font-size: 2vw;
+  font-style: italic;
+}
+#serviceHead p {
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  color: rgb(7, 54, 67);
+  font-weight: bold;
+}
+#serviceHead p::after {
+  content: "";
+  width: 5vw;
+  height: 3vw;
+  background: linear-gradient(rgb(1, 56, 71), rgb(212, 213, 217));
+  position: absolute;
+  top: -1.5vw;
+  left: 0;
+  z-index: -1;
+  border-radius: 70px 0;
+  transform: rotate(4deg);
+}
+#serviceHead h2 {
+  text-transform: capitalize;
+  color: rgb(7, 38, 46);
+}
+#serviceBody {
+  position: relative;
+  top: 15vh;
+}
+#serviceBody img {
+  width: 25vw;
+  margin: 0.5vw;
   border-radius: 5px;
 }
