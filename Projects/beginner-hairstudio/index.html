@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Barber shop</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
-    <title>Barber shop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +21,7 @@
           <li><a href="#feature">features</a></li>
           <li><a href="#service">services</a></li>
           <li><a href="#testimontal">testimontals</a></li>
-          <li><a href="#meetus">meet us</a></li>
+          <li><a href="#footer">contact us</a></li>
         </ul>
       </nav>
     </header>
@@ -63,14 +63,118 @@
           <h2>we provide better</h2>
         </div>
         <div id="serviceBody">
-          <img src="images/pic1.jpg" alt="" />
-          <img src="images/pic2.jpg" alt="" /><br />
-          <img src="images/pic3.jpg" alt="" />
-          <img src="images/pic4.jpg" alt="" />
+          <div class="singleService">
+            <img src="images/pic1.jpg" alt="" />
+            <div class="overlay"></div>
+            <div class="serviceDesc">
+              <h3>hair styling</h3>
+              <hr />
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="singleService">
+            <img src="images/pic2.jpg" alt="" />
+            <div class="overlay"></div>
+            <div class="serviceDesc">
+              <h3>hair styling</h3>
+              <hr />
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <br class="hide-on-mobile" />
+          <div class="singleService">
+            <img src="images/pic3.jpg" alt="" />
+            <div class="overlay"></div>
+            <div class="serviceDesc">
+              <h3>hair styling</h3>
+              <hr />
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="singleService">
+            <img src="images/pic4.jpg" alt="" />
+            <div class="overlay"></div>
+            <div class="serviceDesc">
+              <h3>hair styling</h3>
+              <hr />
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimontal">
+        <div id="testimontalHead">
+          <p>testimontal</p>
+          <h2>what client says</h2>
+        </div>
+        <div id="testimontalBody">
+          <div class="testimontalCol">
+            <div class="user">
+              <img src="images/img1.jpg" alt="" />
+              <div class="userInfo">
+                <h4>jhon</h4>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Provident, molestiae.
+            </p>
+          </div>
+          <div class="testimontalCol">
+            <div class="user">
+              <img src="images/img2.jpg" alt="" />
+              <div class="userInfo">
+                <h4>jhon</h4>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Provident, molestiae.
+            </p>
+          </div>
+          <div class="testimontalCol">
+            <div class="user">
+              <img src="images/img3.jpg" alt="" />
+              <div class="userInfo">
+                <h4>jhon</h4>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Provident, molestiae.
+            </p>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer></footer>
+    <footer id="footer">
+      <div id="footerHead">
+        <p>contact us</p>
+        <h2>visit shop today</h2>
+      </div>
+      <div id="footerBody">
+        <div class="footerLeft">
+          <h4>Openint Hours</h4>
+          <p>Monday to Friday - 9am to 6pm</p>
+          <p>Saturday - 9am to 11am</p>
+        </div>
+        <div class="footerRight">
+          <h4>Get in Touch</h4>
+          <p>
+            <a href="mahdyramshini@Gmail.com" title="our email"
+              >mahdyramshini@Gmail.com</a
+            >
+          </p>
+          <p>
+            <a href="https://github.com/mahdyram" title="our github"
+              >github.com/mahdyram</a
+            >
+          </p>
+          <p>+9823456789</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
