@@ -1,3 +1,4 @@
+/* *********************************** */
 /* order */
 
 #container1 {
@@ -32,19 +33,59 @@
     order: 8;
   }
 }
+
+hr {
+  border: 3px solid red;
+  margin: 50px 0 50px 0;
+}
 /* ********************************* */
 /* flex-grow */
 
 #container2 {
   background-color: blue;
-  margin-bottom: 10px;
-  height: 400px;
+  margin-bottom: 100px;
+  height: 200px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 #container2 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+/* ******************** */
+
+#container3 {
+  background-color: blue;
+  margin-bottom: 100px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#container3 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  flex-grow: 1;
+}
+/* ******************** */
+
+#container4 {
+  background-color: blue;
+  margin-bottom: 100px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#container4 > div {
   background-color: beige;
   margin: 5px;
   width: 50px;
