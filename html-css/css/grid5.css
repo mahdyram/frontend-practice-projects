@@ -1,0 +1,75 @@
+hr {
+  margin: 30px auto;
+}
+/* ******************************** */
+
+.container1 {
+  height: 300px;
+  display: grid;
+  grid-template-rows: 50px 50px;
+  grid-template-columns: auto auto auto;
+  background-color: aqua;
+  padding: 5px;
+  gap: 5px;
+  justify-content: start;
+}
+.item1 {
+  width: 50px;
+  color: white;
+  background-color: rgb(26, 60, 210);
+}
+/* ********************** */
+
+.container2 {
+  height: 300px;
+  display: grid;
+  grid-template-rows: 50px 50px;
+  grid-template-columns: auto auto auto;
+  background-color: aqua;
+  padding: 5px;
+  gap: 5px;
+  justify-content: start;
+  align-content: center;
+}
+.item2 {
+  width: 50px;
+  color: white;
+  background-color: rgb(26, 60, 210);
+}
+/* ********************** */
+
+.container3 {
+  height: 300px;
+  display: grid;
+  grid-template-rows: 50px 50px;
+  grid-template-columns: auto auto auto;
+  background-color: aqua;
+  padding: 5px;
+  gap: 5px;
+  justify-content: start;
+  align-content: space-between;
+}
+.item3 {
+  width: 50px;
+  color: white;
+  background-color: rgb(26, 60, 210);
+}
+/* ********************** */
+
+.container4 {
+  height: 300px;
+  display: grid;
+  grid-template-rows: 50px 50px;
+  grid-template-columns: auto auto auto;
+  background-color: aqua;
+  padding: 5px;
+  gap: 5px;
+  justify-content: start;
+  align-content: space-evenly;
+}
+.item4 {
+  width: 50px;
+  color: white;
+  background-color: rgb(26, 60, 210);
+}
+/* ********************** */
