@@ -30,8 +30,7 @@ hr {
 
 .container3 {
   display: grid;
-  grid-template-rows: 80px 40px;
-  grid-template-columns: 50px 20% 40%;
+  grid-template-columns: 3fr 1fr 7fr;
   background-color: aqua;
   gap: 10px;
 }
@@ -43,11 +42,24 @@ hr {
 
 .container4 {
   display: grid;
+  grid-template-rows: 80px 40px;
+  grid-template-columns: 50px 20% 40%;
+  background-color: aqua;
+  gap: 10px;
+}
+.item4 {
+  background-color: darkblue;
+  color: white;
+}
+/* ********************** */
+
+.container5 {
+  display: grid;
   grid-template-rows: 120px 60px;
   grid-template-columns: 50% auto auto;
   gap: 10px;
 }
-.item4 {
+.item5 {
   background-color: darkblue;
   color: white;
 }
