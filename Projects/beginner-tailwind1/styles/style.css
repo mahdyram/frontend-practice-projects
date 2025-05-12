@@ -1,0 +1,22 @@
+/* -------------> all <-------------- */
+html {
+  font-size: 16px;
+}
+body {
+  color: #071e2d;
+  background: #f9f9f9;
+  font-family: sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p {
+  line-height: 23px;
+}
+
+/* ------------->  <-------------- */
+
+
+
