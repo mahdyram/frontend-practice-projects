@@ -1,3 +1,4 @@
+// ----------------------------------
 // constructor function
 
 function Product(title, price) {
@@ -15,7 +16,7 @@ const product2 = new Product("Book 2", 88);
 console.log(product1);
 console.log(product1.productInfo()); // Title: Book 1 - Price: 99
 
-// ----------------------------
+// ----------------------------------
 // class
 
 class Product2 {

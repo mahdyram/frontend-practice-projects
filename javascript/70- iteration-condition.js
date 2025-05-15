@@ -1,8 +1,11 @@
+// --------------------------------------
 // for
 
 for (let item = 0; item < 10; item++) {
   console.log(`Item number is: ${item}`);
 }
+
+// -------------------
 
 const products = [
   {
@@ -26,7 +29,7 @@ for (let i = 0; i < products.length; i++) {
 for (let i = 0; i < products.length; i++) {
   console.log(products[i].title);
 }
-// *****************************************
+// --------------------------------------
 // if-else
 
 const price = 99;

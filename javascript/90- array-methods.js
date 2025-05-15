@@ -1,3 +1,4 @@
+// ----------------------------------
 // array methods
 
 const products = [

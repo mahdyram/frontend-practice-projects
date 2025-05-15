@@ -1,29 +1,30 @@
+// -------------------------------
 // Arrays
 
 const product = ["book", 99, false];
 
+console.log(typeof product); // object
 console.log(product); // [ 'book', 99, false ]
-console.log(product[1]); // 99
+console.log(product[0]); // book
 console.log(product.length); // 3
 
-// ***********
-
 // product = []  =>  TypeError: Assignment to constant variable.
-product[3] = true;
-console.log(product); // [ 'book', 99, false, true ]
 
-// ***********
+product[0] = "bk";
+console.log(product); // [ 'bk', 99, false, true ]
+product[3] = true;
+console.log(product); // [ 'bk', 99, false, true ]
 
 product.push("pen");
-console.log(product); // [ 'book', 99, false, true, 'pen' ]
+console.log(product); // [ 'bk', 99, false, true, 'pen' ]
 
 product.unshift("notebook");
-console.log(product); // [ 'notebook', 'book', 99, false, true, 'pen' ]
+console.log(product); // [ 'notebook', 'bk', 99, false, true, 'pen' ]
 
 product.pop();
-console.log(product);
+console.log(product); // [ 'notebook', 'bk', 99, false, true ]
 
-// ***********
+// -----------------
 
 const product2 = ["book", 99, false];
 console.log(product2);
@@ -38,4 +39,5 @@ const [name3, price3, valid3] = product2;
 console.log(valid3); // false
 
 const [name4, ...other] = product2;
-console.log(name4, other); // book [ 99, false ]
+console.log(name4); // book 
+console.log(other); // [ 99, false ]

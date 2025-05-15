@@ -1,3 +1,4 @@
+// --------------------------------------
 // function (old)
 
 function addProduct() {
@@ -19,6 +20,9 @@ function addProduct3(title, price) {
   return `Title: ${title} - Price: ${price}`;
 }
 addProduct3(); // nothing in console
+addProduct3("Pen", 88); // nothing in console
+
+console.log(addProduct3("Pen", 88)); // Title: Pen - Price: 88
 
 const result3 = addProduct3("Pen", 88);
 console.log(result3); // Title: Pen - Price: 88
@@ -31,6 +35,8 @@ function addProduct4(title = "Pen", price = 77) {
 
 const result4 = addProduct4();
 console.log(result4); // Title: Pen - Price: 77
+
+console.log(addProduct4("Pen", 88)); // Title: Pen - Price: 88
 
 // --------------------------------------
 // arrow functions (new)
@@ -49,4 +55,4 @@ const addProduct6 = (title, price) => `Title: ${title} - Price: ${price}`; // wh
 const result6 = addProduct6("Pen", 55);
 console.log(result6); // Title: Pen - Price: 55
 
-// ---------------
+
