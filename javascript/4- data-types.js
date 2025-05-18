@@ -59,6 +59,9 @@ console.log(nan3); // NaN
 
 console.log(NaN ** 0); // 1
 
+console.log(nan1 === NaN); // false
+console.log(isNaN(nan1)); // true
+
 // ---------------------------
 
 let user;

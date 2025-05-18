@@ -165,6 +165,16 @@ const naems2 = ["Ali", "Sara", "caren"];
 console.log(naems2.sort()); // [ 'Ali', 'Sara', 'caren' ]
 
 // -----------------
+// destructuring assignment
+
+let f1 = 7;
+let f2 = 4;
+console.log(f1, f2);
+
+[f1, f2] = [f2, f1];
+console.log(f1, f2);
+
+// -----------------
 
 const product2 = ["book", 99, false];
 console.log(product2);

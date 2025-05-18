@@ -77,6 +77,23 @@ console.log(tit); // "pen"
 console.log(exist); // true
 
 // ---------------------------------
+// some methods of objects
+
+let userInfo = {
+  fNaem: "ali",
+  lName: "ram",
+  bDay: 1998,
+  color: "white ",
+  isAdmin: true,
+};
+
+console.log(Object.keys(userInfo));
+
+console.log(Object.values(userInfo));
+
+console.log(Object.entries(userInfo));
+
+// ---------------------------------
 // Objects in Objects
 
 let user = {
