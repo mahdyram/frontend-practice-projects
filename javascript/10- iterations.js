@@ -169,6 +169,27 @@ for (let i = 0; i < alpha.length; i++) {
     console.log("not exist");
   }
 }
+// -------------------
+
+let a = 1;
+let b = 3;
+let c = a * b;
+for (; a < 10; a++) {
+  console.log(`a: ${a}, b: ${b}, c: ${c}`);
+}
+
+// better:
+let a, b, c;
+(a = 1), (b = 3), (c = a * b);
+for (; a < 5; a++) {
+  console.log(`a: ${a}, b: ${b}, c: ${c}`);
+}
+
+// more better:
+let a, b, c;
+for (a = 1, b = 3, c = a * b; a < 10; a++) {
+  console.log(`a: ${a}, b: ${b}, c: ${c}`);
+}
 
 // --------------------------------------
 // for-of (in arrays)

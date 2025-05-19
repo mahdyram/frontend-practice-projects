@@ -54,5 +54,3 @@ const addProduct6 = (title, price) => `Title: ${title} - Price: ${price}`; // wh
 
 const result6 = addProduct6("Pen", 55);
 console.log(result6); // Title: Pen - Price: 55
-
-
