@@ -1,4 +1,4 @@
-// -----------------------------------
+// =======================================
 // Arithmetic Operators
 
 let num = 5;
@@ -107,7 +107,7 @@ for (c = a * b; a < 10; a++) {
   console.log(`a: ${a}, b: ${b}, c: ${c}`);
 }
 
-// -----------------------------------
+// =======================================
 // Comparison Operators
 
 // dar operatore == ham manande operator haye hesabi,
@@ -178,8 +178,103 @@ console.log("Z" > "A"); // true
 console.log("Glow" > "Glee"); // true
 console.log("Bee" > "Be"); // true
 
-// -----------------------------------
-// Logical Operators
+// =======================================
+// Logical Operators  =>  agar amalvandi bolean nabashad, braye arzyabi be bolean tabdil mishavad.
+
+// "||" And
+
+console.log(false || true); // true
+console.log(0 || 3); // 3  bolean(3)=true
+console.log("" || "e"); // e  bolean(e)=true
+
+// -----------------
+// '||' avalin meghdare truthy ra peydamikonad (agar nabood, akharin meghdar ra barmigardanad).
+
+console.log(1 || 0); // 1 (1 is truthy)
+console.log(null || 1); // 1 (1 is the first truthy value)
+console.log(null || 0 || 1); // 1 (the first truthy value)
+console.log(undefined || null || 0); // 0 (all falsy, returns the last value)
+
+// -----------------
+
+true || console.log("dont print");
+
+false || console.log("print");
+
+// -----------------
+
+let firstName = "";
+let lastName = "";
+let nickName = "SuperCoder";
+console.log(firstName || lastName || nickName || "Anonymous"); // SuperCoder
+
+let firstName = "";
+let lastName = "";
+let nickName = "";
+console.log(firstName || lastName || nickName || "Anonymous"); // Anonymous
+
+// --------------------------------------
+// "&&" Or
+
+console.log(false && true); // false
+console.log(0 && 3); // 0  bolean(0)=false
+console.log("" && "e"); // ''  bolean('')=false
+
+// -----------------
+// '&&' avalin meghdare falsy ra peydamikonad (agar nabood, akharin meghdar ra barmigardanad).
+
+console.log(1 && 0); // 0
+console.log(0 && "a"); // 0
+console.log("q" && null && 5); // null
+console.log("q" && 5 && ""); // ""
+console.log(1 && "w" && 5); // 5
+
+// -----------------
+
+let x = 3;
+x > 0 && console.log("larger than zero");
+
+let y = 3;
+if (y > 0) console.log("larger than zero");
+
+// -----------------
+
+let firstName = "ali";
+let lastName = "ram";
+let nickName = "SuperCoder";
+let result = firstName && lastName && nickName && "everyItemFill";
+result === "" ? console.log("existEmptiItem") : console.log(result);
+
+let firstName = "ali";
+let lastName = "";
+let nickName = "SuperCoder";
+let result = firstName && lastName && nickName && "EveryItemFill";
+result === "" ? console.log("existEmptiItem") : console.log(result);
+
+// -----------------
+
+// olaviate and-&& az or-|| bishtar ast.
+// a && b || c && d == (a && b) || (c && d).
+
+// --------------------------------------
+// "!" Not
+
+console.log(!true); // false
+console.log(!3); // false
+
+console.log(!0); // true
+console.log(!""); // true
+
+// -----------------
+// '!!' baraye tabdil kardan be bolean.
+
+console.log(!!"string"); // true
+console.log(!!null); // false
+
+console.log(Boolean("string")); // true
+console.log(Boolean(null)); // false
+
+// --------------------------------------
 
 let test1 = 1;
 let test2 = 2;
@@ -193,3 +288,75 @@ console.log(test3 > test1 || test2 < test1); // true
 
 console.log(test3 > test1); // true
 console.log(!(test3 > test1)); // false
+
+// --------------------------------------
+// "??" nullish-coalescing
+
+/*
+yek ebarat "taerif shodeh" ast hargah na 'null' bashad va na 'undefined'.
+
+natije 'a ?? b' :
+- agar a 'taerif shodeh' bashad, pas a ra barmigardanad
+- agar a 'taerif shodeh' nabashad, pas b ra barmigardanad
+
+result1 === result2 :
+- result1 = a ?? b
+- result2 = (a !== null && a !== undefined) ? a : b;
+*/
+
+let user;
+console.log(user ?? "Anonymous"); // Anonymous
+
+let user2 = "ali";
+console.log(user2 ?? "Anonymous");
+
+// -----------------
+
+let firstName = null;
+let lastName = null;
+let nickName = "Supercoder";
+console.log(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
+
+let firstName = null;
+let lastName = null;
+let nickName = "Supercoder";
+console.log(firstName || lastName || nickName || "Anonymous"); // Supercoder
+
+// -----------------
+// '??' vs '||'
+
+/*
+- "||" avvalin meghdare 'truthy' ra barmigardanad.
+- "??" avvalin meghdare 'taerif shodeh' ra barmigardanad.
+
+be ebarati '||' tafavote beine false, 0, "", null/undefined ra tashkhis nemidahad
+anha hamegi shabihe ham hastand, meghdar haye falsy.
+
+amma momken ast ma faghat donbale null/undefined bashim(ya nabashim)
+*/
+
+let height = 0;
+
+console.log(height || 100); // 100
+console.log(height ?? 100); // 0
+
+// -----------------
+// olaviat
+
+let height = null;
+let width = null;
+let area = (height ?? 100) * (width ?? 50);
+console.log(area); // 5000
+
+let height = null;
+let width = null;
+let area = height ?? 100 * width ?? 50; // == height ?? (100 * width) ?? 50;
+console.log(area); // 0
+
+// -----------------
+// use ?? with || and &&
+
+// let x = 1 && 2 ?? 3; // Syntax error
+
+let x = (1 && 2) ?? 3;
+console.log(x); // 2

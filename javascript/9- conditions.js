@@ -1,9 +1,12 @@
-// --------------------------------------
+// =======================================
 // if
 
 const isCold = true;
+if (isCold) console.log("Wear your jacket!");
 
-if (isCold) {
+const isCold2 = true;
+if (isCold2) {
+  console.log("weather is cold");
   console.log("Wear your jacket!");
 }
 // -------------------
@@ -38,23 +41,75 @@ if (newPrice > price) {
 } else {
   console.log("Same Price");
 }
-// --------------------------------------
-// ternary
+
+// -------------------
+// practice
+
+let whoaryou = prompt("who are you");
+if (whoaryou === "admin") {
+  let pass = prompt("enter password");
+  if (pass === "master") {
+    alert("welcome");
+  } else if (pass === "" || pass === null) {
+    alert("canceled");
+  } else {
+    alert("wrong password");
+  }
+} else if (whoaryou === null || whoaryou === "") {
+  alert("canceled");
+} else {
+  alert("i dont know you");
+}
+
+// =======================================
+// ternary (?)   =>   let result = condition ? value1 : value2;
+
+/*
+const age = 23;
+if (age > 18) {
+  console.log("access");
+} else {
+  console.log("denied");
+}
+*/
 
 const age = 23;
 
-// if (age > 18) {
-//   console.log("access");
-// } else {
-//   console.log("denied");
-// }
-
-let result = age > 18 ? "access" : "denied";
-console.log(result);
+let accessAllowed = age > 18 ? "access" : "denied";
+console.log(accessAllowed);
 
 age > 18 ? console.log("access") : console.log("denied");
 
-// --------------------------------------
+// -------------------
+
+/*
+let age = 15;
+if (age < 3) {
+  message = "Hi, baby!";
+} else if (age < 18) {
+  message = "Hello!";
+} else if (age < 100) {
+  message = "Greetings!";
+} else {
+  message = "What an unusual age!";
+}
+console.log(message);
+*/
+
+let age = 1;
+
+let message =
+  age < 3
+    ? "Hi, baby!"
+    : age < 18
+    ? "Hello!"
+    : age < 100
+    ? "Greetings!"
+    : "What an unusual age!";
+
+console.log(message);
+
+// =======================================
 // switch
 
 const weekday = 2;

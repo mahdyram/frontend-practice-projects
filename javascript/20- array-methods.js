@@ -1,4 +1,16 @@
-// ----------------------------------
+const names = ["ali", "mohammad", "reza", "saeed"];
+
+names.forEach((i) => console.log(i));
+
+names.forEach((item, index) => console.log(item, index));
+
+names.forEach((item2, index2) => {
+  item2 += " -> ";
+  index2++;
+  console.log(item2, index2);
+});
+
+// --------------------------------------
 // array methods
 
 const products = [
