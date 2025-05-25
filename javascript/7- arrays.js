@@ -1,4 +1,4 @@
-// -------------------------------
+// ========================================
 // Arrays
 
 let arr1 = ["ali", 15, true];
@@ -7,7 +7,7 @@ let arr2 = new Array("sara", 14, false);
 console.log(arr1, arr2); // [ 'ali', 15, true ] [ 'sara', 14, false ]
 console.log(typeof arr1, typeof arr2); // object object
 
-// -----------------
+// --------------------
 
 let arr1 = [4];
 let arr2 = new Array(4);
@@ -19,7 +19,7 @@ let arr2 = new Array(4);
 console.log(arr1, arr2); // [ <4 empty items> ] [ <4 empty items> ]
 console.log(arr1.length, arr2.length); // 4 4
 
-// -----------------
+// --------------------
 
 let arr1 = ["ali", 16, 12];
 console.log(arr1); // [ 'ali', 16, 12 ]
@@ -34,7 +34,7 @@ arr1[5] = 18;
 console.log(arr1); // [ 'ali', 13, false, <2 empty items>, 18 ]
 console.log(arr1.length); // 6
 
-// -----------------
+// --------------------
 
 const product = ["book", 99, false];
 
@@ -50,7 +50,8 @@ console.log(product); // [ 'bk', 99, false, true ]
 product[3] = true;
 console.log(product); // [ 'bk', 99, false, true ]
 
-// -----------------
+// ----------------------------------------
+// some simple methods
 
 const product = ["book", 99, false];
 
@@ -63,14 +64,14 @@ console.log(product, test1); // [ 'book', 99, false, 'pen', 20 ] 5
 let test2 = product.push("ali");
 console.log(product, test2); // [ 'book', 99, false, 'pen', 20, 'ali' ] 6
 
-// -----------------
+// --------------------
 
 const arr = [1, 2, 3, 4, 5];
 
 arr.unshift("notebook");
 console.log(arr); // [ 'notebook', 1, 2, 3, 4, 5 ]
 
-// -----------------
+// --------------------
 
 const arr = [1, 2, 5, 6, 7];
 arr.splice(2, 0, 3, 4);
@@ -80,7 +81,7 @@ const arr = [1, 2, 8, 9, 5, 6, 7];
 arr.splice(2, 2, 3, 4);
 console.log(arr); // [ 1, 2, 3, 4, 5, 6, 7 ]
 
-// -----------------
+// --------------------
 
 const arr = [1, 2, 3, 4, 5];
 
@@ -90,7 +91,7 @@ console.log(arr); // [ 1, 2, 3, 4 ]
 let test = arr.pop();
 console.log(arr, test); // [ 1, 2, 3 ] 4
 
-// -----------------
+// --------------------
 
 const arr = [1, 2, 3, 4, 5];
 
@@ -100,7 +101,7 @@ console.log(arr); // [ 2, 3, 4, 5 ]
 let test = arr.shift();
 console.log(arr, test); // [ 3, 4, 5 ] 2
 
-// -----------------
+// --------------------
 
 const arr = [1, 2, 3, 4, 5, 6, 7];
 
@@ -110,14 +111,14 @@ console.log(arr); // [ 1, 2, 4, 5, 6, 7 ]
 let test = arr.splice(2, 3);
 console.log(arr, test); // [ 1, 2, 7 ] [ 4, 5, 6 ]
 
-// -----------------
+// --------------------
 
 const arr = [1, 2, 3, 4, 5, 6, 7];
 
 delete arr[2];
 console.log(arr); // [ 1, 2, <1 empty item>, 4, 5, 6, 7 ]
 
-// -----------------
+// --------------------
 
 const arr1 = [1, 3, 4];
 const arr2 = [5, 6, "ali"];
@@ -125,31 +126,7 @@ const arr2 = [5, 6, "ali"];
 const arr3 = arr1.concat(arr2);
 console.log(arr3); // [ 1, 3, 4, 5, 6, 'ali' ]
 
-// -----------------
-// find
-
-const arr = [1, 2, 3, 4, 5, 6, 7];
-
-const findValue = arr.find(function (num) {
-  return num === 6;
-});
-console.log(findValue); // 6
-
-const findValue2 = arr.find((num) => num % 2 === 0);
-console.log(findValue2); // 2
-
-// -----------------
-// indexOf
-
-const arr = [1, 2, 5, 3, 4, 5, 6, 7];
-
-const findValue = arr.indexOf(5);
-console.log(findValue); // 2
-
-const findValue2 = arr.indexOf(5, 3);
-console.log(findValue2); // 5
-
-// -----------------
+// --------------------
 // sort
 
 const age = [14, 4, 35, 56, 33, 24];
@@ -164,7 +141,7 @@ console.log(names.sort()); // [ 'ali', 'caren', 'sara' ]
 const naems2 = ["Ali", "Sara", "caren"];
 console.log(naems2.sort()); // [ 'Ali', 'Sara', 'caren' ]
 
-// -----------------
+// ========================================
 // destructuring assignment
 
 let f1 = 7;
@@ -174,7 +151,7 @@ console.log(f1, f2);
 [f1, f2] = [f2, f1];
 console.log(f1, f2);
 
-// -----------------
+// --------------------
 
 const product2 = ["book", 99, false];
 console.log(product2);
@@ -192,7 +169,57 @@ const [name4, ...other] = product2;
 console.log(name4); // book
 console.log(other); // [ 99, false ]
 
-// ----------------------------------
+// ========================================
+// copy
+
+// shallow copy:
+
+// spread-operator(...)
+
+let arr = [1, 2, 3];
+let copy = [...arr];
+
+// --------------------
+// Array.slice()
+
+let arr = [1, 2, 3];
+let copy = arr.slice();
+
+// --------------------
+// Array.from()
+
+let arr = [1, 2, 3];
+let copy = Array.from(arr);
+
+// ----------------------------------------
+// deep copy:
+
+let original = { name: "ali", address: { city: "tehran" } };
+
+let copy = structuredClone(original);
+
+console.log(copy);
+
+// ----------------------------------------
+// deep-copy vs shallow-copy
+
+/*
+- agar array faghat shamele maghadire sade(number, string, boole) bashad, moshkeli nist.
+- amma agar dakhele array object ya array digari bashad moshkel eijad mishavad va ba taghir copy, orijinal ham tagir mikonad.
+- dalil: dar copy sathi faghat "esharegar(refrence) be object" copy shode, yaeni dar hafeze, faghat adrese oon objecte todarto copy mishe na khode dade ha.
+*/
+
+let original1 = { name: "ali", address: { city: "tehran" } };
+let copy = { ...original1 };
+copy.address.city = "mashhad";
+console.log(original1.address.city); // "mashhad" changed!
+
+let original2 = { name: "ali", address: { city: "tehran" } };
+let deepCopy = structuredClone(original2);
+deepCopy.address.city = "mashhad";
+console.log(original2.address.city); // "tehran" not changed
+
+// ========================================
 // practice
 
 let shoppingList = [];

@@ -197,8 +197,8 @@ for (let i = 0; i < alpha.length; i++) {
   console.log(alpha[i]);
 }
 
-const alpha = ["a", "b", "c", "d", "e"];
-for (let i of alpha) {
+const alpha2 = ["a", "b", "c", "d", "e"];
+for (let i of alpha2) {
   console.log(i);
 }
 // --------------------
