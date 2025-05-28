@@ -1,4 +1,8 @@
-// ---------------------------
+// ========================================
+/*
+- Primitive data-type  =>  {number, string, boolean, undefined, null} => 'Stack'
+- Refrence data-type   =>  {Array, Object, Function} => 'Heap'
+*/
 
 let age1 = 24;
 let name1 = "mahdi";
@@ -14,25 +18,7 @@ console.log(result1); // mahdi is 24
 const result2 = `${name1} is ${age1}`;
 console.log(result2); // mahdi is 24
 
-// ---------------------------
-
-const bigInt = 1234567890123456789012345678901234567890n;
-
-console.log(typeof bigInt); // bigint
-console.log(bigInt); // 1234567890123456789012345678901234567890n
-
-// ---------------------------
-
-let validUser = true;
-let isGreater = 4 > 7;
-
-console.log(typeof validUser); // boolean
-console.log(typeof isGreater); // boolean
-
-console.log(validUser); // true
-console.log(isGreater); // false
-
-// ---------------------------
+// --------------------
 
 let inf1 = 1 / 0;
 let inf2 = Infinity;
@@ -43,7 +29,25 @@ console.log(typeof inf2); // number
 console.log(inf1); // Infinity
 console.log(inf2); // Infinity
 
-// ---------------------------
+// ----------------------------------------
+
+const bigInt = 1234567890123456789012345678901234567890n;
+
+console.log(typeof bigInt); // bigint
+console.log(bigInt); // 1234567890123456789012345678901234567890n
+
+// ----------------------------------------
+
+let validUser = true;
+let isGreater = 4 > 7;
+
+console.log(typeof validUser); // boolean
+console.log(typeof isGreater); // boolean
+
+console.log(validUser); // true
+console.log(isGreater); // false
+
+// ----------------------------------------
 
 let nan1 = "ali" / 3;
 let nan2 = NaN + 3;
@@ -62,7 +66,7 @@ console.log(NaN ** 0); // 1
 console.log(nan1 === NaN); // false
 console.log(isNaN(nan1)); // true
 
-// ---------------------------
+// ----------------------------------------
 
 let user;
 console.log(typeof user); // undefined
@@ -81,7 +85,7 @@ let test1 = undefined;
 let test2;
 console.log(test1 === test2); // true
 
-// ---------------------------
+// ----------------------------------------
 
 let user4 = null;
 console.log(typeof user4); // object
@@ -91,7 +95,7 @@ let test10 = null;
 let test20;
 console.log(test10 === test20); // false
 
-// ---------------------------
+// ----------------------------------------
 
 let sym1 = Symbol("test");
 let sym2 = Symbol("test");
@@ -100,7 +104,7 @@ console.log(typeof sym1); // "symbol"
 console.log(sym1, "|", sym2); // Symbol(test) | Symbol(test)
 console.log(sym1 === sym2); // false
 
-// ---------------------------
+// ----------------------------------------
 
 console.log(typeof Math); // "object"
 
@@ -108,7 +112,7 @@ console.log(typeof null); // "object"
 
 console.log(typeof alert); // "function"
 
-// ---------------------------
+// ----------------------------------------
 // more string
 
 console.log("you can't"); // you can't
@@ -117,3 +121,24 @@ console.log(`you can't`); // you can't
 
 console.log("i am \tmahdy"); // i am 	mahdy
 console.log("i am \nmahdy");
+
+// ========================================
+// Literal & Wrapper
+
+let fName = "ali"; // a primitive string
+let lName = new String("ram"); // a String object (object wrapper for a string)
+
+console.log(typeof fName);
+console.log(typeof lName);
+
+// --------------------
+
+let str = "hello"; // string literal
+let num = 42; // number literal
+let bool = true; // boolean literal
+
+let strObj = new String("hello"); // wrapper object
+let numObj = new Number(42); // wrapper object
+let boolObj = new Boolean(true); // wrapper object
+
+// estefade az literal tosieh mishavad

@@ -5,7 +5,7 @@ let x = Number("12");
 
 console.log(Number.isNaN(x)); // false
 
-console.log(isNaN(x)); // false  =>  isNan is a Global method
+console.log(isNaN(x)); // false => isNan is a Global method
 
 // ----------------------------------------
 // URIs
@@ -13,20 +13,24 @@ console.log(isNaN(x)); // false  =>  isNan is a Global method
 let uri = "https://www.example.com/submit?name=ali reza ram";
 
 let encodedUri = encodeURI(uri);
-console.log(encodedUri); // https://www.example.com/submit?name=ali%20reza%20ram
+console.log(encodedUri);
+// https://www.example.com/submit?name=ali%20reza%20ram
 
 let decodedUri = decodeURI(encodedUri);
-console.log(decodedUri); // https://www.example.com/submit?name=ali reza ram
+console.log(decodedUri);
+// https://www.example.com/submit?name=ali reza ram
 
 // --------------------
 
 let uri = "https://www.example.com/submit?name=ali reza ram";
 
 let encoded = encodeURIComponent(uri);
-console.log(encoded); // https%3A%2F%2Fwww.example.com%2Fsubmit%3Fname%3Dali%20reza%20ram
+console.log(encoded);
+// https%3A%2F%2Fwww.example.com%2Fsubmit%3Fname%3Dali%20reza%20ram
 
 let decoded = decodeURIComponent(encoded);
-console.log(decoded); // https://www.example.com/submit?name=ali reza ram
+console.log(decoded);
+// https://www.example.com/submit?name=ali reza ram
 
 // ----------------------------------------
 // eval
@@ -664,6 +668,8 @@ console.log(str.slice(-9)); // avaScript
 
 console.log("   hello  js   ".trim()); // "hello  js"
 
+console.log("hello".includes("h")); // true
+
 console.log("hello".toUpperCase()); // HELLO
 console.log("HELLO".toLowerCase()); // hello
 
@@ -679,8 +685,207 @@ console.log("=".repeat(10)); // ==========
 // ========================================
 // numbers-methods
 
+// is
+
+let num = 12;
+
+console.log(Number.isNaN(num)); // false
+console.log(isNaN(num)); // false
+console.log(!isNaN(num)); // true
+
+console.log(isFinite(num)); // true
+
+console.log(Number.isInteger(num)); // true
+console.log(Number.isInteger(12.3)); // false
+
+// ----------------------------------------
+// to...  ->  output: string
+
+let num = 12.23478;
+console.log(num.toFixed(3)); // 12.235
+
+let num2 = 12.23428;
+console.log(num2.toFixed(3)); // 12.234
+
+// --------------------
+
+let num = 12.23478;
+console.log(num.toPrecision(3)); // 12.2
+console.log(num.toPrecision(5)); // 12.235
+
 // ========================================
 // math-methods
 
+// max-min
+
+let x = Math.max(2, 5, 6, 8, 4, 3);
+console.log(x); // 8
+
+// --------------------
+
+let arr = [4, 8, 2, 1, 6, 9];
+
+console.log(Math.max(arr)); // NaN
+console.log(Math.max(...arr)); // 9
+console.log(Math.min(...arr)); // 1
+
+// ----------------------------------------
+// power-root-abs
+
+console.log(Math.pow(5, 3)); // 125
+
+console.log(Math.sqrt(16)); // 4
+
+console.log(Math.abs(-16)); // 16
+
+// ----------------------------------------
+// random
+
+console.log(Math.random()); // ? in [0,1)
+
+// --------------------
+// ? in [0,n)
+
+let n = 10;
+console.log(Math.floor(Math.random() * n));
+
+// --------------------
+// ? in [a,b]
+
+let min = 5;
+let max = 15;
+let rand = Math.floor(Math.random() * (max - min + 1)) + min;
+console.log(rand);
+
+// ----------------------------------------
+// round-floor-ceil-trunc
+
+let num1 = 5.69;
+let num2 = 3.2647;
+let num3 = 7.5;
+let num4 = -7.5;
+
+console.log(Math.round(num1)); // 6
+console.log(Math.round(num2)); // 3
+console.log(Math.round(num3)); // 8
+console.log(Math.round(num4)); // -7
+
+console.log(Math.ceil(num1)); // 6
+console.log(Math.ceil(num2)); // 4
+console.log(Math.ceil(num3)); // 8
+console.log(Math.ceil(num4)); // -7
+
+console.log(Math.floor(num1)); // 5
+console.log(Math.floor(num2)); // 3
+console.log(Math.floor(num3)); // 7
+console.log(Math.floor(num4)); // -8
+
+console.log(Math.trunc(num1)); // 5
+console.log(Math.trunc(num2)); // 3
+console.log(Math.trunc(num3)); // 7
+console.log(Math.trunc(num4)); // -7
+
+// ----------------------------------------
+// properties
+
+console.log(Math.PI); // 3.141592653589793
+console.log(Math.E); // 2.718281828459045
+console.log(Math.LN10); // 2.302585092994046
+console.log(Math.SQRT2); // 1.4142135623730951
+
 // ========================================
 // date-methods
+
+// new Date()
+
+let currentDate = new Date();
+console.log(currentDate);
+// in vscode: 2025-05-26T00:53:08.962Z
+// in console: Mon May 26 2025 04:23:40 GMT+0330 (Iran Standard Time)
+
+// --------------------
+// create date
+
+let d1 = new Date("Dec 31 2010");
+let d2 = new Date("2010-12-31");
+let d3 = new Date(2010, 11, 31); // January = 0، December = 11
+console.log(d1); // Wed Dec 31 2010
+console.log(d2); // Wed Dec 31 2010
+console.log(d3); // Wed Dec 31 2010
+
+// --------------------
+// get...
+
+let date = new Date();
+
+console.log(date.getFullYear());
+console.log(date.getMonth());
+console.log(date.getDate());
+console.log(date.getDay());
+
+console.log(date.getHours());
+console.log(date.getMinutes());
+console.log(date.getSeconds());
+
+// --------------------
+// set...
+
+let date = new Date();
+
+date.setFullYear(2020, 9, 28);
+console.log(date); // 2020-10-28T01:47:28.061Z
+
+date.setMonth(11);
+date.setDate(21);
+date.setHours(12);
+date.setMinutes(34);
+date.setSeconds(44);
+console.log(date); // 2020-12-21T09:04:44.130Z
+
+// --------------------
+// convert-to-string
+
+let now = new Date();
+
+console.log(now);
+console.log(now.toDateString());
+console.log(now.toLocaleDateString());
+console.log(now.toLocaleTimeString());
+
+console.log(Date.parse(now));
+
+// ----------------------------------------
+// Date.now()
+
+console.log(Date.now()); // 1748221020255  =>  It means the number of milliseconds that have passed since 00:00:00 on January 1, 1970 (UTC) — also known as the Unix Epoch.
+
+// --------------------
+// time of 2 points:
+
+let start = Date.now();
+// ... some code
+let end = Date.now();
+console.log(`Duration: ${end - start} ms`);
+
+// --------------------
+// create userId based on date:
+
+let id = "user_" + Date.now();
+console.log(id); // user_1748221987484
+
+// --------------------
+// one year after Unix Epoch:
+
+console.log(new Date(0)); // 1970-01-01T00:00:00.000Z  (zero time)
+
+let oneYear = 365 * 24 * 60 * 60 * 1000;
+console.log(new Date(oneYear)); // 1971-01-01T00:00:00.000Z
+
+// --------------------
+
+let now = new Date();
+
+console.log(now.getTime());
+
+console.log(new Date(now.getTime()));
+console.log(now);

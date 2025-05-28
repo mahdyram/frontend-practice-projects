@@ -36,6 +36,15 @@ console.log(arr1.length); // 6
 
 // --------------------
 
+let str = "aliram";
+
+console.log(str[0]); // a
+console.log(str[5]); // m
+console.log(str[-1]); // undefined
+console.log(str[str.length - 1]); // m 
+
+// --------------------
+
 const product = ["book", 99, false];
 
 console.log(product); // [ 'book', 99, false ]
@@ -168,56 +177,6 @@ console.log(valid3); // false
 const [name4, ...other] = product2;
 console.log(name4); // book
 console.log(other); // [ 99, false ]
-
-// ========================================
-// copy
-
-// shallow copy:
-
-// spread-operator(...)
-
-let arr = [1, 2, 3];
-let copy = [...arr];
-
-// --------------------
-// Array.slice()
-
-let arr = [1, 2, 3];
-let copy = arr.slice();
-
-// --------------------
-// Array.from()
-
-let arr = [1, 2, 3];
-let copy = Array.from(arr);
-
-// ----------------------------------------
-// deep copy:
-
-let original = { name: "ali", address: { city: "tehran" } };
-
-let copy = structuredClone(original);
-
-console.log(copy);
-
-// ----------------------------------------
-// deep-copy vs shallow-copy
-
-/*
-- agar array faghat shamele maghadire sade(number, string, boole) bashad, moshkeli nist.
-- amma agar dakhele array object ya array digari bashad moshkel eijad mishavad va ba taghir copy, orijinal ham tagir mikonad.
-- dalil: dar copy sathi faghat "esharegar(refrence) be object" copy shode, yaeni dar hafeze, faghat adrese oon objecte todarto copy mishe na khode dade ha.
-*/
-
-let original1 = { name: "ali", address: { city: "tehran" } };
-let copy = { ...original1 };
-copy.address.city = "mashhad";
-console.log(original1.address.city); // "mashhad" changed!
-
-let original2 = { name: "ali", address: { city: "tehran" } };
-let deepCopy = structuredClone(original2);
-deepCopy.address.city = "mashhad";
-console.log(original2.address.city); // "tehran" not changed
 
 // ========================================
 // practice
