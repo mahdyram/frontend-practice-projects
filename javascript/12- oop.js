@@ -14,9 +14,23 @@ let dog = {
   animalName: "dog",
 };
 console.log(dog);
+console.log(dog.animalName);
 
-// with Class (new-ES6):
+// --------------------
+// with Class (new - ES6):
+
 class Animal {
+  constructor() {
+    this.animalColor = "yello";
+    this.animalWeight = 120;
+    this.animalHeight = 120;
+    this.animalName = "liony";
+  }
+}
+let lion = new Animal();
+console.log(lion);
+
+class Aanimal {
   constructor(color, weight, height, name) {
     this.animalColor = color;
     this.animalWeight = weight;
@@ -24,10 +38,12 @@ class Animal {
     this.animalName = name;
   }
 }
-let lion1 = new Animal("yello", 120, 120, "liony");
-console.log(lion1);
+let lion = new Animal("yello", 120, 120, "liony");
+console.log(lion);
 
+// --------------------
 // with Constructor-Function (older):
+
 function Animal(color, weight, height, name) {
   this.animalColor = color;
   this.animalWeight = weight;
@@ -74,6 +90,25 @@ console.log(u1);
 console.log(u1.lastName); // ram
 console.log(u1.test1); // test1
 console.log(u1.test2); // test2
+
+// --------------------
+
+class User {
+  constructor(fN, lN) {
+    this.firstName = fN;
+    this.lastName = lN;
+    this.test1 = "test one";
+    this.test2 = () =>
+      `first-name is ${this.firstName} and last-name is ${this.lastName}`;
+  }
+}
+
+let u1 = new User("ali", "ram");
+console.log(u1);
+
+console.log(u1.lastName); // ram
+console.log(u1.test1); // test1
+console.log(u1.test2()); // first-name is ali and last-name is ram (Arrow Function in Constructor)
 
 // --------------------
 // private properti
@@ -212,6 +247,27 @@ console.log(product1); // Product { title: 'Book', price: 77 }
 console.log(product1.productInfo()); // Title: Book 3 - Price: 77
 
 // --------------------
+
+class User {
+  constructor(fN, lN) {
+    this.firstName = fN;
+    this.lastName = lN;
+    this.test1 = "test one";
+  }
+
+  test2() {
+    return `first-name is ${this.firstName} and last-name is ${this.lastName}`;
+  }
+}
+
+let u1 = new User("ali", "ram");
+console.log(u1);
+
+console.log(u1.lastName); // ram
+console.log(u1.test1); // test1
+console.log(u1.test2()); // first-name is ali and last-name is ram (Class Method)
+
+// --------------------
 // Instance methods
 class User {
   sayHi() {
@@ -241,6 +297,116 @@ new User().sayHi(); // TypeError: (intermediate value).sayHi is not a function
 
 const u2 = new User();
 u2.sayHi(); // TypeError: u2.sayHi is not a function
+
+// ----------------------------------------
+// Class-Method vs Function-in-Constructor
+
+// --------------------
+// normal-method in prototype
+/*
+features:
+- 'sayHello' dar 'prototype' zakhire mishavad -> masrafe hafeze kamtar.
+- tamame ashiae sakhte shode az 'User' be yek noskhe moshtarak az 'sayHello' dastresi darand.
+- 'this' bastegi be nahve seda zadan darad va momken ast eshtebah shavad.
+*/
+
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayHello() {
+    console.log(`Hello, ${this.name}`);
+  }
+}
+
+// --------------------
+// arrow-function in field
+/*
+features:
+- 'sayHello' dakhele khode 'instance' sakhte mishavad na 'prototype' -> masrafe hafeze bishtar (chon har instance, tabe khodash ra darad).
+- dar natije har sheie yek noskhe mostaghel az in tabe khahad dasht.
+- 'this' hamishe dorost be khode sheie eshare mikonad (hatta agar be onvane 'callback' seda zade shavad).
+*/
+
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayHello = () => {
+    console.log(`Hello, ${this.name}`);
+  };
+}
+
+// --------------------
+// Function in Constructor
+/*
+features:
+- dar har nemoone besoorate jodagane sakhte mishavad -> masrafe bishtare hafeze.
+- vaghti tabe mamooli dar 'constructor' be yek 'property' nesbat dade shavad, 'this' daroon an be shey’e fe’eli (User instance) eshare mikonad, chun tabe ba seda zadan mesle u.sayHello() ejra mishavad.
+- agar bekhahim tabe mamooli ra joda-gane be onvane 'callback' ersal konim (masalan be setTimeout) va seda bezanim, momken ast 'this' gom shavad va be shey’e eshtebah eshare konad (magar inke an ra 'bind' konim).
+*/
+
+class User {
+  constructor(name) {
+    this.name = name;
+    this.sayHello = function () {
+      console.log(`Hello, ${this.name}`);
+    };
+  }
+}
+
+// --------------------
+// Arrow-Function in Constructor
+/*
+features:
+- dar har nemoone besoorate jodagane sakhte mishavad -> masrafe bishtare hafeze.
+- arrow-function 'this' ra az mohite birooni (ya’ni khode constructor) migirad => pas 'this.name' hamishe be 'name' haman shey’e eshare darad, hatta agar 'sayHello' be onvane 'callback' ya jodagane farakhani shavad.
+- 'this' hamishe be sheie fe'eli eshare darad -> monaseb baraye 'callback' ha (masalan dar 'event' ha).
+- 'this' ghabele taghir nist va be 'instance' feli ghofl shode => monaseb baraye mavagheei ke mikhahim method hatman 'this' ra hefz konad.
+*/
+
+class User {
+  constructor(name) {
+    this.name = name;
+    this.sayHello = () => {
+      console.log(`Hello, ${this.name}`);
+    };
+  }
+}
+
+// --------------------
+// kodoom ravash behtare?
+/*
+✅ behtarin entekhab dar bishtar movaghe':
+
+ravesh aval - tarif metode mamooli dar class (dar prototype)
+dalael:
+
+hafezeh kamtari masraf mikone chon metode too prototype zakhire mishe va beyn tamame namooneha moshtareke.
+
+baraye metodhayi ke niazi be bind kardan this nadaran (yani gharar nist be onvane callback joda-gane estefade beshan), ideal-e.
+
+✅ ravesh dovvom (arrow dar class) ya ravesh chaharom (arrow dar constructor):
+baraye movaghei khobe ke (olaviat ba dovvom):
+
+gharare metode ro be onvane callback estefade koni (masalan too rooydad ya timer).
+
+mikhay this hamishe be instance fe'li eshare kone va gom nashe.
+
+🚫 ravesh sevom (tabe mamooli dakhele constructor):
+behtare azash parhiz beshe chon:
+
+too har instance ye kopi jadid az metode sakhte mishe (masraf hafeze bishtar).
+
+this momkene dar callback gom beshe va niaze be bind dare.
+
+natije:
+age metode faghat ye amal kard sade dare va gharar nist joda az shay seda zade bashe → ravesh classic (prototype) behtarine.
+
+age metode gharare be onvane callback ya dar context joda estefade beshe → arrow function monaseb-e.
+*/
 
 // ----------------------------------------
 // constructor
@@ -412,7 +578,7 @@ s1.fName = "reza";
 console.log(s1.fName); // reza
 
 // ----------------------------------------
-// prototypes =>
+// prototypes
 
 /*
 taerife prototype:

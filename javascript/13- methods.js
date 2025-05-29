@@ -1,6 +1,11 @@
 // ========================================
 // global-methods
 
+const dayjs = require("dayjs");
+
+// ----------------------------------------
+// example of GMethods
+
 let x = Number("12");
 
 console.log(Number.isNaN(x)); // false
@@ -82,6 +87,7 @@ console.log(parseFloat(x) + 5); // 12.3
 // ========================================
 // array-methods
 
+// ----------------------------------------
 // forEach
 /*
 - maemoolan braye amaliat haye khareji mesle clg ya taghire motghere khareji bekar miravad.
@@ -440,6 +446,27 @@ let ageGroups = people.reduce((acc, person) => {
 console.log(ageGroups); // { '25': ['Ali', 'Reza'], '30': ['Sara'] }
 
 // ----------------------------------------
+// sort
+/*
+- betore pishfarz anasor ro besoorate reshte ei morattab mikonad.
+- arraye asli ra taghir midahad
+*/
+
+const names = ["ali", "sara", "caren"];
+console.log(names.sort()); // [ 'ali', 'caren', 'sara' ]
+
+const naems2 = ["Ali", "Sara", "caren"];
+console.log(naems2.sort()); // [ 'Ali', 'Sara', 'caren' ]
+
+// --------------------
+
+const age = [14, 4, 35, 56, 33, 24];
+console.log(age.sort()); // [ 14, 24, 33, 35, 4, 56 ]   =>  "14" < "24" < "33" < "35" < "4" < "56"
+
+console.log(age.sort((a, b) => a - b)); // [ 4, 14, 24, 33, 35, 56 ]
+console.log(age.sort((a, b) => b - a)); // [ 56, 35, 33, 24, 14, 4 ]
+
+// ----------------------------------------
 // practice
 
 const products = [
@@ -518,6 +545,7 @@ console.log(notExistId2); // [ 2, 3 ]
 // ========================================
 // string-methods
 
+// ----------------------------------------
 // concat
 
 let firstName = "Ali";
@@ -685,6 +713,7 @@ console.log("=".repeat(10)); // ==========
 // ========================================
 // numbers-methods
 
+// ----------------------------------------
 // is
 
 let num = 12;
@@ -716,6 +745,7 @@ console.log(num.toPrecision(5)); // 12.235
 // ========================================
 // math-methods
 
+// ----------------------------------------
 // max-min
 
 let x = Math.max(2, 5, 6, 8, 4, 3);
@@ -796,8 +826,6 @@ console.log(Math.SQRT2); // 1.4142135623730951
 // ========================================
 // date-methods
 
-// new Date()
-
 let currentDate = new Date();
 console.log(currentDate);
 // in vscode: 2025-05-26T00:53:08.962Z
@@ -818,14 +846,26 @@ console.log(d3); // Wed Dec 31 2010
 
 let date = new Date();
 
-console.log(date.getFullYear());
-console.log(date.getMonth());
-console.log(date.getDate());
-console.log(date.getDay());
+console.log(date.getFullYear()); // Year (YYYY)
+console.log(date.getMonth()); // Month (0-11)
+console.log(date.getDate()); // Date-of-Month (1-31)
+console.log(date.getDay()); // Day-of-Week (0-6)
 
-console.log(date.getHours());
-console.log(date.getMinutes());
-console.log(date.getSeconds());
+console.log(date.getHours()); // (0-23)
+console.log(date.getMinutes()); // (0-59)
+console.log(date.getSeconds()); // (0-59)
+
+console.log(date.getTime()); // Unix-Epoch: in second since 00:00:00 on January 1, 1970
+
+// --------------------
+//compare two date:
+
+const date1 = new Date(1995, 11, 3, 16, 35, 21);
+const date2 = new Date(1995, 11, 3, 16, 35, 21);
+
+console.log(date1 === date2); // false!
+
+console.log(date1.getTime() === date2.getTime()); // true
 
 // --------------------
 // set...
@@ -853,6 +893,56 @@ console.log(now.toLocaleDateString());
 console.log(now.toLocaleTimeString());
 
 console.log(Date.parse(now));
+
+// ----------------------------------------
+// practice: change date format
+
+const formatDate = (dateObject) => {
+  const parts = {
+    year: dateObject.getFullYear().toString(),
+    month: (dateObject.getMonth() + 1).toString().padStart(2, "0"),
+    date: dateObject.getDate().toString().padStart(2, "0"),
+    hour: (dateObject.getHours() % 12 || 12).toString().padStart(2, "0"),
+    amOePm: dateObject.getHours() < 12 ? "AM" : "PM",
+    minute: dateObject.getMinutes().toString().padStart(2, "0"),
+  };
+
+  return `${parts.year}/${parts.month}/${parts.date} ${parts.hour}:${parts.minute} ${parts.amOePm}`;
+};
+
+const myDate = new Date(1995, 11, 3, 16, 9);
+const myDateFormated = formatDate(myDate);
+
+console.log(myDate); // 1995-12-03T13:05:21.000Z  =>  UTC-tiem
+console.log(myDateFormated); // 1995/12/03 04:35  =>  Local-time
+
+// --------------------
+// UTC-Date
+
+const formatDateUTC = (dateObject) => {
+  const parts = {
+    year: dateObject.getUTCFullYear(),
+    month: String(dateObject.getUTCMonth() + 1).padStart(2, "0"),
+    date: String(dateObject.getUTCDate()).padStart(2, "0"),
+    hour: String(dateObject.getUTCHours() % 12 || 12).padStart(2, "0"),
+    minute: String(dateObject.getUTCMinutes()).padStart(2, "0"),
+  };
+
+  return `${parts.year}/${parts.month}/${parts.date} ${parts.hour}:${parts.minute}`;
+};
+
+const myDate = new Date(1995, 11, 3, 16, 9);
+console.log(myDate);
+console.log(formatDateUTC(myDate));
+
+// --------------------
+// use Day.js pakage
+
+const dayjs = require("dayjs");
+
+const myDate = dayjs("1995-11-3 16:9");
+
+console.log(myDate.format("YYYY/M/D hh:mm A"));
 
 // ----------------------------------------
 // Date.now()

@@ -41,7 +41,7 @@ let str = "aliram";
 console.log(str[0]); // a
 console.log(str[5]); // m
 console.log(str[-1]); // undefined
-console.log(str[str.length - 1]); // m 
+console.log(str[str.length - 1]); // m
 
 // --------------------
 
@@ -62,7 +62,10 @@ console.log(product); // [ 'bk', 99, false, true ]
 // ----------------------------------------
 // some simple methods
 
-const product = ["book", 99, false];
+const product = ["book", 99];
+
+product[product.length] = false;
+console.log(product); // [ 'book', 99, false ]
 
 product.push("pen");
 console.log(product); // [ 'book', 99, false, 'pen' ]
@@ -134,21 +137,6 @@ const arr2 = [5, 6, "ali"];
 
 const arr3 = arr1.concat(arr2);
 console.log(arr3); // [ 1, 3, 4, 5, 6, 'ali' ]
-
-// --------------------
-// sort
-
-const age = [14, 4, 35, 56, 33, 24];
-console.log(age.sort()); // [ 14, 24, 33, 35, 4, 56 ]   =>  "14" < "24" < "33" < "35" < "4" < "56"
-
-console.log(age.sort((a, b) => a - b)); // [ 4, 14, 24, 33, 35, 56 ]
-console.log(age.sort((a, b) => b - a)); // [ 56, 35, 33, 24, 14, 4 ]
-
-const names = ["ali", "sara", "caren"];
-console.log(names.sort()); // [ 'ali', 'caren', 'sara' ]
-
-const naems2 = ["Ali", "Sara", "caren"];
-console.log(naems2.sort()); // [ 'Ali', 'Sara', 'caren' ]
 
 // ========================================
 // destructuring assignment

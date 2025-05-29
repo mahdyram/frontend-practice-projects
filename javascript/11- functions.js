@@ -135,8 +135,47 @@ const result6 = addProduct6("Pen", 55);
 console.log(result6); // Title: Pen - Price: 55
 
 // =======================================
+// Function Definition Summary
+
+// ----------------------------------------
+// Function Declaration
+
+function sum(a, b) {
+  return a + b;
+}
+/*
+- in tabe ba name 'sum' taerif shodeh ast.
+- 'Hoisting' mishavad, yaeni ghabl az taerif ham mishavad az an estfaeh kard.
+- maemoolan baraye tavabe omoomi estefadeh mishavad.
+*/
+
+// ----------------------------------------
+// Function Expression
+
+let result = function (a, b) {
+  return a + b;
+};
+/*
+- in tabe bedoone nam ast(anonymous) va dar motaghayere 'result' zakhire shode ast.
+- 'Hoisting' nemishavad.
+- in noe tabe ra mitavan beonvane argoman, meghdare bazgashti, ya mthode object estefade kard.
+*/
+
+// --------------------
+// Arrow Function
+
+let result2 = (a, b) => a + b;
+/*
+- noei az function-expression(fe) amma kootahtar.
+- barkhalafe fe, 'this', 'arguments', 'super' va 'new.target' nadarad.
+- baraye object-methods ya tavabeei ke ba 'this' kar darand monaseb nist.
+- monaseb bareye tavabe kootah ya estefade dar tavabe martabe balatar(higher-order functions).
+*/
+
+// =======================================
 // some operators
 
+// ----------------------------------------
 // spread
 
 const names = ["ali", "mohammad", "reza", "saeed"];
@@ -192,6 +231,17 @@ const plusNumbers = (...params) => {
 plusNumbers(); // 0
 plusNumbers(4, 7, 8); // 19
 plusNumbers(4, 7, 8, 3, 4, 2); // 28
+
+// --------------------
+
+const plusNumbers = (x, ...params) => {
+  let total = 0;
+  params.forEach((i) => (total += i));
+  console.log(total * x);
+};
+
+plusNumbers(3, 4, 5); // 19 -> 3*(4+5)
+plusNumbers(2, 4, 7, 8); // 38
 
 // ========================================
 // var vs let vs const
@@ -251,6 +301,7 @@ f(); // ReferenceError: Cannot access 'test' before initialization
 // =======================================
 // some special functions
 
+// ----------------------------------------
 // setTimeout function
 
 function one() {

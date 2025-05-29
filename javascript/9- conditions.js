@@ -1,4 +1,4 @@
-// =======================================
+// ========================================
 // if
 
 const isCold = true;
@@ -9,7 +9,7 @@ if (isCold2) {
   console.log("weather is cold");
   console.log("Wear your jacket!");
 }
-// -------------------
+// --------------------
 
 const score = 13;
 
@@ -18,7 +18,7 @@ if (score > 15) {
 } else {
   console.log("not good");
 }
-// -------------------
+// --------------------
 
 const score = 11;
 
@@ -29,7 +29,7 @@ if (score > 16) {
 } else {
   console.log("its bad");
 }
-// -------------------
+// --------------------
 
 const price = 99;
 const newPrice = 109;
@@ -42,7 +42,7 @@ if (newPrice > price) {
   console.log("Same Price");
 }
 
-// -------------------
+// --------------------
 // practice
 
 let whoaryou = prompt("who are you");
@@ -61,7 +61,7 @@ if (whoaryou === "admin") {
   alert("i dont know you");
 }
 
-// =======================================
+// ========================================
 // ternary (?)   =>   let result = condition ? value1 : value2;
 
 /*
@@ -80,7 +80,7 @@ console.log(accessAllowed);
 
 age > 18 ? console.log("access") : console.log("denied");
 
-// -------------------
+// --------------------
 
 /*
 let age = 15;
@@ -109,8 +109,9 @@ let message =
 
 console.log(message);
 
-// =======================================
+// ========================================
 // switch
+// faghat braye shorote barabary(===) na > ya <
 
 const weekday = 2;
 
@@ -138,7 +139,7 @@ switch (weekday) {
   default:
     console.log("wrong input!");
 }
-// -------------------
+// --------------------
 
 const weekday = 2;
 
@@ -153,7 +154,7 @@ switch (weekday) {
   default:
     console.log("wrong input!");
 }
-// -------------------
+// --------------------
 
 const weekday = 2;
 
@@ -169,7 +170,7 @@ switch (weekday) {
   default:
     console.log("wrong input!");
 }
-// -------------------
+// --------------------
 
 let answer;
 let randNumber = Math.random(); // 0 <= < 1

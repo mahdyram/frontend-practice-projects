@@ -197,6 +197,8 @@ for (let i = 0; i < alpha.length; i++) {
   console.log(alpha[i]);
 }
 
+console.log("-".repeat(30));
+
 const alpha2 = ["a", "b", "c", "d", "e"];
 for (let i of alpha2) {
   console.log(i);
@@ -257,13 +259,15 @@ let userInfo = {
   color: "white ",
   isAdmin: true,
 };
+
 console.log(userInfo.length); // undefined
 
-let n = 0;
+let length = 0;
 for (let i in userInfo) {
-  n++;
+  length++;
 }
-console.log(n); // 5
+console.log(length); // 5
+
 // --------------------
 
 let userInfo = {
@@ -276,7 +280,7 @@ let userInfo = {
 console.log(userInfo);
 
 for (let key in userInfo) {
-  console.log(`${key}: ${userInfo[key]}`);
+  console.log(`${key} => ${userInfo[key]}`);
 }
 
 for (let i of Object.entries(userInfo)) {
