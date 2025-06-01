@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <title>differnce textContent & innerText</title>
+    <style>
+      #hiddenText {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="example">hello <span id="hiddenText">'hide'</span> world!</div>
+
+    <script>
+      const example = document.getElementById("example");
+      console.log("textContent:", example.textContent);
+      console.log("innerText:", example.innerText);
+      alert("see results in console(F12)");
+    </script>
+  </body>
+</html>
