@@ -44,6 +44,7 @@ console.log(f2); // 5
 
 // ----------------------------------------
 // do while
+// tafavot ba while: hadeaghal yekbar badane halghe ejra mishavad va sepas shart chek mishavad.
 
 let x = 0;
 

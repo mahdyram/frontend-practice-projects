@@ -45,12 +45,10 @@
     <button onclick="toggleText()">changing text</button>
 
     <script>
-      // chon az this estefade shode, behtar ast az arrow-func estefade nashavad.
-      function changeText(x) {
+      const changeText = (x) => {
         x.innerText = "Text changed!";
-      }
+      };
 
-      // mitavan az arrow-func ya tabe maemooli estefade kard.
       const changeText1 = () => {
         document.getElementById("p1").innerText = "Text changed!";
       };

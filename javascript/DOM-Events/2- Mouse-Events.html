@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dom-2</title>
+    <title>Mouse Events</title>
     <style>
       body {
-        height: 1200px;
+        height: 3000px;
       }
       div,
       p {
@@ -29,15 +29,19 @@
   </head>
   <body>
     <div onclick="alert('clicked-1')">Test-1</div>
+
     <div onclick="clickHandler()">Test-2</div>
     <hr />
+    <!-- -------------------- -->
 
-    <div onclick="changeBColor(this)">Test-3</div>
-    <div id="t3.5" onclick="changeBColor2()">Test-3.5</div>
+    <div onclick="changeBColor1(this)">Test-3.1</div>
+
+    <div id="t3.5" onclick="changeBColor2()">Test-3.2</div>
 
     <div id="t4">Test-4</div>
     <button onclick="toggleShow4()">Toggle</button>
     <hr />
+    <!-- -------------------- -->
 
     <div id="t5">Test-5</div>
     <button onclick="toggleShow5()">Toggle</button>
@@ -48,24 +52,28 @@
     <div id="t7">Test-7</div>
     <button onclick="toggleShow7()">Toggle</button>
     <hr />
+    <!-- -------------------- -->
 
-    <div class="t8">Test-8</div>
+    <div class="tC1">Test-8</div>
     <button onclick="toggleShow8()">Toggle</button>
 
-    <div class="t9">Test-9</div>
+    <div class="tC1">Test-9</div>
     <button onclick="toggleShow9()">Toggle</button>
     <hr />
+    <!-- -------------------- -->
 
-    <div class="t10 active">Test-10</div>
+    <div class="tC2 active">Test-10</div>
     <button onclick="toggleShow10()">Toggle</button>
     <hr />
+    <!-- -------------------- -->
 
-    <div class="t11 active">Test-11</div>
+    <div class="tC3 active">Test-11</div>
     <button onclick="toggleShow11()">Toggle</button>
 
-    <div class="t12 active">Test-12</div>
+    <div class="tC3 active">Test-12</div>
     <button onclick="toggleShow12()">Toggle</button>
     <hr />
+    <!-- -------------------- -->
 
     <div id="t13" class="active" style="color: white">Test-13</div>
     <button onclick="toggleShow13()">Toggle</button>
@@ -73,15 +81,23 @@
     <div class="t14">Test-14</div>
     <button onclick="toggleShow14()">Toggle</button>
     <hr />
+    <!-- -------------------- -->
 
     <div id="t15">Test-15</div>
 
     <div id="t16">Test-16</div>
-    <button id="btn16">Toggle</button>
 
     <div id="t17">Test-17</div>
     <button id="btn17">Toggle</button>
     <hr />
+    <!-- -------------------- -->
+    
+    <div id="t18">Test-18</div>
+    
+    <div id="t19">Test-19</div>
+    <button id="btn19">Toggle</button>
+    <hr />
+    <!-- -------------------- -->
 
     <script src="two.js"></script>
   </body>
