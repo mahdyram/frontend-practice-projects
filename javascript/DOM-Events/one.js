@@ -1,11 +1,29 @@
 // ========================================
+// window object:
+
+console.log(window); // method ha va properti hai objecte window.
+// barkhi method ha: alert, confirm, fetch | barkhi properti ha: document, ...
+
+window.console.log("hello");
+// chon objecte window besoorate global eijad shode, mitavanim bedoon gozashtane window. az properti ha va method hai oon estfade konim.
+console.log("hello");
+
+console.log(window.location);
+console.log(window.location.pathname); // /javascript/DOM-Events/1-%20Dom.html
+
+console.log(window.navigator);
+
+console.log(window.document);
+
+// ========================================
 // in console (temporary):
 
 /*
 document
-document.children
+document.documentElement
 document.head
 document.body  =>  taghire mohtava
+document.children
 document.body.children
 document.body.children[0]
 

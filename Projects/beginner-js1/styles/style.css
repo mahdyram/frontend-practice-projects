@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "Vazir-FD";
-  src: url("Vazir-Regular-FD.woff");
+  src: url("../fonts/Vazir-Regular-FD.woff");
 }
 
 body {
@@ -29,7 +29,7 @@ h1 {
 form {
   padding: 2rem;
   border-radius: 5px;
-  box-shadow: 0 0 25px 5px rgb(0, 0, 0, 0.1);
+  box-shadow: 0 0 25px 5px rgb(0, 0, 0, 0.15);
 }
 
 input {
