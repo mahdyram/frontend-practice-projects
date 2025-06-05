@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "Vazir-FD";
-  src: url("../fonts/Vazir-Regular-FD.woff");
+  src: url("Vazir-Regular-FD.woff");
 }
 
 body {
@@ -52,6 +52,7 @@ input {
   border-radius: 5px;
   margin: 5px 0;
   font: inherit;
+  cursor: pointer;
 }
 
 ul {
@@ -62,6 +63,7 @@ ul {
 }
 
 li {
+  position: relative;
   margin: 1rem;
   padding: 1rem;
   border-radius: 5px;

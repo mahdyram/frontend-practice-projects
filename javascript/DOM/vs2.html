@@ -24,12 +24,14 @@
       Outer
       <div id="inner">Inner</div>
     </div>
-    <p id="p11"></p>
+    <p id="p1"></p>
+    <hr />
+    <p id="p2"></p>
 
     <script>
-      const outer = document.getElementById("outer");
+      const outer1 = document.getElementById("outer");
 
-      outer.addEventListener("click", function (e) {
+      outer1.addEventListener("click", function (e) {
         // this → خود outer
         this.style.backgroundColor = "lightgreen";
 
@@ -37,8 +39,15 @@
         e.target.style.backgroundColor = "yellow";
 
         document.getElementById(
-          "p11"
-        ).innerText = `this: ${this.id} | e.target: ${e.target.id}`;
+          "p1"
+        ).innerText = `get: outer  =>  this: ${this.id} | e.target: ${e.target.id}`;
+      });
+
+      const inner1 = document.getElementById("inner");
+      inner1.addEventListener("click", function (e) {
+        document.getElementById(
+          "p2"
+        ).innerText = `get: inner  =>  this: ${this.id} | e.target: ${e.target.id}`;
       });
     </script>
   </body>

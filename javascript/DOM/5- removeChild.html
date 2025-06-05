@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>removeChild</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .box {
+        width: 300px;
+        margin: auto;
+        padding: 10px;
+        border: 2px dashed gray;
+      }
+      .item,
+      .item2 {
+        background-color: lightcoral;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      #box2 > .item2 {
+        cursor: default;
+      }
+      .item:hover,
+      .item2:hover {
+        background-color: crimson;
+        color: white;
+      }
+      .delete-btn {
+        position: relative;
+        right: -100px;
+        background-color: white;
+        border: 1px solid crimson;
+        color: crimson;
+        padding: 2px 5px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .delete-btn:hover {
+        background-color: rgb(138, 22, 22);
+        border: 1px solid rgb(64, 5, 17);
+        color: rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>برای حذف، روی آیتم کلیک کن</h2>
+    <div id="box" class="box">
+      <div class="item">آیتم ۱</div>
+      <div class="item">آیتم ۲</div>
+      <div class="item">آیتم ۳</div>
+    </div>
+    <br />
+    <hr />
+
+    <h2>برای حذف، روی دکمه حذف کلیک کن</h2>
+    <div id="box2" class="box">
+      <div class="item2">آیتم ۱ <button class="delete-btn">حذف</button></div>
+      <div class="item2">آیتم ۲ <button class="delete-btn">حذف</button></div>
+      <div class="item2">آیتم ۳ <button class="delete-btn">حذف</button></div>
+    </div>
+
+    <script>
+      const box = document.getElementById("box");
+      box.addEventListener("click", function (e) {
+        if (e.target.classList.contains("item")) {
+          box.removeChild(e.target); // *
+          // e.target.remove();
+        }
+      });
+
+      const box2 = document.getElementById("box2");
+      box2.addEventListener("click", function (e) {
+        if (e.target.classList.contains("delete-btn")) {
+          box2.removeChild(e.target.parentElement); // *
+          // const item = e.target.closest(".item2");
+          // if (item) {
+          //   item.remove();
+          // }
+        }
+      });
+    </script>
+  </body>
+</html>

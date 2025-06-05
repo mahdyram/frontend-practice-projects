@@ -1,5 +1,5 @@
 // ========================================
-// window object:
+// window object
 
 console.log(window); // method ha va properti hai objecte window.
 // barkhi method ha: alert, confirm, fetch | barkhi properti ha: document, ...
@@ -15,7 +15,9 @@ console.log(window.navigator);
 
 console.log(window.document);
 
-// ========================================
+// ----------------------------------------
+// more about document
+
 // in console (temporary):
 
 /*
@@ -24,7 +26,8 @@ document.documentElement
 document.head
 document.body  =>  taghire mohtava
 document.children
-document.body.children
+document.body.childNode  =>  everything in body: tags, text-nodes, empty-spaces, coments,...
+document.body.children   =>  just tags in body
 document.body.children[0]
 
 document.body.children[0].style.backgroundColor = "red"  =>  (inline styles): change inline-style of first element inside body.
@@ -35,7 +38,7 @@ $0.style.background = 'red'  =>  ye ghsmat ro ke inspect kardim.
 getComputedStyle(document.body.children[0]).backgroundColor  =>  (computed style): return the final computed-style value.
 */
 
-// ========================================
+// --------------------
 // in js-file (permanent):
 
 document.body.children[0].style.backgroundColor = "cadetblue";
@@ -44,7 +47,9 @@ document.body.children[0].innerText = "ali";
 document.body.style.background = "bisque";
 setTimeout(() => (document.body.style.background = ""), 1000);
 
-// ----------------------------------------
+// ========================================
+// getting element
+
 // getElement
 
 document.getElementById("test2").innerText = "ram";
@@ -111,8 +116,55 @@ for (elm of t1s) {
 
 // --------------------
 
-document.querySelector("#list1").style.color = "red";
+document.querySelector("#list1").style.listStyleType = "square";
 
 document.querySelectorAll("#list1>li").forEach((item, index) => {
   item.innerText += ` - 0${index + 1}`;
 });
+
+const lItems = document.querySelectorAll(".lItem");
+for (i of lItems) {
+  i.style.color = "red";
+}
+
+// ========================================
+// creating element
+
+let ul1 = document.querySelector("#list1");
+
+const newLi1 = document.createElement("li");
+
+ul1.appendChild(newLi1);
+
+// --------------------
+
+const newLi2 = document.createElement("li");
+newLi2.innerText = "Item - 05";
+ul1.appendChild(newLi2);
+
+// --------------------
+
+const newLi3 = document.createElement("li");
+newLi3.innerText = "Item - 06";
+newLi3.setAttribute("class", "lItem");
+ul1.appendChild(newLi3);
+
+// --------------------
+
+const lItems2 = document.querySelectorAll(".lItem");
+for (i of lItems2) {
+  i.style.color = "blue";
+}
+// ----------------------------------------
+
+ul1 = document.querySelector("#list1");
+console.log(ul1.childNodes); // in console:
+
+console.log(document.body.childNodes[29].innerHTML); // with tags
+console.log(document.body.childNodes[29].innerText); // just text
+console.log(document.body.childNodes[29].textContent); // text with spaces
+
+const li2 = document.querySelector("#li2");
+console.log(li2);
+console.log(li2.previousElementSibling);
+console.log(li2.nextElementSibling);
