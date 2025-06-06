@@ -71,8 +71,24 @@ form2.addEventListener("submit", function (event) {
   const first = formData2.get("firstname");
   const last = formData2.get("lastname");
 
-  document.getElementById("welc").innerText = `Welcome ${first} ${last}`;
+  document.getElementById("wel").innerText = `Welcome ${first} ${last}`;
 });
+
+form2.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const first = form2.elements["firstname"].value;
+  const last = form2.elements["lastname"].value;
+
+  document.getElementById("hel").innerText = `Hello ${first} ${last}`;
+  form2.reset()
+});
+
+// const first = form2.querySelectorAll("input[type='text']")[0].value.trim();
+// const last = form2.querySelectorAll("input[type='text']")[1].value.trim();
+
+// const first = form2.querySelector("input[name='firstname']").value.trim();
+// const last = form2.querySelector("input[name='lastname']").value.trim();
 
 // ----------------------------------------
 // change

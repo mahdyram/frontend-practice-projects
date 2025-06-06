@@ -1,18 +1,54 @@
+const searchInput = document.querySelector("#search-books input");
+const bookList = document.querySelector("ul");
+const checkBox = document.getElementById("chb");
+const addForm = document.querySelector("#add-book");
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+const initialBooks = ["اثر مرکب", "طرح کلی", "انسان 250 ساله"];
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (!localStorage.getItem("initialized")) {
+    localStorage.setItem("tasks", JSON.stringify(initialBooks));
+    localStorage.setItem("initialized", "true");
+  }
+
+  tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+  tasks.forEach((task) => {
+    const newBook = createBookElement(task);
+    bookList.appendChild(newBook);
+  });
+});
+
 /* -------------> search-book <-------------- */
+
+searchInput.addEventListener("input", function () {
+  const nameBooks = document.querySelectorAll(".name");
+  nameBooks.forEach((item) => {
+    if (item.innerText.startsWith(searchInput.value)) {
+      item.parentElement.style.display = "flex";
+    } else {
+      item.parentElement.style.display = "none";
+    }
+  });
+});
 
 /* -------------> delete-book <-------------- */
 
-const bookList = document.querySelector("ul");
-
 bookList.addEventListener("click", function (e) {
   if (e.target.classList.contains("delete")) {
-    bookList.removeChild(e.target.parentElement);
+    // bookList.removeChild(e.target.parentElement);
+    e.target.parentElement.remove();
+    removeFromLocalStorage(e.target.parentElement.children[1].textContent);
   }
 });
 
-/* -------------> hide-books <-------------- */
+function removeFromLocalStorage(task) {
+  tasks = tasks.filter((t) => t !== task);
 
-const checkBox = document.getElementById("chb");
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+/* -------------> hide-books <-------------- */
 
 checkBox.addEventListener("change", function () {
   if (checkBox.checked) {
@@ -22,9 +58,34 @@ checkBox.addEventListener("change", function () {
   }
 });
 
-/* -------------> add-book <-------------- */
+/* -------------> reset <-------------- */
 
-const addForm = document.querySelector("#add-book");
+// reset ba refresh
+// document
+//   .querySelector("#hide-book span")
+//   .addEventListener("click", function () {
+//     localStorage.removeItem("initialized");
+//     window.location.reload();
+//   });
+
+// reset bedoone refresh
+document
+  .querySelector("#hide-book span")
+  .addEventListener("click", function () {
+    localStorage.setItem("tasks", JSON.stringify(initialBooks));
+    localStorage.setItem("initialized", "true");
+
+    tasks = [...initialBooks];
+
+    bookList.innerHTML = "";
+
+    tasks.forEach((task) => {
+      const newBook = createBookElement(task);
+      bookList.appendChild(newBook);
+    });
+  });
+
+/* -------------> add-book <-------------- */
 
 addForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -32,8 +93,20 @@ addForm.addEventListener("submit", function (e) {
   const input = addForm.querySelector("input[type='text']");
   const bookName = input.value.trim();
 
-  if (bookName === "") return;
+  if (bookName === "" || tasks.includes(bookName)) {
+    addForm.reset();
+    return;
+  }
 
+  const newBook = createBookElement(bookName);
+  bookList.appendChild(newBook);
+
+  storToLocalStorage(bookName);
+
+  addForm.reset();
+});
+
+function createBookElement(bookName) {
   const newBook = document.createElement("li");
   const span1 = document.createElement("span");
   span1.className = "delete";
@@ -42,7 +115,12 @@ addForm.addEventListener("submit", function (e) {
   span2.className = "name";
   span2.textContent = bookName;
   newBook.append(span1, span2);
-  bookList.appendChild(newBook);
+  return newBook;
+}
 
-  addForm.reset();
-});
+function storToLocalStorage(task) {
+  if (!tasks.includes(task)) {
+    tasks.push(task);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+}

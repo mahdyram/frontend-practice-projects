@@ -120,6 +120,13 @@ function func1() {
 
 target10.addEventListener("mousemove", func1);
 
+// --------------------
+
+let xy = document.querySelector("#xy");
+document.body.addEventListener("mousemove", function (e) {
+  xy.innerHTML = `mouseX: ${e.offsetX} | mouseY: ${e.offsetY}`;
+});
+
 // ========================================
 // out
 
