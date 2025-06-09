@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Vazir-FD";
+  src: url("../fonts/Vazir-Regular-FD.woff");
+}
+body {
+  font-family: "Vazir-FD";
+}
+.container {
+  display: flex;
+  gap: 1.5vw;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.pic {
+  position: relative;
+  width: 6vw;
+  height: 80%;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: width 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.active {
+  width: 60vw;
+}
+.pic:nth-child(1) {
+  background-image: url("../images/1.jpg");
+}
+.pic:nth-child(2) {
+  background-image: url("../images/2.jpg");
+}
+.pic:nth-child(3) {
+  background-image: url("../images/3.jpg");
+}
+.pic:nth-child(4) {
+  background-image: url("../images/4.jpg");
+}
+.pic:nth-child(5) {
+  background-image: url("../images/5.jpg");
+}
+span {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  font-size: 20px;
+  transition: 0.2s;
+  opacity: 0;
+}
+.active span {
+  transition: opacity 0.4s ease 0.4s;
+  opacity: 1;
+}
+
+@media screen and (max-width: 550px) {
+  .pic:nth-child(4) {
+    display: none;
+  }
+  .pic:nth-child(5) {
+    display: none;
+  }
+  .pic {
+    width: 10vw;
+  }
+  .active {
+    width: 67vw;
+  }
+}
