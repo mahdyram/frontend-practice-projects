@@ -45,7 +45,8 @@ window.addEventListener("resize", function () {
 let target5 = document.getElementById("t5");
 
 window.addEventListener("scroll", function () {
-  t5.textContent = window.scrollY + " px";
+  // t5.textContent = window.scrollY + " px";
+  t5.textContent = window.innerHeight
 });
 
 // ========================================

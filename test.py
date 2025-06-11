@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-folder_path = r"D:\now\Javascript2"
+folder_path = r"D:\now\React"
 total_duration = 0
 
 for filename in os.listdir(folder_path):
