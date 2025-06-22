@@ -1,5 +1,4 @@
 // props & children:
-
 function Box({ title, children }) {
   return (
     <div className="CBox CBox4">

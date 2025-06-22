@@ -45,3 +45,31 @@ a:hover {
 .CBox4 {
   background-color: rgb(202, 251, 111);
 }
+
+button {
+  padding: 10px 20px;
+  background-color: #1e88e5;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 5px;
+}
+button:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+button:active {
+  transform: scale(0.95);
+}
+
+.redText {
+  color: red;
+}
+.normalText {
+  color: black;
+}

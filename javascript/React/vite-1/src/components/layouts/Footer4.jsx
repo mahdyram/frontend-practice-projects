@@ -1,0 +1,45 @@
+import { useState } from "react";
+import CourseBox from "./CourseBox";
+
+const Footer4 = () => {
+  let load1 = true;
+  let load2 = false;
+
+  const [load3, setLoad3] = useState(true);
+  const handleChange3 = () => {
+    setLoad3(false);
+  };
+
+  const [load4, setLoad4] = useState(true);
+  const handleChange4 = () => {
+    setLoad4(load4 ? false : true);
+    // setLoad4(!load4);
+  };
+
+  const [load5, setLoad5] = useState(true);
+  const handleChange5 = () => {
+    setLoad5((prevState) => !prevState);
+  };
+
+  return (
+    <div>
+      {load1 ? <span>loaded</span> : <span>not load</span>}
+      <br />
+      <span>{load2 ? "loaded" : "not load"}</span>
+      <br />
+
+      <button onClick={handleChange3}>change</button>
+      <span>{load3 ? "loaded" : "not load"}</span>
+      <br />
+
+      <button onClick={handleChange4}>change</button>
+      <span>{load4 ? "loaded" : "not load"}</span>
+      <br />
+
+      <button onClick={handleChange5}>change</button>
+      <span>{load5 ? "loaded" : "not load"}</span>
+    </div>
+  );
+};
+
+export default Footer4;

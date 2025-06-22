@@ -1,4 +1,4 @@
-# Web Practice & Projects <span style="font-size: 20px;">**_[(my portfolio)](https://mahdiramshini.ir/)_**</span>
+# Web Practice & Projects <span style="font-size: 20px;">**_(my portfolio: [link1](https://mahdiramshini.ir/) - [link2](https://mahdyram.github.io/portfolio/))_**</span>
 
 این مخزن شامل مجموعه‌ای از تمرین‌ها و پروژه‌های من در مسیر یادگیری توسعه وب هست.
 
