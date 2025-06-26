@@ -3,11 +3,7 @@ import CourseBox from "./CourseBox";
 
 function Footer3() {
   let data1 = ["name one", "name two", "name three"];
-
-  let data2 = ["name one", "name two", "name three"];
-
-  let data3 = ["name one", "name two", "name three"];
-  data3 = data3.map((i) => <p>{i}</p>);
+  let data2 = data1.map((i) => <p>{i}</p>);
 
   let courseList1 = [
     { id: 1, title: "css course", description: "css description" },
@@ -27,19 +23,19 @@ function Footer3() {
   };
 
   const [courseL4, setCourseL4] = useState(courseList1);
-  const handleDelete = (id) => {
-    setCourseL4(courseL4.filter((i) => i.id !== id));
+  const handleDelete = (idd) => {
+    setCourseL4(courseL4.filter((i) => i.id !== idd));
   };
 
   return (
     <div>
+      {/* ----------> list <---------- */}
       <h2>Footer Section 3:</h2>
-      {/* List: */}
       {data1} <br />
-      {data2.map((i) => (
-        <span>{i}</span>
+      {data1.map((i) => (
+        <span key={i.id}>{i}</span>
       ))}
-      {data3}
+      {data2}
       <hr />
       <div className="CBoxs">
         {courseList1.map((i) => (
@@ -68,7 +64,7 @@ function Footer3() {
           </CourseBox>
         ))}
       </div>
-      <hr />
+      <hr className="hr1" />
     </div>
   );
 }

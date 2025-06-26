@@ -12,7 +12,7 @@ function Main() {
 
   return (
     <div>
-      <h3>Main Section:</h3>
+      <h2>Main Section:</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
         blanditiis, odio eaque repellendus autem commodi facilis odit? Ipsum nam
@@ -21,17 +21,17 @@ function Main() {
       </p>
 
       <div className="CBoxs">
-        {/* CourseBox-1 */}
+        {/* ----------> CourseBox-1 <---------- */}
         <CourseBox1 title="css course" detail="detaillllll css" time="2:35" />
         <CourseBox1 title={courseThree.title} time={courseThree.time} />
         <CourseBox1 {...courseThree} />
 
-        {/* CourseBox-2 */}
+        {/* ----------> CourseBox-2 <---------- */}
         <CourseBox2 course={{ title: "react course", time: "1:10" }} />
         <CourseBox2 course={courseThree} />
         <CourseBox2 course={courseThree} />
 
-        {/* CourseBox-3 */}
+        {/* ----------> CourseBox-3 <---------- */}
         <CourseBox3>
           <span>CourseBox-3</span>
           <h2>course title: react</h2>
@@ -52,7 +52,7 @@ function Main() {
           <p>Learn React with projects</p>
         </CourseBox3>
 
-        {/* CourseBox-4 */}
+        {/* ----------> CourseBox-4 <---------- */}
         <CourseBox4 title="React">
           <p>Learn React step by step.</p>
           <button>Start</button>
@@ -70,6 +70,7 @@ function Main() {
           <img src="css.png" alt="css logo" />
         </CourseBox4>
       </div>
+      <hr className="hr1" />
     </div>
   );
 }

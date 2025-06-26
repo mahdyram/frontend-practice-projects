@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-function Footer({ fullName }) {
+function Footer({ name }) {
   const handleDonate = () => {
     alert("thank for donating us");
   };
@@ -10,11 +8,11 @@ function Footer({ fullName }) {
       <h2>Footer Section 1:</h2>
       <a href="">myEmail</a>
       <a href="">myEmail</a>
-      <p>thanks {fullName} </p>
+      <p>thanks {name} </p>
 
-      {/* events: */}
+      {/* ----------> events <---------- */}
       <button onClick={handleDonate}>donate us</button>
-      <hr />
+      <hr className="hr1" />
     </div>
   );
 }

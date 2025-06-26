@@ -8,6 +8,9 @@ body {
   margin-bottom: 200px;
   text-align: center;
 }
+.hr1 {
+  border: 2px solid black;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -72,4 +75,23 @@ button:active {
 }
 .normalText {
   color: black;
+}
+
+.form1 {
+  display: flex;
+  justify-content: center;
+}
+
+.form1 input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+}
+
+.form1 button {
+  height: 30px;
+  line-height: 13px;
+  background-color: darkred;
+  font-size: 1rem;
 }

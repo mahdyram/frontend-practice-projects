@@ -23,6 +23,8 @@ const Footer4 = () => {
 
   return (
     <div>
+      {/* ----------> condition <---------- */}
+      <h2>Footer Section 4:</h2>
       {load1 ? <span>loaded</span> : <span>not load</span>}
       <br />
       <span>{load2 ? "loaded" : "not load"}</span>
@@ -38,6 +40,7 @@ const Footer4 = () => {
 
       <button onClick={handleChange5}>change</button>
       <span>{load5 ? "loaded" : "not load"}</span>
+      <hr className="hr1"/>
     </div>
   );
 };

@@ -2,11 +2,11 @@
 function Box({ title, children }) {
   return (
     <div className="CBox CBox4">
-      {/* اشتراک ساختاری */}
+      {/* ----------> Structural sharing <---------- */}
       <span>CourseBox-4</span>
       <h2>course title: {title}</h2>
 
-      {/* انعطاف در محتوا */}
+      {/* ----------> Flexibility in content <---------- */}
       <div>{children}</div>
     </div>
   );

@@ -1,4 +1,4 @@
-function CourseBox({ title, description, children }) {
+function CourseBox({ title, description = "defualt des", children }) {
   return (
     <div className="CBox CBox3">
       <h3>{title}</h3>

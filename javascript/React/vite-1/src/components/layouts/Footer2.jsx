@@ -18,25 +18,44 @@ function Footer2() {
     setIsRed(!isRed);
   };
 
+  const [clr2, setColor2] = useState("green");
+  const handleME = () => {
+    setColor2("red");
+  };
+  const handleML = () => {
+    setColor2("blue");
+  };
+
   return (
     <div>
       <h2>Footer Section 2:</h2>
 
-      {/* state: */}
-      <p>تعداد: {count}</p>
+      {/* ----------> state <---------- */}
+      <p>Count: {count}</p>
       <button onClick={() => setCount(count + 1)}>increse</button>
 
       <p>{mas}</p>
       <button onClick={changeMas}>change mas</button>
 
-      <p style={{ color: clr }}>Doubleclick to change color</p>
+      <p style={{ color: clr }}>Click to change color</p>
       <button onClick={handleColor}>Change Color</button>
 
       <p className={isRed ? "redText" : "normalText"}>
         Doubleclick to change color
       </p>
+      <p className={`CBox3 ${isRed ? "redText" : "normalText"}`}>
+        Doubleclick to change color
+      </p>
       <button onDoubleClick={handleColor2}>Change Color</button>
-      <hr />
+
+      <p
+        style={{ color: clr2, fontWeight: "bold" }}
+        onMouseEnter={handleME}
+        onMouseLeave={handleML}
+      >
+        Hover to change color
+      </p>
+      <hr className="hr1" />
     </div>
   );
 }

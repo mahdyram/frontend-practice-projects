@@ -1,8 +1,9 @@
 function Header() {
   return (
     <div>
-      <h3>Header Section:</h3>
+      <h2>Header Section:</h2>
       <h1>hello mahdi</h1>
+      <hr className="hr1" />
     </div>
   );
 }
