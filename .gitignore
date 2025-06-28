@@ -1,19 +1,20 @@
-# Node.js dependencies 
+Courses/
 node_modules/
+.pnpm-store/
 
-# فایل‌های سیستم
+# System files
 .DS_Store
 Thumbs.db
 
-# فایل‌های IDE
+# Editor settings
 .vscode/
 
-# فایل‌های log و backup
+# Logs & backups
 *.log
 *.bak
 
-# پوشه‌های build یا dist 
+# Build output
 build/
 dist/
 
-Courses/
+test.py
