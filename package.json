@@ -19,6 +19,8 @@
     "globals": "^16.0.0"
   },
   "dependencies": {
-    "dayjs": "^1.11.13"
+    "@tailwindcss/cli": "^4.1.11",
+    "dayjs": "^1.11.13",
+    "tailwindcss": "^4.1.11"
   }
 }

@@ -1,4 +1,5 @@
 /* -------------> all <-------------- */
+@import "tailwindcss";
 
 * {
   margin: 0;
@@ -11,9 +12,9 @@ html {
 }
 
 body {
-  color: #071e2d;
+  /* color: #071e2d;
   font-family: "Vazir-FD";
-  background: #999;
+  background: #999; */
 }
 p {
   line-height: 23px;
