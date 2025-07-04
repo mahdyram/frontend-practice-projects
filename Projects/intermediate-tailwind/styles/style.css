@@ -1,23 +1,31 @@
-/* -------------> all <-------------- */
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* -------------> fonts <-------------- */
+@font-face {
+  font-family: absan;
+  src: url("../fonts/Abasan.ttf");
 }
-
-html {
-  font-size: 16px;
+@font-face {
+  font-family: hamid;
+  src: url("../fonts/Hamid.ttf");
 }
-
-body {
-  /* color: #071e2d;
-  font-family: "Vazir-FD";
-  background: #999; */
+@font-face {
+  font-family: hayat;
+  src: url("../fonts/Hayat.ttf");
 }
-p {
-  line-height: 23px;
+@font-face {
+  font-family: iransans;
+  src: url("../fonts/IranSans.ttf");
 }
-
-/* -------------> ??? <-------------- */
+@font-face {
+  font-family: kaman;
+  src: url("../fonts/Kaman.ttf");
+}
+@font-face {
+  font-family: vazir;
+  src: url("../fonts/Vazir.ttf");
+}
+@font-face {
+  font-family: yekan;
+  src: url("../fonts/Yekan.ttf");
+}
