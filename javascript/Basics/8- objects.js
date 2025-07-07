@@ -6,6 +6,7 @@ const product = {
   price: 77,
   exist: true,
 };
+
 console.log(typeof product); // object
 console.log(product); // { title: 'pen', price: 77, exist: true }
 
@@ -13,9 +14,6 @@ console.log(product); // { title: 'pen', price: 77, exist: true }
 console.log(product["exist"]); // true
 console.log(product.exist); // true
 console.log(product.title); // pen
-
-const { exist } = product; // Destructuring
-console.log(exist); // true
 
 product.exist = false;
 console.log(product.exist); // false
@@ -37,7 +35,7 @@ const product = {
 console.log(product["exist"]); // true
 console.log(product.exist); // true
 
-const { exist } = product; // Destructuring
+const { exist } = product; // Destructuring (=== const exist = product.exist)
 console.log(exist); // true
 
 // --------------------
@@ -65,6 +63,7 @@ console.log(title); // pen
 console.log(exist); // true
 
 // --------------------
+// change-name
 
 const product = {
   title: "pen",
@@ -72,9 +71,20 @@ const product = {
   exist: true,
 };
 
-const { title: tit, exist } = product;
-console.log(tit); // "pen"
+const { title: t, exist } = product;
+console.log(t); // "pen"
 console.log(exist); // true
+
+// --------------------
+// default-value
+
+const product = {
+  title: "pen",
+};
+
+const { title, price = 70 } = product;
+console.log(title); // "pen"
+console.log(price); // 70
 
 // ----------------------------------------
 // some methods of objects
@@ -86,6 +96,8 @@ let userInfo = {
   color: "white ",
   isAdmin: true,
 };
+
+console.log(userInfo);
 
 console.log(Object.keys(userInfo));
 
@@ -176,6 +188,13 @@ console.log(obj.user[3].isAdmin); // false
 // ========================================
 // copy {Stack & Heap}
 
+/*
+Stack vs Heap:
+maghadir-e sade (Primitive) mesle number, string, boolean dar hafeze-ye Stack zakhire mishan.
+maghadir-e pichide (mesle array, object) dar Heap gharar migiran va motaghayer faghat adres (reference) ro negah midare.
+*/
+
+// --------------------
 // array:
 
 let arr = [1, 2, 3];
@@ -192,7 +211,7 @@ let copy = [...arr];
 // let copy = Array.from(arr);
 // let copy = Object.assign([], arr);
 copy[0] = 0;
-console.log(arr, copy); // [1, 2, 3] [0, 2, 3]  =>  dar sathe avval moshkeli eijad nemikonad
+console.log(arr, copy); // [1, 2, 3] [0, 2, 3]  =>  copy sathi, dar sathe avval moshkeli eijad nemikonad.
 
 let arr = [1, 2, [3, 4]];
 let copy = [...arr];
@@ -200,7 +219,7 @@ let copy = [...arr];
 // let copy = Array.from(arr);
 // let copy = Object.assign([], arr);
 copy[2][1] = 5;
-console.log(arr, copy); // [1, 2, [3, 5]] [1, 2, [3, 5]]  =>  agar array daray ashyae todarto(bish az 1 sath) bashad, an ashyae erjaei(refrence) baghi mimoonan(dar copy sathi).
+console.log(arr, copy); // [1, 2, [3, 5]] [1, 2, [3, 5]]  =>  agar array daray ashyae todarto(bish az 1 sath) bashad, an ashyae erjaei(refrence - Heap) baghi mimoonan(dar copy sathi).
 
 // -----------------------
 // object:
@@ -213,14 +232,14 @@ console.log(user1, user2); // { name1: 'mahdi' } { name1: 'mahdi' }
 // shallow-copy:
 
 let user1 = { name1: "ali" };
-let user2 = Object.assign({}, user1);
+let user2 = { ...user1 };
 user2.name1 = "mahdi";
 console.log(user1, user2); // { name1: 'ali' } { name1: 'mahdi' }
 
 let user1 = { names: { name1: "ali", name2: "ram" } };
-let user2 = Object.assign({}, user1);
+let user2 = { ...user1 };
 user2.names.name1 = "mahdi";
-console.log(user1, user2); // { names: { name1: 'mahdi', name2: 'ram' } } { names: { name1: 'mahdi', name2: 'ram' } }
+console.log(user1, "\n", user2);
 
 // ----------------------------------------
 // deep-copy (array & object):
@@ -289,6 +308,8 @@ const products = [
     exist: false,
   },
 ];
+
+console.log(products);
 
 const data = JSON.stringify(products);
 console.log(data);

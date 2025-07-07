@@ -1,7 +1,6 @@
 // ========================================
 // Errors
 
-// ----------------------------------------
 // Error Types
 
 // ReferenceError:
@@ -37,7 +36,7 @@ try {
   console.log("erro"); // error
 }
 
-console.log("not crashed progrom");
+console.log("progrom not crashed");
 
 // --------------------
 
@@ -48,7 +47,7 @@ try {
   console.log(e);
 }
 
-console.log("not crashed progrom");
+console.log("progrom not crashed");
 
 // --------------------
 
@@ -59,7 +58,7 @@ try {
   console.log(e.message); // result is not defined
 }
 
-console.log("not crashed progrom");
+console.log("progrom not crashed");
 
 // --------------------
 
@@ -70,7 +69,7 @@ try {
   console.log(e.name); // ReferenceError
 }
 
-console.log("not crashed progrom");
+console.log("progrom not crashed");
 
 // --------------------
 
@@ -81,6 +80,6 @@ try {
   console.log(`${e.name}: you had wrong!`); // ReferenceError: you had wrong!
 }
 
-console.log("not crashed progrom");
+console.log("progrom not crashed");
 
 // --------------------

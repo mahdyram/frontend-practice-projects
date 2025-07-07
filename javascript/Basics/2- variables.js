@@ -1,4 +1,5 @@
-// --------------------------------------
+// ========================================
+// Variables
 
 // console.log(firstName) => Uncaught ReferenceError: firstName is not defined
 

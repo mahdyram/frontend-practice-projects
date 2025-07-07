@@ -137,7 +137,6 @@ console.log(result6); // Title: Pen - Price: 55
 // =======================================
 // Function Definition Summary
 
-// ----------------------------------------
 // Function Declaration
 
 function sum(a, b) {
@@ -175,7 +174,6 @@ let result2 = (a, b) => a + b;
 // =======================================
 // some operators
 
-// ----------------------------------------
 // spread
 
 const names = ["ali", "mohammad", "reza", "saeed"];
@@ -301,7 +299,6 @@ f(); // ReferenceError: Cannot access 'test' before initialization
 // =======================================
 // some special functions
 
-// ----------------------------------------
 // setTimeout function
 
 function one() {
@@ -348,3 +345,13 @@ function sayBye() {
 }
 
 greet("ali", sayBye);
+
+// -9876**************************
+// destruchturing
+
+function greet({ name, city }) {
+  console.log(`Salam ${name} az ${city}`);
+}
+
+greet({ name: "Sara", city: "Mashhad" });
+// خروجی: Salam Sara az Mashhad

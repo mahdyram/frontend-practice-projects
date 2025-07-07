@@ -62,7 +62,7 @@ if (whoaryou === "admin") {
 }
 
 // ========================================
-// ternary (?)   =>   let result = condition ? value1 : value2;
+// ternary  =>  let result = condition ? value1 : value2;
 
 /*
 const age = 23;
@@ -75,10 +75,10 @@ if (age > 18) {
 
 const age = 23;
 
+age > 18 ? console.log("access") : console.log("denied");
+
 let accessAllowed = age > 18 ? "access" : "denied";
 console.log(accessAllowed);
-
-age > 18 ? console.log("access") : console.log("denied");
 
 // --------------------
 
@@ -110,14 +110,10 @@ let message =
 console.log(message);
 
 // ========================================
-// switch
-// faghat braye shorote barabary(===) na > ya <
+// switch => (just for equality - not ><)
 
-const weekday = 2;
-
+// const weekday = 2;
 // if (weekday == 1) {
-//   console.log("saturday");
-// } else if (weekday == 1) {
 //   console.log("saturday");
 // } else if (weekday == 2) {
 //   console.log("sunday");
@@ -126,6 +122,8 @@ const weekday = 2;
 // }
 // ...
 
+const weekday = 20;
+
 switch (weekday) {
   case 1:
     console.log("saturday");
@@ -146,7 +144,6 @@ const weekday = 2;
 switch (weekday) {
   case 1:
     console.log("saturday");
-    break;
   case 2:
     console.log("sunday");
   case 3:
@@ -170,11 +167,30 @@ switch (weekday) {
   default:
     console.log("wrong input!");
 }
+// --------------------
+
+let target = "c";
+
+switch (target) {
+  case "a":
+    console.log("ali");
+    break;
+  case "b":
+    console.log("bahram");
+    break;
+  case "c":
+    console.log("cina");
+    break;
+  case "d":
+    console.log("davood");
+    break;
+}
+
 // --------------------
 
 let answer;
-let randNumber = Math.random(); // 0 <= < 1
-randNumber = Math.floor(randNumber * 7); // 0 <= <= 6
+let randNumber = Math.random(); // 0 <= ? < 1
+randNumber = Math.floor(randNumber * 7); // 0 <= ? <= 6
 
 switch (randNumber) {
   case 1:

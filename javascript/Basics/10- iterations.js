@@ -2,25 +2,34 @@
 // while
 
 let x = 10;
-
 while (x > 5) {
   console.log(x);
   x--;
+}
+
+let x = 10;
+while (x > 5) {
+  x--;
+  console.log(x);
 }
 // --------------------
 
 let alpha = ["a", "b", "c", "d", "e"];
 let notFound = true;
+let target = "d";
 let x = 0;
 
 while (notFound && x < alpha.length) {
-  if (alpha[x] === "d") {
+  if (alpha[x] === target) {
     console.log(`founded => index of 'd' is ${x}`);
     notFound = false;
   } else {
     x++;
   }
 }
+
+console.log(alpha.indexOf("d"));
+
 // --------------------
 
 let n = 10;
@@ -30,6 +39,7 @@ while (fibo.length < n) {
   fibo.push(fibo[fibo.length - 1] + fibo[fibo.length - 2]);
 }
 console.log(fibo); // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
 // --------------------
 
 let x = 6;
@@ -44,6 +54,7 @@ console.log(f2); // 5
 
 // ----------------------------------------
 // do while
+
 // tafavot ba while: hadeaghal yekbar badane halghe ejra mishavad va sepas shart chek mishavad.
 
 let x = 0;
@@ -52,19 +63,9 @@ do {
   console.log(`${x} is less than 7`);
   x++;
 } while (x < 7);
-// --------------------
-
-let userSelect;
-
-do {
-  userSelect = prompt("1: rock, 2: paper, 3: scissor");
-  userSelect = Number(userSelect);
-} while (userSelect < 1 || userSelect > 3 || isNaN(userSelect));
-
-alert("correct input");
 
 // --------------------
-// diference while & do-while
+// while vs do-while
 
 let x = 12;
 while (x < 10) {
@@ -77,6 +78,16 @@ do {
   console.log(`${x} is less than 10`);
   x++;
 } while (x < 10);
+
+// --------------------
+
+let userSelect;
+
+do {
+  userSelect = +prompt("1: rock, 2: paper, 3: scissor");
+} while (userSelect < 1 || userSelect > 3 || isNaN(userSelect));
+
+alert("correct input");
 
 // ----------------------------------------
 // breake & contionue
@@ -115,7 +126,7 @@ while (x < 10) {
 
 /* 
 for (<1>initialize-variable; <2>condition; <3>statement) {
-  code to be executed <4>
+  <4>code-to-be-executed 
 }
     1 -> 2 => 4
     3 -> 2 => 4
@@ -127,6 +138,26 @@ for (<1>initialize-variable; <2>condition; <3>statement) {
 for (let i = 0; i < 3; i++) {
   console.log(`Item number is: ${i}`);
 }
+
+// or:
+let i = 0;
+for (i; i < 3; i++) {
+  console.log(`Item number is: ${i}`);
+}
+
+// or:
+let i = 0;
+for (; i < 3; i++) {
+  console.log(`Item number is: ${i}`);
+}
+// --------------------
+
+let a, b, c;
+a = 1;
+b = 3;
+for (c = a * b; a < 10; a++) {
+  console.log(`c: ${c}, a: ${a}`);
+}
 // --------------------
 
 let x = 1;
@@ -135,7 +166,8 @@ while (x < 5) {
   x++;
 }
 
-for (let x = 1; x < 5; x++) {
+let x = 1;
+for (x; x < 5; x++) {
   console.log(x);
 }
 // --------------------
@@ -150,23 +182,10 @@ for (let i = 1; i <= n; i++) {
 }
 
 // or easier:
-
 let n = 5;
-for (let i = 1; i <= n; i++) {
+let i = 1;
+for (i; i <= n; i++) {
   console.log("* ".repeat(i));
-}
-// --------------------
-
-const alpha = ["a", "b", "c", "d", "e"];
-let x = true;
-
-for (let i = 0; i < alpha.length; i++) {
-  if (alpha[i] === "g") {
-    console.log(`founded, its index is ${i}`);
-    x = false;
-  } else if (i === alpha.length - 1 && x) {
-    console.log("not exist");
-  }
 }
 // --------------------
 
@@ -179,14 +198,12 @@ for (; a < 10; a++) {
 
 // better:
 let a, b, c;
-(a = 1), (b = 3), (c = a * b);
-for (; a < 5; a++) {
+for (a = 1, b = 3, c = a * b; a < 10; a++) {
   console.log(`a: ${a}, b: ${b}, c: ${c}`);
 }
 
 // more better:
-let a, b, c;
-for (a = 1, b = 3, c = a * b; a < 10; a++) {
+for (let a = 1, b = 3, c = a * b; a < 10; a++) {
   console.log(`a: ${a}, b: ${b}, c: ${c}`);
 }
 
@@ -231,6 +248,30 @@ for (let i of products) {
 
 for (let i of products) {
   console.log(i.title);
+}
+// --------------------
+
+let userInfo = {
+  fNaem: "ali",
+  lName: "ram",
+  bDay: 1998,
+  color: "white ",
+  isAdmin: true,
+};
+console.log(userInfo);
+console.log(Object.entries(userInfo));
+console.log("-".repeat(30));
+
+for (let i of Object.entries(userInfo)) {
+  console.log(i);
+}
+
+for (let i of Object.entries(userInfo)) {
+  console.log(i[0], i[1]);
+}
+
+for (let [k, v] of Object.entries(userInfo)) {
+  console.log(k, v);
 }
 
 // ----------------------------------------
@@ -279,21 +320,10 @@ let userInfo = {
   isAdmin: true,
 };
 console.log(userInfo);
+console.log("-".repeat(30));
 
 for (let key in userInfo) {
-  console.log(`${key} => ${userInfo[key]}`);
-}
-
-for (let i of Object.entries(userInfo)) {
-  console.log(i);
-}
-
-for (let i of Object.entries(userInfo)) {
-  console.log(i[0], i[1]);
-}
-
-for (let [k, v] of Object.entries(userInfo)) {
-  console.log(k, v);
+  console.log(`${key} => ${userInfo.key}`);
 }
 
 // --------------------
@@ -342,22 +372,38 @@ for (let i = 1; i < 10; i++) {
 }
 // --------------------
 
+let i = 0;
+let x = true;
+let target = "c";
 const alpha = ["a", "b", "c", "d", "e"];
 
-for (let i = 0; i < alpha.length; i++) {
-  if (alpha[i] === "d") {
+for (; i < alpha.length; i++) {
+  if (alpha[i] === target) {
+    console.log(`founded, its index is ${i}`);
+    x = false;
+  } else if (i === alpha.length - 1 && x) {
+    console.log("not exist");
+  }
+}
+
+// or esier (without boolean variable - with break):
+let i = 0;
+let target = "c";
+const alpha = ["a", "b", "c", "d", "e"];
+
+for (i; i < alpha.length; i++) {
+  if (alpha[i] === target) {
     console.log(`founded, its index is ${i}`);
     break;
   } else if (i === alpha.length - 1) {
     console.log("not exist");
   }
 }
-
 // --------------------
-// labeled blocks
+// labeled-blocks
 
-let n = 6;
-for (let i = 1; i <= n; i++) {
+// wrong
+for (let i = 1, n = 6; i <= n; i++) {
   let row = "";
   for (let j = 1; j <= i; j++) {
     row += "* ";
@@ -368,8 +414,8 @@ for (let i = 1; i <= n; i++) {
   console.log(row);
 }
 
-let n = 6;
-for (let i = 1; i <= n; i++) {
+// solotion-1
+for (let i = 1, n = 6; i <= n; i++) {
   let row = "";
   if (i === 4) {
     break;
@@ -380,8 +426,8 @@ for (let i = 1; i <= n; i++) {
   console.log(row);
 }
 
-let n = 6;
-first: for (let i = 1; i <= n; i++) {
+// solotion-2
+first: for (let i = 1, n = 6; i <= n; i++) {
   let row = "";
   second: for (let j = 1; j <= i; j++) {
     row += "* ";

@@ -1,4 +1,6 @@
 // ========================================
+// DataTypes
+
 /*
 - Primitive data-type  =>  {number, string, boolean, undefined, null} => 'Stack'
 - Refrence data-type   =>  {Array, Object, Function} => 'Heap'
@@ -81,14 +83,14 @@ user3 = undefined;
 console.log(typeof user3); // undefined
 console.log(user3); // undefined
 
-let test1 = undefined;
-let test2;
+let test1;
+let test2 = undefined;
 console.log(test1 === test2); // true
 
 // ----------------------------------------
 
 let user4 = null;
-console.log(typeof user4); // object
+console.log(typeof user4); // object (old bug - type of null is null)
 console.log(user4); // null
 
 let test10 = null;
@@ -108,9 +110,9 @@ console.log(sym1 === sym2); // false
 
 console.log(typeof Math); // "object"
 
-console.log(typeof null); // "object"
+console.log(typeof console); // "object"
 
-console.log(typeof alert); // "function"
+console.log(typeof console); // "function" (see in browser)
 
 // ----------------------------------------
 // more string
@@ -125,11 +127,21 @@ console.log("i am \nmahdy");
 // ========================================
 // Literal & Wrapper
 
-let fName = "ali"; // a primitive string
-let lName = new String("ram"); // a String object (object wrapper for a string)
+let str = "ali"; // a primitive string
+let strObj = new String("ali"); // a String object (object wrapper for a string)
 
-console.log(typeof fName);
-console.log(typeof lName);
+console.log(typeof str); // string
+console.log(typeof strObj); // object
+
+console.log(str === strObj); // false
+
+// --------------------
+
+let b = new Boolean(false);
+
+if (b) {
+  console.log("true!"); // true!
+}
 
 // --------------------
 

@@ -1,4 +1,4 @@
-// =======================================
+// ========================================
 // Arithmetic Operators
 
 let num = 5;
@@ -13,7 +13,7 @@ let num3 = 5;
 num3--;
 console.log(num3); // 4
 
-// -----------------
+// --------------------
 // ++ & --
 
 let num4 = 5;
@@ -24,13 +24,13 @@ let num5 = 5;
 let result5 = ++num5;
 console.log(result5, num5); // 6 6   avval num4 ra yeki ezaf mikonad va ba'd num4 ro mirize to result4.
 
-let counter1 = 5;
-console.log(++counter1); // 6
-console.log(counter1); // 6
-
 let counter2 = 5;
 console.log(counter2++); // 5
 console.log(counter2); // 6
+
+let counter1 = 5;
+console.log(++counter1); // 6
+console.log(counter1); // 6
 
 let x = 5;
 console.log(3 * x--); // 15
@@ -40,7 +40,7 @@ let y = 5;
 console.log(3 * --y); // 12
 console.log(y); // 4
 
-// -----------------
+// --------------------
 // ?=
 
 let nr = 7;
@@ -59,7 +59,7 @@ let n = 2;
 n *= 3 + 5; //
 console.log(n); // 16
 
-// -----------------
+// --------------------
 // =
 
 let a = 1;
@@ -70,7 +70,7 @@ let c = 9 - (a = b + 2);
 console.log(a); // 5
 console.log(c); // 4
 
-// -----------------
+// --------------------
 
 let a, b, c;
 
@@ -88,7 +88,7 @@ a = c;
 
 console.log(a, b, c);
 
-// -----------------
+// --------------------
 // ,
 
 let a = (3, 7);
@@ -100,19 +100,25 @@ console.log(b); // 3
 let c = (1 + 2, 3 + 4);
 console.log(c); // 7
 
-let a, b, c;
-a = 1;
-b = 3;
-for (c = a * b; a < 10; a++) {
-  console.log(`a: ${a}, b: ${b}, c: ${c}`);
-}
+let r,
+  s = (3, 7);
+console.log(r, s); // undefined 7
 
-// =======================================
+let a, b, c;
+(a = 1), (b = 3), (c = a * b);
+console.log(a, b, c);
+
+let a = 1,
+  b = 3,
+  c = a * b;
+console.log(a, b, c);
+
+// ========================================
 // Comparison Operators
 
-// dar operatore == ham manande operator haye hesabi,
-// ebteda tabdil be number soorat migirad
-// (albate agar har do taraf string bashand digar tabdil nemishavand balke az moghaiiese vajeh name ei estfade mishavad).
+// dar amalgar == (moghayese-ye sost), agar do taraf az noe mokhtalef bashand, ebtedaa tabdil noe (type coercion) anjam mishavad.
+// dar bishtari az mavared, har do taraf be number tabdil mishavand.
+// albate agar har do taraf string bashand, moghayese be sorat harfi anjam mishavad va tabdili anjam nemishavad.
 
 console.log(Number(false)); // 0
 console.log(Number("")); // 0
@@ -125,7 +131,7 @@ console.log("01" == 1); // true
 console.log(true == 1); // true
 console.log(false == 0); // true
 
-// -----------------
+// --------------------
 
 let a = 0;
 console.log(Boolean(a)); // false
@@ -135,10 +141,10 @@ let b = "0";
 console.log(Boolean(b)); // true
 console.log(Number(b)); // 0
 
-console.log(a == b); // true  =>  rira operatore == ba numbere amalvand ha kar darad na booleane anha.
+console.log(a == b); // true  =>  chon tabegh-e gavanin-e rasmi-ye moghayese-ye sost (==) dar JavaScript, vaghti ye taraf number bashe va taraf-e digar string, string be number tabdil mishe — na baraks.
 
-// -----------------
-// amma dar operatpre ===, barabari ra bedone tabdil be number moghaiese mikonad.
+// --------------------
+// amma dar operatpre ===, barabari ra bedone tabdile type moghaiese mikonad.
 
 console.log("" == false); // true
 console.log(0 == false); // true
@@ -148,7 +154,7 @@ console.log("" === false); // false
 console.log(0 === false); // false
 console.log(3 === "3"); // false
 
-// -----------------
+// --------------------
 
 console.log(5 != 5); // false
 
@@ -156,7 +162,7 @@ console.log(5 != "5"); // false
 
 console.log(5 !== "5"); // true
 
-// -----------------
+// --------------------
 // estesna dar ==: amalgare ==, undefined va null ra ba ham barabar va anhara ba har meghdare digari nabarabar migirad.
 
 console.log(Number(undefined)); // NaN
@@ -168,7 +174,7 @@ console.log(undefined == NaN); // false
 
 console.log(undefined === null); // false
 
-// -----------------
+// --------------------
 // > < in string
 
 console.log("2" > "12"); // true  =>  dar loghat, "2" bozorgtar az "1" ast.
@@ -178,30 +184,37 @@ console.log("Z" > "A"); // true
 console.log("Glow" > "Glee"); // true
 console.log("Bee" > "Be"); // true
 
-// =======================================
+// ========================================
 // Logical Operators  =>  agar amalvandi bolean nabashad, braye arzyabi be bolean tabdil mishavad.
 
-// "||" And
+// "||" Or
 
 console.log(false || true); // true
-console.log(0 || 3); // 3  bolean(3)=true
-console.log("" || "e"); // e  bolean(e)=true
+console.log(0 || 3); // 3
+console.log("" || "e"); // e
 
-// -----------------
+// --------------------
 // '||' avalin meghdare truthy ra peydamikonad (agar nabood, akharin meghdar ra barmigardanad).
 
+console.log(0 || 1); // 1 (1 is truthy)
 console.log(1 || 0); // 1 (1 is truthy)
+console.log(1 || 3); // 1  (1 is the first truthy value)
 console.log(null || 1); // 1 (1 is the first truthy value)
 console.log(null || 0 || 1); // 1 (the first truthy value)
 console.log(undefined || null || 0); // 0 (all falsy, returns the last value)
 
-// -----------------
+// --------------------
 
 true || console.log("dont print");
+false || console.log("print"); // print
 
-false || console.log("print");
+let x = 3;
+if (x > 0) console.log("larger than zero");
 
-// -----------------
+let x2 = 3;
+x2 <= 0 || console.log("larger than zero");
+
+// --------------------
 
 let firstName = "";
 let lastName = "";
@@ -213,31 +226,32 @@ let lastName = "";
 let nickName = "";
 console.log(firstName || lastName || nickName || "Anonymous"); // Anonymous
 
-// --------------------------------------
-// "&&" Or
+// ----------------------------------------
+// "&&" And
 
 console.log(false && true); // false
-console.log(0 && 3); // 0  bolean(0)=false
-console.log("" && "e"); // ''  bolean('')=false
+console.log(0 && 3); // 0
+console.log("" && "e"); // ''
 
-// -----------------
+// --------------------
 // '&&' avalin meghdare falsy ra peydamikonad (agar nabood, akharin meghdar ra barmigardanad).
 
 console.log(1 && 0); // 0
 console.log(0 && "a"); // 0
+console.log(0 && null); // 0
 console.log("q" && null && 5); // null
 console.log("q" && 5 && ""); // ""
 console.log(1 && "w" && 5); // 5
 
-// -----------------
+// --------------------
 
 let x = 3;
-x > 0 && console.log("larger than zero");
+if (x > 0) console.log("larger than zero");
 
-let y = 3;
-if (y > 0) console.log("larger than zero");
+let x2 = 3;
+x2 > 0 && console.log("larger than zero");
 
-// -----------------
+// --------------------
 
 let firstName = "ali";
 let lastName = "ram";
@@ -251,12 +265,20 @@ let nickName = "SuperCoder";
 let result = firstName && lastName && nickName && "EveryItemFill";
 result === "" ? console.log("existEmptiItem") : console.log(result);
 
-// -----------------
+// --------------------
 
 // olaviate and-&& az or-|| bishtar ast.
 // a && b || c && d == (a && b) || (c && d).
 
-// --------------------------------------
+// ----------------------------------------
+
+console.log(true & false); // 0
+console.log(true && false); // false
+
+console.log(true | false); // 1
+console.log(true || false); // true
+
+// ----------------------------------------
 // "!" Not
 
 console.log(!true); // false
@@ -265,31 +287,17 @@ console.log(!3); // false
 console.log(!0); // true
 console.log(!""); // true
 
-// -----------------
+// --------------------
 // '!!' baraye tabdil kardan be bolean.
 
+console.log(!"string"); // false
 console.log(!!"string"); // true
 console.log(!!null); // false
 
 console.log(Boolean("string")); // true
 console.log(Boolean(null)); // false
 
-// --------------------------------------
-
-let test1 = 1;
-let test2 = 2;
-let test3 = 3;
-
-console.log((test3 > test1) & (test2 < test3)); // 1
-console.log(test3 > test1 && test2 < test1); // false
-
-console.log((test3 > test1) | (test2 < test3)); // 1
-console.log(test3 > test1 || test2 < test1); // true
-
-console.log(test3 > test1); // true
-console.log(!(test3 > test1)); // false
-
-// --------------------------------------
+// ----------------------------------------
 // "??" nullish-coalescing
 
 /*
@@ -298,6 +306,7 @@ yek ebarat "taerif shodeh" ast hargah na 'null' bashad va na 'undefined'.
 natije 'a ?? b' :
 - agar a 'taerif shodeh' bashad, pas a ra barmigardanad
 - agar a 'taerif shodeh' nabashad, pas b ra barmigardanad
+- ya be ebarati: // '??' avalin meghdare "taerif shodeh" ra peydamikonad (agar nabood, akharin meghdar ra barmigardanad).
 
 result1 === result2 :
 - result1 = a ?? b
@@ -307,10 +316,13 @@ result1 === result2 :
 let user;
 console.log(user ?? "Anonymous"); // Anonymous
 
-let user2 = "ali";
-console.log(user2 ?? "Anonymous");
+let user2 = null;
+console.log(user2 ?? "Anonymous"); // Anonymous
 
-// -----------------
+let user3 = "ali";
+console.log(user3 ?? "Anonymous"); // ali
+
+// --------------------
 
 let firstName = null;
 let lastName = null;
@@ -322,7 +334,7 @@ let lastName = null;
 let nickName = "Supercoder";
 console.log(firstName || lastName || nickName || "Anonymous"); // Supercoder
 
-// -----------------
+// --------------------
 // '??' vs '||'
 
 /*
@@ -336,11 +348,22 @@ amma momken ast ma faghat donbale null/undefined bashim(ya nabashim)
 */
 
 let height = 0;
-
 console.log(height || 100); // 100
 console.log(height ?? 100); // 0
 
-// -----------------
+// --------------------
+
+let firstName = null;
+let lastName = "";
+let nickName = "Supercoder";
+console.log(firstName ?? lastName ?? nickName ?? "Anonymous"); // ""
+
+let firstName = null;
+let lastName = "";
+let nickName = "Supercoder";
+console.log(firstName || lastName || nickName || "Anonymous"); // Supercoder
+
+// --------------------
 // olaviat
 
 let height = null;
@@ -353,7 +376,7 @@ let width = null;
 let area = height ?? 100 * width ?? 50; // == height ?? (100 * width) ?? 50;
 console.log(area); // 0
 
-// -----------------
+// --------------------
 // use ?? with || and &&
 
 // let x = 1 && 2 ?? 3; // Syntax error
