@@ -6,6 +6,11 @@ function sayHello() {
 }
 sayHello(); // hello user
 
+function hiUser() {
+  return "hello user";
+}
+console.log(hiUser()); // hello user
+
 // --------------------
 
 function sayHello2() {
@@ -14,7 +19,7 @@ function sayHello2() {
 }
 sayHello2();
 
-// ----------------------------------------
+// --------------------
 
 function addTwoNumbers() {
   let num1 = prompt("enter first number:");
@@ -23,7 +28,8 @@ function addTwoNumbers() {
 }
 addTwoNumbers();
 
-// --------------------
+// ----------------------------------------
+// params
 
 function addTwoNumbers2(num1, num2) {
   console.log(`${num1} + ${num2} = ${num1 + num2}`);
@@ -31,14 +37,6 @@ function addTwoNumbers2(num1, num2) {
 addTwoNumbers2(); // undefined + undefined = NaN
 addTwoNumbers2(7); // 7 + undefined = NaN
 addTwoNumbers2(7, 9); // 7 + 9 = 16
-
-// ----------------------------------------
-
-function addProduct(title, price) {
-  console.log(`Title: ${title} - Price: ${price}`);
-}
-addProduct(); // Title: undefined - Price: undefined
-addProduct("Book", 99); // Title: Book - Price: 99
 
 // --------------------
 
@@ -50,29 +48,39 @@ addProduct2("book"); // Title: book - Price: 77
 addProduct2("Book", 99); // Title: Book - Price: 99
 
 // ----------------------------------------
-// return
+// Object-Destructuring
 
-function addProduct3(title, price) {
-  return `Title: ${title} - Price: ${price}`;
+function addProduct3({ title = "Pen", price = 77 }) {
+  console.log(`Title: ${title} - Price: ${price}`);
 }
-addProduct3(); // nothing in console
-addProduct3("Pen", 77); // nothing in console
 
-console.log(addProduct3("Pen", 77)); // Title: Pen - Price: 77
-
-const result3 = addProduct3("book", 88);
-console.log(result3); // Title: book - Price: 88
+addProduct3(); // TypeError
+addProduct3({ price: 100 }); // Title: Pen - Price: 100
+addProduct3({ title: "Book" }); // Title: Book - Price: 77
+addProduct3({ title: "Book", price: 50 }); // Title: Book - Price: 50
 
 // --------------------
 
-function addProduct4(title = "Pen", price = 77) {
-  return `Title: ${title} - Price: ${price}`;
+function addProduct3({ title = "Pen", price = 77 } = {}) {
+  console.log(`Title: ${title} - Price: ${price}`);
 }
 
-const result4 = addProduct4();
-console.log(result4); // Title: Pen - Price: 77
+addProduct3(); // Title: Pen - Price: 77
+addProduct3({ price: 100 }); // Title: Pen - Price: 100
 
-console.log(addProduct4("book", 88)); // Title: book - Price: 88
+// ----------------------------------------
+// return
+
+function addProduct4(title, price) {
+  return `Title: ${title} - Price: ${price}`;
+}
+addProduct4(); // nothing in console
+addProduct4("Pen", 77); // nothing in console
+
+console.log(addProduct4("Pen", 77)); // Title: Pen - Price: 77
+
+const result4 = addProduct4("book", 88);
+console.log(result4); // Title: book - Price: 88
 
 // ========================================
 // arrow functions (new)
@@ -80,52 +88,46 @@ console.log(addProduct4("book", 88)); // Title: book - Price: 88
 const sayHello3 = () => {
   console.log("hello user");
 };
-
 sayHello3(); // hello user
-
-// --------------------
 
 const sayHello4 = () => {
   return "hello user";
 };
-
 console.log(sayHello4()); // hello user
 
 // --------------------
-// when one line is returned
+// one-line-return
 
-let sayHello6 = () => console.log("hello user");
+let sayHello5 = () => console.log("hello user");
+sayHello5(); // hello user
 
-sayHello6(); // hello user
-
-// --------------------
-
-const sayHello5 = () => "hello user";
-
-console.log(sayHello5()); // hello user
+const sayHello6 = () => "hello user";
+console.log(sayHello6()); // hello user
 
 // ----------------------------------------
+// params
 
-let addTwoNumbers3 = (num1, num2) => console.log(num1 + num2);
-
-addTwoNumbers3(7, 9); // 16
-
-// --------------------
-
-let addTwoNumbers4 = (num1, num2) => {
+let addTwoNumbers3 = (num1, num2) => {
   num1 *= 2;
   num2 **= 2;
   console.log(num1 + num2);
 };
 
-addTwoNumbers4(3, 4); // 22
+addTwoNumbers3(3, 4); // 22
+
+// --------------------
 
 const addProduct5 = (title, price) => {
   return `Title: ${title} - Price: ${price}`;
 };
 
-const result5 = addProduct5("Pen", 66);
-console.log(result5); // Title: Pen - Price: 66
+console.log(addProduct5("Pen", 66)); // Title: Pen - Price: 66
+
+// --------------------
+
+let addTwoNumbers4 = (num1, num2) => console.log(num1 + num2);
+
+addTwoNumbers4(7, 9); // 16
 
 // --------------------
 
@@ -135,46 +137,17 @@ const result6 = addProduct6("Pen", 55);
 console.log(result6); // Title: Pen - Price: 55
 
 // =======================================
-// Function Definition Summary
-
-// Function Declaration
-
-function sum(a, b) {
-  return a + b;
-}
-/*
-- in tabe ba name 'sum' taerif shodeh ast.
-- 'Hoisting' mishavad, yaeni ghabl az taerif ham mishavad az an estfaeh kard.
-- maemoolan baraye tavabe omoomi estefadeh mishavad.
-*/
-
-// ----------------------------------------
-// Function Expression
-
-let result = function (a, b) {
-  return a + b;
-};
-/*
-- in tabe bedoone nam ast(anonymous) va dar motaghayere 'result' zakhire shode ast.
-- 'Hoisting' nemishavad.
-- in noe tabe ra mitavan beonvane argoman, meghdare bazgashti, ya mthode object estefade kard.
-*/
-
-// --------------------
-// Arrow Function
-
-let result2 = (a, b) => a + b;
-/*
-- noei az function-expression(fe) amma kootahtar.
-- barkhalafe fe, 'this', 'arguments', 'super' va 'new.target' nadarad.
-- baraye object-methods ya tavabeei ke ba 'this' kar darand monaseb nist.
-- monaseb bareye tavabe kootah ya estefade dar tavabe martabe balatar(higher-order functions).
-*/
-
-// =======================================
 // some operators
 
 // spread
+
+const names = ["ali", "mohammad", "reza", "saeed"];
+const test = ["first", "last"];
+
+test.splice(1, 0, names);
+console.log(test); // [ 'first', [ 'ali', 'mohammad', 'reza', 'saeed' ], 'last' ]
+
+// --------------------
 
 const names = ["ali", "mohammad", "reza", "saeed"];
 const test = ["first", "last"];
@@ -194,20 +167,33 @@ console.log(test2);
 
 // --------------------
 
-const nums = [5, 7];
 const addTwoNumbers = (numOne = 3, numTwo = 4) => console.log(numOne + numTwo);
 
 addTwoNumbers(); // 7
+
+const nums = [5, 7];
 addTwoNumbers(...nums); // 12
 
 // --------------------
 
-const nums1 = [5, 7, 2];
-const nums2 = [3, 6];
 const addNumbers = (num1, num2, num3, num4, num5) =>
   console.log(num1 + num2 + num3 + num4 + num5);
 
+const nums1 = [5, 7, 2];
+const nums2 = [3, 6];
 addNumbers(...nums1, ...nums2); // 23
+
+// --------------------
+// Destructuring
+
+const addTwoNumbers = ({ numOne = 3, numTwo = 4 } = {}) =>
+  console.log(numOne + numTwo);
+
+addTwoNumbers({ numTwo: 7 }); // 10
+addTwoNumbers({ numOne: 5, numTwo: 7 }); // 12
+
+const obj = { numOne: 8, numTwo: 6 };
+addTwoNumbers({ ...obj }); // 14
 
 // ----------------------------------------
 // rest
@@ -238,7 +224,7 @@ const plusNumbers = (x, ...params) => {
   console.log(total * x);
 };
 
-plusNumbers(3, 4, 5); // 19 -> 3*(4+5)
+plusNumbers(3, 4, 5); // 27 => 3*(4+5)
 plusNumbers(2, 4, 7, 8); // 38
 
 // ========================================
@@ -250,7 +236,7 @@ let addNumbers = (x, y) => {
   }
   console.log(z);
 };
-addNumbers(5, 2); // 3  var => function-scoped
+addNumbers(5, 2); // 3:  var is function-scoped
 
 // --------------------
 
@@ -309,6 +295,7 @@ function two() {
   console.log("Function two executed");
 }
 
+one();
 setTimeout(one, 1000); // After 1 second
 setTimeout(two, 3000); // After 3 seconds
 
@@ -330,7 +317,7 @@ setTimeout(function () {
 
 setTimeout(() => {
   console.log("this is a anonymous arrow function");
-}, 3000);
+}, 2000);
 
 // ----------------------------------------
 // callback function
@@ -346,12 +333,39 @@ function sayBye() {
 
 greet("ali", sayBye);
 
-// -9876**************************
-// destruchturing
+// =======================================
+// Function Definition Summary
 
-function greet({ name, city }) {
-  console.log(`Salam ${name} az ${city}`);
+// Function Declaration
+
+function sum(a, b) {
+  return a + b;
 }
+/*
+- in tabe ba name 'sum' taerif shodeh ast.
+- 'Hoisting' mishavad, yaeni ghabl az taerif ham mishavad az an estfaeh kard.
+- maemoolan baraye tavabe omoomi estefadeh mishavad.
+*/
 
-greet({ name: "Sara", city: "Mashhad" });
-// خروجی: Salam Sara az Mashhad
+// ----------------------------------------
+// Function Expression
+
+let sum2 = function (a, b) {
+  return a + b;
+};
+/*
+- in tabe ghaleban bedoone nam ast(anonymous) va dar motaghayere 'sum2' zakhire shode ast (vali mitavanad named ham bashad).
+- 'Hoisting' nemishavad (chon dakhele motaghayer hast - motghir let ham hoist nemishavad).
+- in noe tabe ra mitavan beonvane argoman, meghdare bazgashti, ya methode object estefade kard.
+*/
+
+// --------------------
+// Arrow Function
+
+let sum3 = (a, b) => a + b;
+/*
+- noei az function-expression(fe) amma kootahtar.
+- barkhalafe fe, 'this', 'arguments', 'super' va 'new.target' nadarad.
+- baraye object-methods ke be this ehtiaj darand monaseb nist.
+- monaseb bareye tavabe kootah ya estefade dar tavabe martabe balatar(higher-order functions).
+*/
