@@ -1,11 +1,6 @@
 // ========================================
 // global-methods
 
-const dayjs = require("dayjs");
-
-// ----------------------------------------
-// example of GMethods
-
 let x = Number("12");
 
 console.log(Number.isNaN(x)); // false
@@ -19,11 +14,9 @@ let uri = "https://www.example.com/submit?name=ali reza ram";
 
 let encodedUri = encodeURI(uri);
 console.log(encodedUri);
-// https://www.example.com/submit?name=ali%20reza%20ram
 
 let decodedUri = decodeURI(encodedUri);
 console.log(decodedUri);
-// https://www.example.com/submit?name=ali reza ram
 
 // --------------------
 
@@ -31,22 +24,19 @@ let uri = "https://www.example.com/submit?name=ali reza ram";
 
 let encoded = encodeURIComponent(uri);
 console.log(encoded);
-// https%3A%2F%2Fwww.example.com%2Fsubmit%3Fname%3Dali%20reza%20ram
 
 let decoded = decodeURIComponent(encoded);
 console.log(decoded);
-// https://www.example.com/submit?name=ali reza ram
 
 // ----------------------------------------
 // eval
 
 let x = 5;
 let y = 3;
-let txt = "x**y";
-console.log(txt); // x**y
 
-let result = eval(txt);
-console.log(result); // 125
+console.log("x**y"); // x**y
+
+console.log(eval("x**y")); // 125
 
 // --------------------
 
@@ -56,8 +46,7 @@ let txt = `if (x > 3) {
   x ** 2 + y ** 2;
 }`;
 
-let result = eval(txt);
-console.log(result); // 34
+console.log(eval(txt)); // 34
 
 // ----------------------------------------
 // parse
@@ -87,12 +76,17 @@ console.log(parseFloat(x) + 5); // 12.3
 // ========================================
 // array-methods
 
-// ----------------------------------------
 // forEach
 /*
 - maemoolan braye amaliat haye khareji mesle clg ya taghire motghere khareji bekar miravad.
-- khororji nadarad: undefined barmigardanad.
+- khororji nadarad: undefined.
 */
+
+const names = ["ali", "mohammad", "reza", "saeed"];
+
+let result = names.forEach((i) => i);
+
+console.log(result); // undefined
 
 // --------------------
 
@@ -103,22 +97,8 @@ names.forEach((i) => console.log(i));
 names.forEach((item, index) => console.log(item, index));
 
 names.forEach((item2, index2) => {
-  item2 += " --> ";
-  index2++;
-  console.log(item2, index2);
+  console.log(item2 + " --> ", ++index2);
 });
-
-// --------------------
-
-const names = ["ali", "mohammad", "reza", "saeed"];
-
-names.forEach(testFunc); // ReferenceError: Cannot access 'testFunc' before initialization.
-
-let testFunc = (item2, index2) => {
-  item2 += " --> ";
-  index2++;
-  console.log(item2, index2);
-};
 
 // --------------------
 
@@ -135,7 +115,15 @@ names.forEach(testFunc);
 // --------------------
 
 const names = ["ali", "mohammad", "reza", "saeed"];
+names.forEach(testFunc); // ReferenceError: Cannot access 'testFunc' before initialization.
 
+let testFunc = (item2, index2) => {
+  item2 += " --> ";
+  index2++;
+  console.log(item2, index2);
+};
+
+const names = ["ali", "mohammad", "reza", "saeed"];
 names.forEach(testFunc); // correct
 
 function testFunc(item2, index2) {
@@ -145,120 +133,17 @@ function testFunc(item2, index2) {
 }
 
 // ----------------------------------------
-// filter
-/*
-- baraye sakhte array jadid shamele anasori ke shorote khassi darad
-- khororji darad: new array
-*/
-
-let nums = [1, 4, 5, 6, 11, 13, 14, 24];
-
-let result = nums.filter((item, index) => {
-  return item % 2 === 0;
-});
-console.log(result); // [ 4, 6, 14, 24 ]
-
-// --------------------
-
-let nums = [1, 4, 5, 6, 11, 13, 14, 24];
-4;
-
-function filter1(item, index) {
-  if (index > 4) {
-    return nums[index];
-  }
-}
-
-let result = nums.filter(filter1);
-console.log(result); // [ 13, 14, 24 ]
-
-// ----------------------------------------
-// find
-/*
-- peida kardane avvalin onsor dar arraye ke sharte mara darad.
-*/
-
-let numbers = [3, 8, 12, 5, 10];
-
-let found = numbers.find((num) => num > 9);
-
-console.log(found); // 12
-
-// --------------------
-
-const arr = [1, 2, 3, 4, 5, 6, 7];
-
-const findValue = arr.find(function (num) {
-  return num === 6;
-});
-console.log(findValue); // 6
-
-const findValue2 = arr.find((num) => num % 2 === 0);
-console.log(findValue2); // 2
-
-// ----------------------------------------
-// includes
-/*
-- barresie vojoode yek meghdar dar array.
-- khororji darad: true or false
-*/
-
-const names = ["ali", "mohammad", "reza", "saeed"];
-
-console.log(names.includes("reza")); // true
-console.log(names.includes("mahdi")); // false
-
-console.log(names.indexOf("ali") !== -1); // true - old
-console.log(names.includes("ali")); // true - new
-
-// --------------------
-
-const names = ["ali", "mohammad", "reza", "saeed"];
-
-console.log(names.includes("mohammad")); // true
-console.log(names.includes("mohammad", 2)); // false
-
-// ----------------------------------------
-// every
-/*
-- barresi mikonad ke hame anasor sharte dade shode ra dashte bashand.
-- khororji darad: true or false
-*/
-
-let nums = [1, 4, 5, 6, 11, 13, 14, 24];
-
-let result = nums.every((item) => item % 2 === 0);
-
-console.log(result); // false
-
-// --------------------
-
-let nums = [1, 4, 5, 6, 11, 13, 14, 24];
-
-let result = nums.every((item) => !isNaN(item));
-
-console.log(result); // true
-
-// --------------------
-
-console.log(isNaN(12)); // false
-console.log(isNaN("12")); // false  =>  "12" be adad mitavanad tabdil shavad.
-console.log(isNaN("ali")); // true
-
-let nums = [1, 4, 5, 6, 11, 13, "14", 24];
-let result = nums.every((item) => !isNaN(item));
-console.log(result); // true
-
-let nums2 = [1, 4, 5, 6, 11, 13, "14", 24];
-let result2 = nums2.every((item) => typeof item === "number" && !isNaN(item));
-console.log(result2); // false
-
-// ----------------------------------------
 // map
 /*
 - baraye transformation anasore array bedone taghire khode array.
-- khororji darad: array with same length
+- khororji darad: array ba toole yeksan
 */
+
+let nums = [1, 2, 3];
+
+nums.map((n) => console.log(n ** 2));
+
+// --------------------
 
 let nums = [1, 2, 3];
 
@@ -301,6 +186,114 @@ nums.forEach((n) => forEachResult.push(n ** 2));
 console.log(forEachResult); // [1, 4, 9]
 
 // ----------------------------------------
+// filter
+/*
+- baraye sakhte array jadid shamele anasori ke shorote khassi darad
+- khororji darad: arraye filter shode
+*/
+
+let nums = [1, 4, 5, 6, 11, 13, 14, 24];
+
+nums.filter((item, index) => {
+  console.log(item % 2 === 0);
+});
+
+// --------------------
+
+let nums = [1, 4, 5, 6, 11, 13, 14, 24];
+
+let result = nums.filter((item, index) => {
+  return item % 2 === 0;
+});
+
+console.log(result); // [ 4, 6, 14, 24 ]
+
+// --------------------
+
+let nums = [1, 4, 5, 6, 11, 13, 14, 24];
+
+function filter1(item, index) {
+  if (index > 4) {
+    return item;
+  }
+}
+
+let result = nums.filter(filter1);
+console.log(result); // [ 13, 14, 24 ]
+
+// ----------------------------------------
+// find
+/*
+- peida kardane avvalin onsor dar arraye ke sharte mara darad.
+- khororji darad: yek onsor az arraye (ya undefined)
+*/
+
+let numbers = [3, 8, 12, 5, 10];
+
+numbers.find((num) => console.log(num > 9));
+
+// --------------------
+
+let numbers = [3, 8, 12, 5, 10];
+
+let found = numbers.find((num) => num > 9);
+
+console.log(found); // 12
+
+// --------------------
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+
+const findValue = arr.find(function (num) {
+  return num === 6;
+});
+console.log(findValue); // 6
+
+const findValue2 = arr.find((num) => num % 2 === 0);
+console.log(findValue2); // 2
+
+// ----------------------------------------
+// every
+/*
+- barresi mikonad ke hame anasor sharte dade shode ra dashte bashand.
+- khororji darad: false-true
+*/
+
+let nums = [1, 4, 5, 6, 11, 13, 14, 24];
+
+nums.every((item) => console.log(item % 2 === 0));
+
+// --------------------
+
+let nums = [1, 4, 5, 6, 11, 13, 14, 24];
+
+let result = nums.every((item) => item % 2 === 0);
+
+console.log(result); // false
+
+// --------------------
+
+let nums = [1, 4, 5, 6, 11, 13, 14, 24];
+
+let result = nums.every((item) => !isNaN(item));
+
+console.log(result); // true
+
+// --------------------
+
+console.log(isNaN(12)); // false
+console.log(isNaN("12")); // false  =>  "12" be adad mitavanad tabdil shavad.
+console.log(isNaN("ali")); // true
+
+let nums = [1, 4, 5, 6, 11, 13, "14", 24];
+let result = nums.every((item) => !isNaN(item));
+console.log(result); // true
+
+let nums2 = [1, 4, 5, 6, 11, 13, "14", 24];
+let result2 = nums2.every((item) => typeof item === "number" && !isNaN(item));
+console.log(result2); // false
+
+// ----------------------------------------
 // indexOf
 
 let arr = [1, 4, 5, 6, 11, 13, 4, 14, 24];
@@ -315,13 +308,25 @@ const names = ["ali", "mohammad", "reza", "ali", "saeed"];
 
 console.log(names.indexOf("ali")); // 0
 console.log(names.indexOf("ali", 1)); // 3
+console.log(names.lastIndexOf("ali")); // 3
+
+// ----------------------------------------
+// includes
+
+const names = ["ali", "mohammad", "reza", "saeed"];
+
+console.log(names.includes("reza")); // true
+console.log(names.includes("mahdi")); // false
+
+console.log(names.indexOf("ali") !== -1); // true - old
+console.log(names.includes("ali")); // true - new
 
 // --------------------
 
-const names = ["ali", "mohammad", "reza", "ali", "saeed"];
+const names = ["ali", "mohammad", "reza", "saeed"];
 
-console.log(names.indexOf("ali")); // 0
-console.log(names.lastIndexOf("ali")); // 3
+console.log(names.includes("mohammad")); // true
+console.log(names.includes("mohammad", 2)); // false
 
 // ----------------------------------------
 // fill (value, [start, end))
@@ -342,7 +347,7 @@ console.log(arr); // ["hi", "hi", "hi", "hi", "hi"]
 // --------------------
 
 let arr1 = [2, 5, "a", 7];
-console.log(arr1); // [ 2, 5, 'a' ]
+console.log(arr1); // [ 2, 5, 'a', 7 ]
 
 arr1.fill("test");
 console.log(arr1); // [ 'test', 'test', 'test', 'test' ]
@@ -361,7 +366,28 @@ let arr = new Array(3).fill({ x: 1 });
 console.log(arr);
 
 arr[0].x = 99;
-console.log(arr); // [ { x: 99 }, { x: 99 }, { x: 99 } ] ❗
+console.log(arr); // [ { x: 99 }, { x: 99 }, { x: 99 } ]
+
+// ----------------------------------------
+// sort
+/*
+- betore pishfarz anasor ro besoorate reshte ei morattab mikonad.
+- arraye asli ra taghir midahad
+*/
+
+const names = ["ali", "sara", "caren"];
+console.log(names.sort()); // [ 'ali', 'caren', 'sara' ]
+
+const naems2 = ["Ali", "Sara", "caren"];
+console.log(naems2.sort()); // [ 'Ali', 'Sara', 'caren' ]
+
+// --------------------
+
+const age = [14, 4, 35, 56, 33, 24];
+console.log(age.sort()); // [ 14, 24, 33, 35, 4, 56 ]  =>  "14" < "24" < "33" < "35" < "4" < "56"
+
+console.log(age.sort((a, b) => a - b)); // [ 4, 14, 24, 33, 35, 56 ]
+console.log(age.sort((a, b) => b - a)); // [ 56, 35, 33, 24, 14, 4 ]
 
 // ----------------------------------------
 // from
@@ -381,7 +407,6 @@ console.log(arr1); // [ 2, 4, 6 ]
 
 // ----------------------------------------
 // reduce
-
 /*
 array.reduce((accumulator, currentValue, currentIndex?, array?) => {
   // code to combine the current value with the accumulated value
@@ -389,6 +414,14 @@ array.reduce((accumulator, currentValue, currentIndex?, array?) => {
 
 - estefade: jamebandi ya kaheshe array be yek meghdare vahed.
 */
+
+const numbers = [175, 50, 25, 10, 5];
+
+numbers.reduce((acc, cur) => console.log(acc, cur));
+
+numbers.reduce((acc, cur) => console.log(acc, cur), 77);
+
+// --------------------
 
 const numbers = [175, 50, 25, 10, 5];
 
@@ -413,7 +446,7 @@ console.log(result2); // 10
 
 let nums = [1, 2, 3, 4, 5, 5];
 
-let sum = nums.reduce((acc, cur) => acc + cur, 0);
+let sum = nums.reduce((acc, cur) => acc + cur);
 console.log(sum); // 20
 
 let sum2 = nums.reduce((acc, cur) => acc + cur, 7);
@@ -446,27 +479,6 @@ let ageGroups = people.reduce((acc, person) => {
 console.log(ageGroups); // { '25': ['Ali', 'Reza'], '30': ['Sara'] }
 
 // ----------------------------------------
-// sort
-/*
-- betore pishfarz anasor ro besoorate reshte ei morattab mikonad.
-- arraye asli ra taghir midahad
-*/
-
-const names = ["ali", "sara", "caren"];
-console.log(names.sort()); // [ 'ali', 'caren', 'sara' ]
-
-const naems2 = ["Ali", "Sara", "caren"];
-console.log(naems2.sort()); // [ 'Ali', 'Sara', 'caren' ]
-
-// --------------------
-
-const age = [14, 4, 35, 56, 33, 24];
-console.log(age.sort()); // [ 14, 24, 33, 35, 4, 56 ]   =>  "14" < "24" < "33" < "35" < "4" < "56"
-
-console.log(age.sort((a, b) => a - b)); // [ 4, 14, 24, 33, 35, 56 ]
-console.log(age.sort((a, b) => b - a)); // [ 56, 35, 33, 24, 14, 4 ]
-
-// ----------------------------------------
 // practice
 
 const products = [
@@ -494,23 +506,24 @@ const products = [
 // forEach
 
 products.forEach((item) => {
-  console.log(item.title);
-});
-
-products.forEach((item) => {
   if (item.exist === false) {
-    console.log(item.id);
+    console.log(item.title);
   }
 });
+
+console.log("-".repeat(30));
 
 //--------------------
 // map
 
 const productTitle = products.map((item) => {
-  return item.title;
+  if (item.exist === false) {
+    return item.title;
+  }
 });
 
 console.log(productTitle); // output: array
+console.log("-".repeat(30));
 
 //--------------------
 // filter
@@ -520,6 +533,7 @@ const notExist = products.filter((item) => {
 });
 
 console.log(notExist);
+console.log("-".repeat(30));
 
 //--------------------
 // filter-map
@@ -529,6 +543,7 @@ const notExistId = products
   .map((item) => item.id);
 
 console.log(notExistId); // [ 2, 3 ]
+console.log("-".repeat(30));
 
 //--------------------
 // reduce
@@ -545,7 +560,6 @@ console.log(notExistId2); // [ 2, 3 ]
 // ========================================
 // string-methods
 
-// ----------------------------------------
 // concat
 
 let firstName = "Ali";
@@ -567,6 +581,17 @@ console.log(result); // "Age: 25"
 // ----------------------------------------
 // split
 
+let word = "hello";
+let chars = word.split("");
+console.log(chars); // ["h", "e", "l", "l", "o"]
+
+// --------------------
+
+console.log("hello".split()); // [ 'hello' ]
+console.log("hello".split(",")); // [ 'hello' ]
+
+// --------------------
+
 let sentence = "I love JavaScript";
 let words = sentence.split(" ");
 console.log(words); // ["I", "love", "JavaScript"]
@@ -583,33 +608,14 @@ let sentence = "one two three four";
 let parts = sentence.split(" ", 2);
 console.log(parts); // ["one", "two"]
 
-// --------------------
-
-let word = "hello";
-let chars = word.split("");
-console.log(chars); // ["h", "e", "l", "l", "o"]
-
-// --------------------
-
-console.log("hello".split()); // [ 'hello' ]
-console.log("hello".split(",")); // [ 'hello' ]
-
 // ----------------------------------------
 // join
 
 let fruits = ["apple", "banana", "cherry"];
 
-let result = fruits.join();
-console.log(result); // apple,banana,cherry
-
-let result2 = fruits.join(", ");
-console.log(result2); // apple, banana, cherry
-
-// --------------------
-
-let words = ["I", "love", "JS"];
-let sentence = words.join(" ");
-console.log(sentence); // I love JS
+console.log(fruits.join()); // apple, banana, cherry
+console.log(fruits.join(", ")); // apple, banana, cherry
+console.log(fruits.join(" ")); // apple banana cherry
 
 // --------------------
 
@@ -650,9 +656,9 @@ console.log(result); // Hello mahdi
 
 // --------------------
 
-console.log("hello world".replace("World", "JS")); // hello world
-console.log("hello world".replace("world", "JS")); // hello JS
-console.log("hello world".replace(/world/i, "JS")); // hello JS
+console.log("hello World".replace("world", "JS")); // hello World
+console.log("hello World".replace("World", "JS")); // hello JS
+console.log("hello World".replace(/world/i, "JS")); // hello JS
 
 // --------------------
 
@@ -672,7 +678,7 @@ let newStr = str.replace(/\$(\d+)/, (match, p1) => "$" + parseInt(p1) * 2);
 console.log(newStr); // Price: $10
 
 // ----------------------------------------
-// substring & slice
+// substring & slice [)
 
 let str = "JavaScript";
 
@@ -682,11 +688,15 @@ console.log(str.substring(2, 5)); // vaS
 console.log(str.substring(4)); // Script
 console.log(str.substring(1)); // avaScript
 
+console.log(str.substring(-3)); // JavaScript
+console.log(str.substring(-5)); // JavaScript
+
 // --------------------
 
 let str = "JavaScript";
 
 console.log(str.slice(0, 4)); // Java
+console.log(str.slice(3)); // aScript
 
 console.log(str.slice(-6)); // Script
 console.log(str.slice(-9)); // avaScript
@@ -697,13 +707,13 @@ console.log(str.slice(-9)); // avaScript
 console.log("   hello  js   ".trim()); // "hello  js"
 
 console.log("hello".includes("h")); // true
+console.log("I love JS".includes("love")); // true
 
 console.log("hello".toUpperCase()); // HELLO
 console.log("HELLO".toLowerCase()); // hello
 
 console.log("JavaScript".startsWith("Java")); // true
 console.log("script.js".endsWith(".js")); // true
-console.log("I love JS".includes("love")); // true
 
 console.log("JS ".repeat(2)); // JS JS
 console.log("ha".repeat(3)); // hahaha
@@ -713,7 +723,6 @@ console.log("=".repeat(10)); // ==========
 // ========================================
 // numbers-methods
 
-// ----------------------------------------
 // is
 
 let num = 12;
@@ -745,7 +754,6 @@ console.log(num.toPrecision(5)); // 12.235
 // ========================================
 // math-methods
 
-// ----------------------------------------
 // max-min
 
 let x = Math.max(2, 5, 6, 8, 4, 3);
@@ -771,16 +779,16 @@ console.log(Math.abs(-16)); // 16
 // ----------------------------------------
 // random
 
-console.log(Math.random()); // ? in [0,1)
+console.log(Math.random()); // ? in [0, 1)
 
 // --------------------
-// ? in [0,n)
+// ? in [0, n)
 
 let n = 10;
 console.log(Math.floor(Math.random() * n));
 
 // --------------------
-// ? in [a,b]
+// ? in [a, b]
 
 let min = 5;
 let max = 15;
@@ -828,7 +836,7 @@ console.log(Math.SQRT2); // 1.4142135623730951
 
 let currentDate = new Date();
 console.log(currentDate);
-// in vscode: 2025-05-26T00:53:08.962Z
+// in vscode: 2025-05-26T 00:53:08.962Z
 // in console: Mon May 26 2025 04:23:40 GMT+0330 (Iran Standard Time)
 
 // --------------------
@@ -837,6 +845,7 @@ console.log(currentDate);
 let d1 = new Date("Dec 31 2010");
 let d2 = new Date("2010-12-31");
 let d3 = new Date(2010, 11, 31); // January = 0، December = 11
+
 console.log(d1); // Wed Dec 31 2010
 console.log(d2); // Wed Dec 31 2010
 console.log(d3); // Wed Dec 31 2010
@@ -938,11 +947,11 @@ console.log(formatDateUTC(myDate));
 // --------------------
 // use Day.js pakage
 
-const dayjs = require("dayjs");
+import dayjs from "dayjs";
 
 const myDate = dayjs("1995-11-3 16:9");
 
-console.log(myDate.format("YYYY/M/D hh:mm A"));
+console.log(myDate.format("YYYY/M/D hh:m A"));
 
 // ----------------------------------------
 // Date.now()
