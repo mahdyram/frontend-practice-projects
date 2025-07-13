@@ -7,12 +7,16 @@ const getDataPromis = function (url) {
     req.open("GET", url);
 
     req.onload = function () {
-      if (req.status === 200) {
-        const data = JSON.parse(req.responseText);
-        resolve(data);
-      } else {
+      if (req.status !== 200) {
         reject(new Error("not found..."));
+        return;
       }
+      const data = JSON.parse(req.responseText);
+      resolve(data);
+    };
+
+    req.onerror = function () {
+      reject(new Error("Network error"));
     };
 
     req.send();
@@ -21,10 +25,10 @@ const getDataPromis = function (url) {
 
 // .then().catch()
 getDataPromis("data.json")
-  .then(function (data) {
+  .then((data) => {
     console.log("getDataPromis(data-then.catch): ", data);
   })
-  .catch(function (err) {
+  .catch((err) => {
     console.log("getDataPromis(error-then.catch): ", err.message);
   });
 
@@ -40,21 +44,23 @@ getDataPromis("data.json")
 
 // ----------------------------------------
 
-const getDataPromis2 = function (url) {
-  return new Promise(function (resolve, reject) {
+const getDataPromis2 = (url) => {
+  return new Promise((resolve, reject) => {
     const req = new XMLHttpRequest();
     req.open("GET", url);
 
     req.onload = function () {
-      if (req.status === 200) {
-        try {
-          const data = JSON.parse(req.responseText);
-          resolve(data);
-        } catch (err) {
-          reject(new Error("Invalid JSON"));
-        }
-      } else {
-        reject(new Error("not found..."));
+      const { status, responseText } = req;
+
+      if (status !== 200) {
+        return reject(new Error(`Request failed with status ${status}`));
+      }
+
+      try {
+        const data = JSON.parse(responseText);
+        resolve(data);
+      } catch (err) {
+        reject(new Error("Invalid JSON response"));
       }
     };
 
@@ -76,22 +82,24 @@ getDataPromis2("data.json")
   });
 
 // async/await
-(async function () {
+async function fetchData() {
   try {
     const data = await getDataPromis2("data.json");
     console.log("getDataPromis2(data-async/await): ", data);
   } catch (err) {
     console.error("getDataPromis2(error-async/await):", err.message);
   }
-})();
+}
+fetchData();
 
 // --------------------
+// toodartoo(baraye tartib)
 
 const url4 = "https://jsonplaceholder.typicode.com/todos/4";
 const url5 = "https://jsonplaceholder.typicode.com/todos/5";
 const url6 = "https://jsonplaceholder.typicode.com/todos/6";
 
-// toodartoo(baraye tartib) ba then.catch:
+// then.catch:
 getDataPromis2(url4)
   .then(function (data) {
     console.log("data url4: ", data);
@@ -108,8 +116,8 @@ getDataPromis2(url4)
     console.log("getDataPromis2(error-then.catch): ", err.message);
   });
 
-// toodartoo(baraye tartib) ba async/await:
-(async function () {
+// async/await:
+async function fetchData2() {
   try {
     const data1 = await getDataPromis2(url4);
     console.log("data url4:", data1);
@@ -122,4 +130,5 @@ getDataPromis2(url4)
   } catch (err) {
     console.log("getDataPromis2(error-async/await):", err.message);
   }
-})();
+}
+fetchData2();

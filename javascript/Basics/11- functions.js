@@ -322,6 +322,31 @@ setTimeout(() => {
 // ----------------------------------------
 // callback function
 
+function sayHello() {
+  console.log("Hello!");
+}
+
+function greet(callback) {
+  callback();
+}
+
+greet(sayHello); // Hello!
+
+// --------------------
+
+function sayName(name) {
+  console.log("Hello, " + name);
+}
+
+function greetPerson(callback) {
+  const name = "Ali";
+  callback(name);
+}
+
+greetPerson(sayName);
+
+// --------------------
+
 function greet(name, callback) {
   console.log("hello " + name);
   callback();
@@ -329,6 +354,19 @@ function greet(name, callback) {
 
 function sayBye() {
   console.log("goodby");
+}
+
+greet("ali", sayBye);
+
+// --------------------
+
+function greet(name, callback) {
+  console.log("hello " + name);
+  callback(name);
+}
+
+function sayBye(x) {
+  console.log("goodby " + x);
 }
 
 greet("ali", sayBye);

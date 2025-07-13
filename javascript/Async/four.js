@@ -1,41 +1,48 @@
 // ========================================
 // Fetch-Api (jaigozine XMLHttpRequest)
 
-const url7 = "https://jsonplaceholder.typicode.com/todos/7";
+fetch("data.json")
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.error("Fetch error:", err));
 
-const res = fetch(url7);
-console.log(res); // Promise {<pending>}  =>  harvaght khoroji object Promise bood, niaz be then va catch darim.
+// --------------------
 
-fetch(url7).then(function (res) {
-  console.log(res); // Response {…}
-});
-
-fetch(url7).then(function (res) {
-  console.log(res.json()); // Promise {<pending>}
-});
-
-fetch(url7)
-  .then(function (res) {
+fetch("data.json")
+  .then((res) => {
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
     return res.json();
   })
-  .then(function (data) {
-    console.log(data); // {userId: 1, id: 7, title: 'illo expedita consequatur quia in', completed: false}
-  });
+  .then((data) => console.log(data))
+  .catch((err) => console.error("Fetch error:", err.message));
+
+// --------------------
+
+const url7 = "https://jsonplaceholder.typicode.com/todos/7";
+
+console.log(fetch(url7)); // Promise => harvaght khoroji object Promise bood, niaz be "then" va "catch" darim.
+
+fetch(url7).then(
+  (res) => console.log(res) // Response
+);
+
+fetch(url7).then(
+  (res) => console.log(res.json()) // Promise => khoroji promise pas baz ham niaz be "then" darim.
+);
 
 fetch(url7)
-  .then(function (res) {
-    if (res.ok) {
-      return res.json();
-    } else {
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+fetch(url7)
+  .then((res) => {
+    if (!res.ok) {
       throw new Error("not found...");
     }
+    return res.json();
   })
-  .then(function (data) {
-    console.log(data); // {userId: 1, id: 7, title: 'illo expedita consequatur quia in', completed: false}
-  })
-  .catch(function (err) {
-    console.log(err.message);
-  });
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err.message));
 
 // ----------------------------------------
 // then.catch
@@ -43,21 +50,15 @@ fetch(url7)
 const url8 = "https://jsonplaceholder.typicode.com/todos/8";
 
 function getDataFetch(url) {
-  return fetch(url).then(function (res) {
-    if (!res.ok) {
-      throw new Error("not found...");
-    }
+  return fetch(url).then((res) => {
+    if (!res.ok) throw new Error("not found...");
     return res.json();
   });
 }
 
 getDataFetch(url8)
-  .then(function (data) {
-    console.log("getDataFetch: ", data);
-  })
-  .catch(function (err) {
-    console.log(err.message);
-  });
+  .then((data) => console.log("getDataFetch: ", data))
+  .catch((err) => console.log(err.message));
 
 // ----------------------------------------
 // async/await
@@ -66,15 +67,13 @@ const url9 = "https://jsonplaceholder.typicode.com/todos/9";
 
 async function getDataFetch2(url) {
   const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error("not found...");
-  }
+  if (!res.ok) throw new Error("not found...");
   return await res.json();
 }
 
 // farakhani ba then.catch:
 getDataFetch2(url9)
-  .then((data) => console.log("getDataFetch: ", data))
+  .then((data) => console.log("getDataFetch-2: ", data))
   .catch((err) => console.error(err.message));
 
 // farakhani ba async/await:
@@ -101,7 +100,7 @@ const getDataFetch3 = async (url) => {
   return await res.json();
 };
 
-// then/catch (Promise chaining):
+// then/catch:
 getDataFetch3(url2)
   .then((data) => {
     console.log("data url2(then/catch):", data);
@@ -118,7 +117,7 @@ getDataFetch3(url2)
     console.error("Error:", err.message);
   });
 
-// async/await in async-function:
+// async/await:
 async function fetchAll() {
   try {
     const data2 = await getDataFetch3(url2);
@@ -134,3 +133,16 @@ async function fetchAll() {
   }
 }
 fetchAll();
+
+// async/await general:
+async function fetchAllGeneral(urls) {
+  try {
+    for (let url of urls) {
+      const data = await getDataFetch3(url);
+      console.log(`Data from ${url}:`, data);
+    }
+  } catch (err) {
+    console.error("Error:", err.message);
+  }
+}
+fetchAllGeneral([url2, url3, url4]);

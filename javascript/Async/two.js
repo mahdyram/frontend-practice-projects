@@ -4,10 +4,12 @@
 const getData = function (url) {
   const req = new XMLHttpRequest();
   req.open("GET", url);
+
   req.onload = function () {
     if (req.status !== 200) return console.log("not found...");
     console.log(JSON.parse(req.responseText));
   };
+
   req.send();
 };
 
@@ -18,16 +20,18 @@ getData("https://jsonplaceholder.typicode.com/todos/66");
 const url3 = "https://jsonplaceholder.typicode.com/todos";
 getData(url3);
 
-// --------------------
+// ----------------------------------------
 
 const getData2 = function (url, callback) {
   const req = new XMLHttpRequest();
   req.open("GET", url);
+
   req.onload = function () {
     if (req.status !== 200) return console.log("not found...");
     const data = JSON.parse(req.responseText);
     callback(data);
   };
+
   req.send();
 };
 
@@ -60,47 +64,49 @@ const url6 = "https://jsonplaceholder.typicode.com/todos/6";
 
 getData3(url4, function (err, data) {
   if (err) {
-    console.error("Error object:", err.message);
+    console.error("Error object 4:", err.message);
   } else {
-    console.log("Data:", data);
+    console.log("Data 4:", data);
   }
 });
 
 getData3(url5, function (err, data) {
   if (err) {
-    console.error("Error object:", err.message);
+    console.error("Error object 5:", err.message);
   } else {
-    console.log("Data:", data);
+    console.log("Data 5:", data);
   }
 });
 
 getData3(url6, function (err, data) {
   if (err) {
-    console.error("Error object:", err.message);
+    console.error("Error object 6:", err.message);
   } else {
-    console.log("Data:", data);
+    console.log("Data 6:", data);
   }
 });
 
-// in 3 lozooman tartibi nadarnd hengame namayesh dar condole, request ha dade mishavad va harkodam ke zodtar beresad, an namayesh dade mishavad.
+// in 3 lozooman tartibi nadarnd hengame namayesh dar condole, request ha
+// dade mishavad va harkodam ke zodtar beresad, an namayesh dade mishavad.
 
 // --------------------
 // baraye inke betartib delkhahe ma namayesh dade shavad (callBack-Hell):
+
 getData3(url4, function (err, data) {
   if (err) {
-    console.error("Error object:", err.message);
+    console.error("Error object 4.2:", err.message);
   } else {
-    console.log("Data:", data);
+    console.log("Data 4.2:", data);
     getData3(url5, function (err, data) {
       if (err) {
-        console.error("Error object:", err.message);
+        console.error("Error object 5.2:", err.message);
       } else {
-        console.log("Data:", data);
+        console.log("Data 5.2:", data);
         getData3(url6, function (err, data) {
           if (err) {
-            console.error("Error object:", err.message);
+            console.error("Error object 6.2:", err.message);
           } else {
-            console.log("Data:", data);
+            console.log("Data 6.2:", data);
           }
         });
       }
