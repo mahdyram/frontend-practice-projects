@@ -14,12 +14,12 @@ const changeBColor1 = (x) => {
 };
 // --------------------
 
-const target = document.getElementById("t3.5");
+const target = document.getElementById("t3.2");
 
-function changeBColor2() {
+const changeBColor2 = () => {
   target.style.backgroundColor = "red";
   target.innerText = target.style.backgroundColor;
-}
+};
 // --------------------
 
 const target4 = document.getElementById("t4");
@@ -68,7 +68,7 @@ function toggleShow7() {
   }
 }
 // ----------------------------------------
-// add-Class
+// add-Class (classList)
 
 const target8 = document.getElementsByClassName("tC1")[0];
 
@@ -93,7 +93,7 @@ function toggleShow10() {
   target10.classList.remove("active");
 }
 // ----------------------------------------
-// toggle (add or remove)
+// toggle (add - remove)
 
 const target11 = document.getElementsByClassName("tC3")[0];
 
@@ -118,8 +118,8 @@ const target13 = document.getElementById("t13");
 
 function toggleShow13() {
   target13.innerText = target13.getAttribute("id");
-  target13.innerText += " / " + target13.getAttribute("style");
   target13.innerText += " / " + target13.getAttribute("class");
+  target13.innerText += " / " + target13.getAttribute("style");
 }
 // --------------------
 
@@ -128,11 +128,11 @@ const target14 = document.getElementsByClassName("t14")[0];
 function toggleShow14() {
   let attr = target14.getAttribute("class");
   target14.setAttribute("class", `${attr} active`);
+  // target14.classList.add("active");
   target14.setAttribute("style", "color: white;");
 }
 // ----------------------------------------
-// addEventListener
-// 'raveshe jaigozine onclick'
+// addEventListener (jaigozine onclick)
 
 const target15 = document.getElementById("t15");
 function f15() {

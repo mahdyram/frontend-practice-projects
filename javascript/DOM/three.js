@@ -14,7 +14,7 @@ target1.ondblclick = function () {
 
 // ----------------------------------------
 
-// faghat dovvomi ejra mishavad
+// faghat dovvomi ejra mishavad:
 
 let target2 = document.getElementById("t2");
 
@@ -26,8 +26,7 @@ target2.ondblclick = function () {
   target2.style.color = "white";
 };
 // --------------------
-
-// hardo ejra mishavad
+// hardo ejra mishavad:
 
 let target3 = document.getElementById("t3");
 
@@ -40,7 +39,7 @@ target3.addEventListener("dblclick", function () {
 });
 
 // ========================================
-// down-up
+// down - up
 
 let target4 = document.getElementById("t4");
 
@@ -76,7 +75,7 @@ target6.addEventListener("mouseup", function () {
 });
 
 // ========================================
-// enter-leave
+// enter - leave
 
 let target7 = document.getElementById("t7");
 
@@ -130,55 +129,45 @@ document.body.addEventListener("mousemove", function (e) {
 // ========================================
 // out
 
-let target11 = document.getElementById("t11");
+// function randomColor2(e) {
+//   let red = Math.floor(Math.random() * 256);
+//   let green = Math.floor(Math.random() * 256);
+//   let blue = Math.floor(Math.random() * 256);
+//   e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+// }
 
-function func2() {
+function randomColor(t) {
   let red = Math.floor(Math.random() * 256);
   let green = Math.floor(Math.random() * 256);
   let blue = Math.floor(Math.random() * 256);
-  target11.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+  t.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }
 
-target11.addEventListener("mouseout", func2);
+let target11 = document.getElementById("t11");
+
+target11.addEventListener("mouseout", () => randomColor(target11));
+// target11.addEventListener("mouseover", randomColor2);
 
 // --------------------
 // out vs leave
 
 let target12 = document.getElementById("t12");
 
-function func3() {
-  let red = Math.floor(Math.random() * 256);
-  let green = Math.floor(Math.random() * 256);
-  let blue = Math.floor(Math.random() * 256);
-  target12.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-}
-
-target12.addEventListener("mouseleave", func3);
+target12.addEventListener("mouseleave", () => randomColor(target12));
+// target12.addEventListener("mouseover", randomColor2);
 
 // ========================================
 // over
 
 let target13 = document.getElementById("t13");
 
-function func4() {
-  let red = Math.floor(Math.random() * 256);
-  let green = Math.floor(Math.random() * 256);
-  let blue = Math.floor(Math.random() * 256);
-  target13.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-}
-
-target13.addEventListener("mouseover", func4);
+target13.addEventListener("mouseout", () => randomColor(target13));
+// target13.addEventListener("mouseover", randomColor2);
 
 // --------------------
 // out vs enter
 
 let target14 = document.getElementById("t14");
 
-function func5() {
-  let red = Math.floor(Math.random() * 256);
-  let green = Math.floor(Math.random() * 256);
-  let blue = Math.floor(Math.random() * 256);
-  target14.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-}
-
-target14.addEventListener("mouseenter", func5);
+target14.addEventListener("mouseout", () => randomColor(target14));
+// target14.addEventListener("mouseenter", randomColor2);

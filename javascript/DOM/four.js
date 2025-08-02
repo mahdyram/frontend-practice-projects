@@ -31,9 +31,8 @@ window.addEventListener("DOMContentLoaded", function () {
 // ----------------------------------------
 // resize
 
-t4.textContent = window.innerWidth + " x " + window.innerHeight;
-
 let target4 = document.getElementById("t4");
+target4.textContent = window.innerWidth + " x " + window.innerHeight;
 
 window.addEventListener("resize", function () {
   target4.textContent = window.innerWidth + " x " + window.innerHeight;
@@ -45,8 +44,7 @@ window.addEventListener("resize", function () {
 let target5 = document.getElementById("t5");
 
 window.addEventListener("scroll", function () {
-  // t5.textContent = window.scrollY + " px";
-  t5.textContent = window.innerHeight
+  target5.textContent = window.scrollY + " px";
 });
 
 // ========================================
@@ -82,7 +80,7 @@ form2.addEventListener("submit", function (e) {
   const last = form2.elements["lastname"].value;
 
   document.getElementById("hel").innerText = `Hello ${first} ${last}`;
-  form2.reset()
+  form2.reset();
 });
 
 // const first = form2.querySelectorAll("input[type='text']")[0].value.trim();
@@ -259,7 +257,7 @@ document.getElementById("box2").addEventListener("dragend", function () {
 });
 
 // ----------------------------------------
-// dragover-drop
+// dragover - drop
 
 document.getElementById("box3").addEventListener("dragstart", function () {
   this.style.opacity = 0.5;
@@ -273,7 +271,7 @@ document.getElementById("target3").addEventListener("dragover", function (e) {
   e.preventDefault();
 });
 
-document.getElementById("target3").addEventListener("drop", function (e) {
+document.getElementById("target3").addEventListener("drop", function () {
   this.style.backgroundColor = "crimson";
 });
 
@@ -291,16 +289,17 @@ document.getElementById("target4").addEventListener("dragover", function (e) {
   e.preventDefault();
 });
 
-document.getElementById("target4").addEventListener("drop", function (e) {
-  const bx = document.getElementById("box4");
-  this.appendChild(bx);
+document.getElementById("target4").addEventListener("drop", function () {
+  const bx4 = document.getElementById("box4");
+  this.appendChild(bx4);
 });
 
 // --------------------
+// professional(dataTransfer):
 
 document.getElementById("box5").addEventListener("dragstart", function (e) {
   this.style.opacity = 0.5;
-  e.dataTransfer.setData("text/plain", e.target.id);
+  e.dataTransfer.setData("box-5", e.target.id);
 });
 
 document.getElementById("box5").addEventListener("dragend", function () {
@@ -312,7 +311,7 @@ document.getElementById("target5").addEventListener("dragover", function (e) {
 });
 
 document.getElementById("target5").addEventListener("drop", function (e) {
-  const data = e.dataTransfer.getData("text/plain");
+  const data = e.dataTransfer.getData("box-5");
   const box = document.getElementById(data);
   e.target.appendChild(box);
 });

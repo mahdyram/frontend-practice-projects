@@ -1,11 +1,11 @@
 // ========================================
 // window object
 
-console.log(window); // method ha va properti hai objecte window.
+console.log(window); // method ha va properti haye objecte window.
 // barkhi method ha: alert, confirm, fetch | barkhi properti ha: document, ...
 
+// chon objecte window besoorate global eijad shode, mitavanim bedoon gozashtane window az properti ha va method hai an estfade konim.
 window.console.log("hello");
-// chon objecte window besoorate global eijad shode, mitavanim bedoon gozashtane window. az properti ha va method hai oon estfade konim.
 console.log("hello");
 
 console.log(window.location);
@@ -26,13 +26,15 @@ document.documentElement
 document.head
 document.body  =>  taghire mohtava
 document.children
+
 document.body.childNode  =>  everything in body: tags, text-nodes, empty-spaces, coments,...
 document.body.children   =>  just tags in body
-document.body.children[0]
 
+document.body.children[0]
 document.body.children[0].style.backgroundColor = "red"  =>  (inline styles): change inline-style of first element inside body.
-document.body.children[0].innerText = "ali"
 document.body.children[0].style.color = "white"
+document.body.children[0].innerText = "ali2"
+
 $0.style.background = 'red'  =>  ye ghsmat ro ke inspect kardim.
 
 getComputedStyle(document.body.children[0]).backgroundColor  =>  (computed style): return the final computed-style value.
@@ -60,24 +62,29 @@ document.getElementById("test2").style.backgroundColor = "pink";
 let t3 = document.getElementById("test3");
 t3.style.backgroundColor = "red";
 
-// --------------------
-// getElements(HTMLCollection)
+// ----------------------------------------
+// getElements(HTMLCollection-array)
 
-let d = document.getElementsByTagName("div");
-d[3].style.backgroundColor = "green";
-d.item(3).style.color = "white";
+let divs = document.getElementsByTagName("div");
+divs[3].style.backgroundColor = "green";
+divs.item(3).style.color = "white";
 
-let t5 = document.getElementsByTagName("div").namedItem("test5");
-t5.style.backgroundColor = "brown";
+let t5 = document.getElementsByTagName("div")[4];
+t5.style.color = "white";
+
+let T5 = document.getElementsByTagName("div").namedItem("test5");
+T5.style.backgroundColor = "brown";
 
 // --------------------
 
 let t = document.getElementsByClassName("test");
 t[0].innerText = "t";
 t.item(1).innerText = "T";
-t.namedItem("test8").innerText = "tT";
+t.namedItem("test8").innerText = "Tt";
+
 // or:
-for (elm of t) {
+
+for (let elm of t) {
   elm.innerText += "-Class";
   elm.style.color = "blue";
 }
@@ -104,15 +111,12 @@ t0.style.backgroundColor = "blue";
 
 let pars = document.querySelectorAll("p");
 pars[1].style.backgroundColor = "red";
+
 // or:
-for (elm of pars) {
+
+for (let elm of pars) {
   elm.innerText += " |$";
   elm.style.color = "white";
-}
-
-let t1s = document.querySelectorAll(".test1");
-for (elm of t1s) {
-  elm.style.color = "red";
 }
 
 // --------------------
@@ -124,7 +128,7 @@ document.querySelectorAll("#list1>li").forEach((item, index) => {
 });
 
 const lItems = document.querySelectorAll(".lItem");
-for (i of lItems) {
+for (let i of lItems) {
   i.style.color = "red";
 }
 
@@ -146,22 +150,24 @@ ul1.appendChild(newLi2);
 // --------------------
 
 const newLi3 = document.createElement("li");
-// newLi3.appendChild(document.createTextNode("Item - 06"));  // yek gere matni misazad va be onsor ezaf mikonad, agar mohtavai ghabli dashte bashad hefz mishavad.
+ul1.appendChild(newLi3);
+newLi3.innerText = "- ";
+newLi3.appendChild(document.createTextNode("Item - 006")); // yek gere matni misazad va be onsor ezaf mikonad, agar mohtavai ghabli dashte bashad hefz mishavad.
 newLi3.innerText = "Item - 06"; // mohtavaye matni onsor ra pak mikonad va in matn ra jaigozin mikonad.
 newLi3.setAttribute("class", "lItem");
-ul1.appendChild(newLi3);
 
 // --------------------
 
 const lItems2 = document.querySelectorAll(".lItem");
-for (i of lItems2) {
+for (let i of lItems2) {
   i.style.color = "blue";
 }
+
 // --------------------
 
-const newLi6 = document.createElement("li");
-newLi6.innerText = "Item - <6>"; 
-// ul1.replaceChild(newLi6, newLi3);
+const newLi4 = document.createElement("li");
+newLi4.innerText = "Item - <6>";
+// ul1.replaceChild(newLi4, newLi3);
 
 // ========================================
 // edame dastresi be elements
@@ -200,5 +206,6 @@ console.log(li2.parentElement.parentElement); // <body>...</body>
 // --------------------
 
 console.log("-".repeat(40));
+console.log(document.querySelector("#list1"));
 // li2.remove()
 // ul1.children[1].remove()

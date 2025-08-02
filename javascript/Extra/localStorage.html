@@ -29,29 +29,26 @@
 
       // array:
       const arr = ["ali", 23];
-      localStorage.setItem("array", arr);
-      console.log(localStorage.getItem("array")); // ali,23
+      localStorage.setItem("array1", arr);
+      console.log(localStorage.getItem("array1")); // ali,23
 
       // object
       const obj = { name: "ali", age: 23 };
-      localStorage.setItem("object", obj);
-      console.log(localStorage.getItem("object")); // [object Object]
+      localStorage.setItem("object1", obj);
+      console.log(localStorage.getItem("object1")); // [object Object]
 
       // ----------------------------------------
       // storing array & object with JSON
 
       // array:
-      const arr2 = ["ali2", 23];
+      const arr2 = ["ali2", 25];
       localStorage.setItem("array2", JSON.stringify(arr2));
-      console.log(JSON.parse(localStorage.getItem("array2"))); // >(2) ['ali2', 23]
+      console.log(JSON.parse(localStorage.getItem("array2"))); // > (2) ['ali2', 25]
 
       // object
-      const obj2 = { name: "ali2", age: 23 };
+      const obj2 = { name: "ali2", age: 25 };
       localStorage.setItem("object2", JSON.stringify(obj2));
-      console.log(JSON.parse(localStorage.getItem("object2"))); // >{name: 'ali2', age: 23}
+      console.log(JSON.parse(localStorage.getItem("object2"))); // > {name: 'ali2', age: 25}
     </script>
   </body>
 </html>
-
-<!-- div.test{test$}*5 -->
-<!-- div#test$*5{test$} -->
