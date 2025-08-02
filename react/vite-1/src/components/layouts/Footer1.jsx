@@ -1,4 +1,4 @@
-function Footer({ name }) {
+function Footer1({ name }) {
   const handleDonate = () => {
     alert("thank for donating us");
   };
@@ -6,7 +6,7 @@ function Footer({ name }) {
   return (
     <div>
       <h2>Footer Section 1:</h2>
-      <a href="">myEmail</a>
+      <a href="">myEmail-</a>
       <a href="">myEmail</a>
       <p>thanks {name} </p>
 
@@ -17,4 +17,4 @@ function Footer({ name }) {
   );
 }
 
-export default Footer;
+export default Footer1;

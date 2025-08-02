@@ -18,7 +18,7 @@ function Footer2() {
     setIsRed(!isRed);
   };
 
-  const [clr2, setColor2] = useState("green");
+  const [clr2, setColor2] = useState();
   const handleME = () => {
     setColor2("red");
   };
@@ -32,7 +32,7 @@ function Footer2() {
 
       {/* ----------> state <---------- */}
       <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>increse</button>
+      <button onClick={() => setCount(count + 1)}>increse</button> 
 
       <p>{mas}</p>
       <button onClick={changeMas}>change mas</button>

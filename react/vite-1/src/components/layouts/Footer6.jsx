@@ -3,7 +3,7 @@ import { useState } from "react";
 const Footer6 = () => {
   const [auth, setAuth] = useState(false);
   const handleLoge = () => {
-    setAuth(!auth);
+    setAuth((prev) => !prev);
   };
 
   if (auth) {

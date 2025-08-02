@@ -27,7 +27,7 @@ function Main() {
         <CourseBox1 {...courseThree} />
 
         {/* ----------> CourseBox-2 <---------- */}
-        <CourseBox2 course={{ title: "react course", time: "1:10" }} />
+        <CourseBox2 course={{ title: "css course", time: "1:10" }} />
         <CourseBox2 course={courseThree} />
         <CourseBox2 course={courseThree} />
 

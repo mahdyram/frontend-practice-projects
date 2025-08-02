@@ -1,5 +1,4 @@
 import { useState } from "react";
-import CourseBox from "./CourseBox";
 
 const Footer4 = () => {
   let load1 = true;
@@ -13,12 +12,12 @@ const Footer4 = () => {
   const [load4, setLoad4] = useState(true);
   const handleChange4 = () => {
     setLoad4(load4 ? false : true);
-    // setLoad4(!load4);
   };
 
   const [load5, setLoad5] = useState(true);
   const handleChange5 = () => {
     setLoad5((prevState) => !prevState);
+    // setLoad5(!load5);
   };
 
   return (
@@ -40,7 +39,7 @@ const Footer4 = () => {
 
       <button onClick={handleChange5}>change</button>
       <span>{load5 ? "loaded" : "not load"}</span>
-      <hr className="hr1"/>
+      <hr className="hr1" />
     </div>
   );
 };

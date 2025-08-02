@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import CourseBox from "./CourseBox";
 
-const Footer7 = () => {
+const Footer8 = () => {
   let courseList = [
     { id: 1, title: "css course", description: "css description" },
     { id: 2, title: "js course", description: "js description" },
@@ -9,7 +9,7 @@ const Footer7 = () => {
   ];
 
   const [courseL, setCourseL] = useState(courseList);
-  const [courseTitle, setCourseTitle] = useState("");
+  const inputRef = useRef();
 
   const handleDelete = (id) => {
     setCourseL(courseL.filter((i) => i.id !== id));
@@ -17,26 +17,19 @@ const Footer7 = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    const id = Math.floor(Math.random() * 1000);
-    const newProduct = { id: id, title: courseTitle };
-    if (courseTitle.trim() != "") {
-      setCourseL((prev) => [...prev, newProduct]);
-      setCourseTitle("");
+    const title = inputRef.current.value.trim();
+    if (title) {
+      const newItem = { id: Date.now(), title };
+      setCourseL((prev) => [...prev, newItem]);
+      inputRef.current.value = "";
     }
   };
 
   return (
     <div>
-      <h2>Footer Section 7:</h2>
+      <h2>Footer Section 8:</h2>
       <form className="form1" onSubmit={submitForm}>
-        <div>
-          <input
-            type="text"
-            placeholder="add product"
-            value={courseTitle}
-            onChange={(e) => setCourseTitle(e.target.value)}
-          />
-        </div>
+        <input type="text" placeholder="add product" ref={inputRef} />
         <button type="submit">Add</button>
       </form>
 
@@ -52,4 +45,4 @@ const Footer7 = () => {
   );
 };
 
-export default Footer7;
+export default Footer8;
