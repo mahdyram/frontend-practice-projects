@@ -104,6 +104,10 @@ document.getElementById("liveInput0").addEventListener("change", function () {
   document.getElementById("output0").innerText = "You typed: " + this.value;
 });
 
+// document.getElementById("liveInput0").addEventListener("change", function (e) {
+//   document.getElementById("output0").innerText = "You typed: " + e.target.value;
+// });
+
 // ----------------------------------------
 // input
 

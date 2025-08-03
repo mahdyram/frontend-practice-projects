@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-folder_path = r"D:\now\React"
+folder_path = r"D:\now\web\react-sharifi"
 total_duration = 0
 
 for filename in os.listdir(folder_path):
