@@ -28,7 +28,7 @@ a:hover {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 7px 15px;
   background-color: #1e88e5;
   color: #fff;
   font-size: 1rem;
@@ -65,4 +65,14 @@ button:active {
   line-height: 13px;
   background-color: darkred;
   font-size: 1rem;
+}
+
+.divBox1 {
+  width: 300px;
+  height: 150px;
+  line-height: 150px;
+  background-color: #ffddcc;
+  margin-top: 20px;
+  border: 2px dashed #333;
+  cursor: pointer;
 }

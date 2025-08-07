@@ -31,6 +31,17 @@ console.log(typeof inf2); // number
 console.log(inf1); // Infinity
 console.log(inf2); // Infinity
 
+// --------------------
+
+let num1 = 23000000;
+console.log(num1);
+
+let num2 = 23_000_000;
+console.log(num2);
+
+let num3 = 23e6;
+console.log(num3);
+
 // ----------------------------------------
 
 const bigInt = 1234567890123456789012345678901234567890n;
@@ -123,6 +134,9 @@ console.log(`you can't`); // you can't
 
 console.log("i am \tmahdy"); // i am 	mahdy
 console.log("i am \nmahdy");
+
+console.log(`hello
+   ali`);
 
 // ========================================
 // Literal & Wrapper

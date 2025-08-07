@@ -51,18 +51,20 @@ console.log(eval(txt)); // 34
 // ----------------------------------------
 // parse
 
+console.log("7.8"); // 7.8
+console.log(parseInt("7.8")); // 7
+
+console.log(parseInt("7.8fsadfa")); // 7
+console.log(parseInt("7.8  fsadfa")); // 7
+console.log(parseInt("7 4 23")); // 7
+
+// --------------------
+
 let x = "13";
 console.log(x + 5); // 135
 
 x = parseInt(x);
 console.log(x + 5); // 18
-
-// --------------------
-
-let x = "7.4";
-
-console.log(x); // 7.4
-console.log(parseInt(x)); // 7
 
 // --------------------
 
@@ -292,6 +294,37 @@ console.log(result); // true
 let nums2 = [1, 4, 5, 6, 11, 13, "14", 24];
 let result2 = nums2.every((item) => typeof item === "number" && !isNaN(item));
 console.log(result2); // false
+
+// ----------------------------------------
+// flat
+
+const arr = [1, 2, [3, 4]];
+const result = arr.flat();
+console.log(result); // [1, 2, 3, 4]
+
+// --------------------
+
+const arr = [1, 2, [3, 4, [5, 6]]];
+console.log(arr.flat()); // [1, 2, 3, 4, [5, 6]]
+console.log(arr.flat(2)); // [1, 2, 3, 4, 5, 6]
+
+// --------------------
+
+const arr = [1, 2, 3];
+const result = arr.map((x) => [x * 2]);
+console.log(result); // [ [2], [4], [6] ]
+console.log(result.flat()); // [2, 4, 6]
+
+// --------------------
+
+const arr = [1, 2, 3];
+const result = arr.flatMap((x) => [x * 2]);
+console.log(result); // [2, 4, 6]
+
+// --------------------
+
+const arr = [1, [2, [3, [4]]]];
+console.log(arr.flat(Infinity)); // [1, 2, 3, 4]
 
 // ----------------------------------------
 // indexOf
@@ -588,6 +621,7 @@ console.log(chars); // ["h", "e", "l", "l", "o"]
 // --------------------
 
 console.log("hello".split()); // [ 'hello' ]
+console.log("hello".split("")); // [ 'h', 'e', 'l', 'l', 'o' ]
 console.log("hello".split(",")); // [ 'hello' ]
 
 // --------------------
@@ -601,6 +635,7 @@ console.log(words); // ["I", "love", "JavaScript"]
 let data = "apple,banana,cherry";
 let fruits = data.split(",");
 console.log(fruits); // ["apple", "banana", "cherry"]
+console.log(fruits.join(" ")); // "apple banana cherry"
 
 // --------------------
 
@@ -639,13 +674,19 @@ console.log(text.search("script")); // -1
 console.log(text.search(/script/i)); // 11 -> regex
 console.log(text.search("Script")); // 11
 
-// --------------------
+// ----------------------------------------
+// indexOf
 
-let str = "hello javaScript";
+let str = "hello javaScript and java";
 
 console.log(str.search("java")); // 6
 
 console.log(str.indexOf("java")); // 6
+
+console.log(str.indexOf("java", 7)); // 21
+console.log(str.indexOf("java", str.indexOf("java") + 1)); // 21
+
+console.log(str.lastIndexOf("java")); // 21
 
 // ----------------------------------------
 // replace
@@ -667,6 +708,7 @@ let msg = "one two one";
 console.log(msg.replace("one", "1")); // 1 two one
 
 console.log(msg.replace(/one/g, "1")); // 1 two 1  ->  regex
+console.log(msg.replace(/One/gi, "1")); // 1 two 1  ->  regex
 
 console.log(msg.replaceAll("one", "1")); // 1 two 1
 
@@ -678,7 +720,7 @@ let newStr = str.replace(/\$(\d+)/, (match, p1) => "$" + parseInt(p1) * 2);
 console.log(newStr); // Price: $10
 
 // ----------------------------------------
-// substring & slice [)
+// substring & slice [start, end)
 
 let str = "JavaScript";
 
@@ -700,17 +742,41 @@ console.log(str.slice(3)); // aScript
 
 console.log(str.slice(-6)); // Script
 console.log(str.slice(-9)); // avaScript
+console.log(str.slice(0, -6)); // Java
 
 // ----------------------------------------
-// some simple method
+// padStart & padEnd
+
+console.log("ali".padStart(5)); // "  ali"
+console.log("ali".padStart(5, "o")); // "ooali"
+console.log("ali".padStart(5, 1)); // "11ali"
+
+console.log("ali".padStart(4, "1-")); // "1ali"
+console.log("ali".padStart(5, "1-")); // "1-ali"
+
+console.log("7".padStart(3, "0")); // 007
+console.log("37".padStart(3, "0")); // 037
+console.log("456".padStart(3, "0")); // 456
+
+// --------------------
+
+console.log("ali".padEnd(6, "f")); // "alifff"
+console.log("ali".padEnd(4, "ram")); // "11ali"
+console.log("ali".padEnd(5, "ram")); // "11ali"
+console.log("ali".padEnd(6, "ram")); // "11ali"
+
+// ----------------------------------------
+// some simple methods
 
 console.log("   hello  js   ".trim()); // "hello  js"
-
-console.log("hello".includes("h")); // true
-console.log("I love JS".includes("love")); // true
+console.log("   hello  js   ".trimStart()); // "hello  js   "
+console.log("   hello  js   ".trimEnd()); // "   hello  js"
 
 console.log("hello".toUpperCase()); // HELLO
 console.log("HELLO".toLowerCase()); // hello
+
+console.log("hello".includes("h")); // true
+console.log("I love JS".includes("love")); // true
 
 console.log("JavaScript".startsWith("Java")); // true
 console.log("script.js".endsWith(".js")); // true
