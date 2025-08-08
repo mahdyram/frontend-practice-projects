@@ -1,31 +1,14 @@
-import { useEffect, useState } from "react";
-
-function Child() {
-  useEffect(() => {
-    const clickHandler = () => {
-      console.log("🖱 Window clicked");
-    };
-
-    window.addEventListener("click", clickHandler);
-    console.log("🟢 Event listener added");
-
-    return () => {
-      window.removeEventListener("click", clickHandler);
-      console.log("🔴 Event listener removed");
-    };
-  }, []);
-
-  return <div>Click anywhere in window</div>;
-}
+import { useEffect } from "react";
 
 export default function A15() {
-  const [show, setShow] = useState(true);
+  useEffect(() => {
+    const clickHandler = () => console.log("clicked window");
+    window.addEventListener("click", clickHandler);
+  }, []);
 
   return (
     <div>
-      <h2>A15</h2>
-      <button onClick={() => setShow(!show)}>Toggle Child Component</button>
-      {show && <Child />}
+      <h2>without unmount - A15</h2>
       <hr className="hr1" />
     </div>
   );

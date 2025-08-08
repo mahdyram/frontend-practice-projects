@@ -22,69 +22,30 @@ let test = "price";
 product[test] = 88;
 console.log(product.price); // 88
 
-// ----------------------------------------
-// Destructuring
+// --------------------
 
-const product = {
-  title: "pen",
-  price: 77,
-  exist: true,
+const user = {
+  name: "ali",
+  age: 24,
+  helloUser() {
+    console.log("hello user");
+    console.log(`hello ${this.name}`);
+  },
 };
 
-// console.log(exist);  =>  exist is not defined
-console.log(product["exist"]); // true
-console.log(product.exist); // true
-
-const { exist } = product; // Destructuring (=== const exist = product.exist)
-console.log(exist); // true
+console.log(user);
+console.log(user.age);
+console.log(user.helloUser);
+user.helloUser();
 
 // --------------------
 
-const product = {
-  title: "pen",
-  price: 77,
-  exist: true,
-};
+let fName = "ali";
+let lName = "ram";
+let age = 34;
 
-const { tit, exist } = product;
-console.log(tit); // undefined
-console.log(exist); // true
-
-// --------------------
-
-const product = {
-  title: "pen",
-  price: 77,
-  exist: true,
-};
-
-const { title, exist } = product;
-console.log(title); // pen
-console.log(exist); // true
-
-// --------------------
-// change-name
-
-const product = {
-  title: "pen",
-  price: 77,
-  exist: true,
-};
-
-const { title: t, exist } = product;
-console.log(t); // "pen"
-console.log(exist); // true
-
-// --------------------
-// default-value
-
-const product = {
-  title: "pen",
-};
-
-const { title, price = 70 } = product;
-console.log(title); // "pen"
-console.log(price); // 70
+let obj = { fName, lName, age };
+console.log(obj); // { fName: 'ali', lName: 'ram', age: 34 }
 
 // ----------------------------------------
 // some methods of objects
@@ -184,6 +145,264 @@ console.log(obj.user); // [ 'Ali', 'Ram', 25, { isActive: true, isAdmin: false }
 console.log(obj.user[0]); // Ali
 console.log(obj.user[3]); // { isActive: true, isAdmin: false }
 console.log(obj.user[3].isAdmin); // false
+
+// ========================================
+// Destructuring
+
+const product = {
+  title: "pen",
+  price: 77,
+  exist: true,
+};
+
+const p1Title = product.title;
+const p1Price = product.price;
+const p1Exist = product.exist;
+
+console.log(p1Title, p1Price, p1Exist); // pen 77 true
+
+// --------------------
+
+const product = {
+  title: "pen",
+  price: 77,
+  exist: true,
+};
+
+const { title, price, exist } = product;
+
+console.log(title, price, exist); // pen 77 true
+
+// ----------------------------------------
+
+const product = {
+  title: "pen",
+  price: 77,
+  exist: true,
+};
+
+// console.log(exist);  =>  exist is not defined
+console.log(product["exist"]); // true
+console.log(product.exist); // true
+
+const { exist } = product; // Destructuring (=== const exist = product.exist)
+console.log(exist); // true
+
+// --------------------
+
+const product = {
+  title: "pen",
+  price: 77,
+  exist: true,
+};
+
+const { titl, exist } = product;
+console.log(titl); // undefined
+console.log(exist); // true
+
+// --------------------
+
+const product = {
+  title: "pen",
+  price: 77,
+  exist: true,
+};
+
+const { exist, title } = product;
+console.log(title); // pen
+console.log(exist); // true
+
+// ----------------------------------------
+// change-name
+
+const product = {
+  title: "pen",
+  price: 77,
+  exist: true,
+};
+
+const { title: p1Title, exist } = product;
+console.log(p1Title); // "pen"
+console.log(exist); // true
+
+// ----------------------------------------
+// default-value
+
+const product = {
+  title: "pen",
+  price: 70,
+};
+
+const { title, price = 30 } = product;
+console.log(price); // 70
+
+// --------------------
+
+const product = {
+  title: "pen",
+  price: 70,
+};
+
+const { title, price, exist } = product;
+console.log(exist); // undefined
+
+// --------------------
+
+const product = {
+  title: "pen",
+  price: 70,
+};
+
+const { title, price, exist = true } = product;
+console.log(exist); // true
+
+// --------------------
+
+const product = {
+  title: "pen",
+  price: 70,
+};
+
+const { title, price, exist: ext = true } = product;
+console.log(ext); // true
+
+// ----------------------------------------
+// rest-operator
+
+const product = {
+  title: "pen",
+  count: 240,
+  price: 77,
+  exist: true,
+};
+
+const { price, ...rest } = product;
+console.log(price); // 77
+console.log(rest); // { title: 'pen', count: 240, exist: true }
+
+// --------------------
+
+const product = {
+  title: "pen",
+  count: 240,
+  price: 77,
+  exist: true,
+};
+
+const { title, price, exist, ...rest } = product;
+console.log(rest); // { count: 240 }
+
+// --------------------
+
+const product = {
+  title: "pen",
+  price: 77,
+  exist: true,
+  features: {
+    color: "red",
+    height: 30,
+  },
+};
+
+const { features } = product;
+console.log(features); // { color: 'red', height: 30 }
+
+// --------------------
+
+const product = {
+  title: "pen",
+  price: 77,
+  exist: true,
+  features: {
+    color: "red",
+    height: 30,
+  },
+};
+
+const { features } = product;
+console.log(features); // { color: 'red', height: 30 }
+
+const { color, height } = features;
+console.log(color); // red
+console.log(height); // 30
+
+// --------------------
+
+const product = {
+  title: "pen",
+  price: 77,
+  exist: true,
+  features: {
+    color: "red",
+    height: 30,
+  },
+};
+
+const {
+  features: { color },
+} = product;
+console.log(color); // red
+
+// --------------------
+
+const product = {
+  title: "pen",
+  price: 77,
+  exist: true,
+  features: {
+    color: "red",
+    height: 30,
+  },
+};
+
+const {
+  features: { color, ...rest },
+} = product;
+console.log(color); // red
+console.log(rest); // { height: 30 }
+
+// ----------------------------------------
+// spread-operator
+
+/*
+  shabih rest-operator ast vali kamel yek chiz digar ast,
+  rest dar samt chap va baraye taerif bekar miraft,
+  vali spread dar samte rast va baraye copy kardan dar
+  yek motaghayere digar bekar miravad.
+*/
+
+const arr1 = ["ali", "sara"];
+const arr2 = ["negar", ...arr1, "amin"];
+
+console.log(arr2); // [ 'negar', 'ali', 'sara', 'amin' ]
+
+// --------------------
+
+const arr = ["ali", "sara", "negar"];
+const obj = { ...arr };
+
+console.log(obj); // { '0': 'ali', '1': 'sara', '2': 'negar' }
+
+// --------------------
+
+const obj1 = {
+  foo: "bar",
+  x: 20,
+};
+
+const obj2 = {
+  foo: "baz",
+  y: 70,
+};
+
+const clonedObj1 = { ...obj1 };
+console.log(clonedObj1);
+
+const megedObj12 = { ...obj1, ...obj2 };
+console.log(megedObj12); // { foo: 'baz', x: 20, y: 70 }
+
+const megedObj21 = { ...obj2, ...obj1 };
+console.log(megedObj21); // { foo: 'bar', y: 70, x: 20 }
 
 // ========================================
 // copy {Stack & Heap}

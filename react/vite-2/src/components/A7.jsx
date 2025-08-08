@@ -1,19 +1,34 @@
 import { useState } from "react";
 
-// some side-effects:
-// -Page title
-// -Local Storage
-// -API
-
 export default function A7() {
-  const [count, setCount] = useState(0);
+  const [task, setTask] = useState("");
+  const [taskList, setTaskList] = useState([]);
 
-  document.title = count;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (task.trim() === "") return;
+    setTaskList((prev) => [...prev, task]);
+    setTask("");
+  };
 
   return (
     <div>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-      <p>You clicked -{count}- times</p>
+      <h2>Tasks List 2 (with Form)</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+        />
+        <button type="submit">Add</button>
+      </form>
+      <br />
+
+      <ul>
+        {taskList.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
       <hr className="hr1" />
     </div>
   );

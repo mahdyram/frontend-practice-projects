@@ -5,8 +5,8 @@ export default function A1() {
 
   let h2Style = {
     display: "inline-block",
-    borderRadius: "7px",
-    padding: "10px",
+    borderRadius: 10,
+    padding: 20,
     backgroundColor: bg,
   };
 

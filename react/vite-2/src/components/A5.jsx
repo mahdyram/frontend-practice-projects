@@ -1,34 +1,21 @@
-import { useState } from "react";
+import { useRef } from "react";
 
 export default function A5() {
-  const [task, setTask] = useState("");
-  const [taskList, setTaskList] = useState([]);
+  const ref = useRef(0);
+  // ref = {
+  //   current: 0,
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (task.trim() === "") return;
-    setTaskList((prev) => [...prev, task]);
-    setTask("");
+  const handleClick = () => {
+    ref.current++;
+    alert(`counter value : ${ref.current}`);
   };
 
   return (
     <div>
-      <h2>Tasks List 2 (with Form)</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-        />
-        <button type="submit">Add</button>
-      </form>
-      <br />
-
-      <ul>
-        {taskList.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+      <h2>without re-rendering</h2>
+      <button onClick={handleClick}>increment and show</button>
+      <p>{`counter value : ${ref.current}`}</p>
       <hr className="hr1" />
     </div>
   );

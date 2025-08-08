@@ -21,6 +21,19 @@ export default function A3() {
           <li key={i.id}>{i.name}</li>
         ))}
       </ul>
+
+      <ul>
+        {users.map((item) => {
+          const { id, name } = item;
+          return <li key={id}>{name}</li>;
+        })}
+      </ul>
+
+      <ul>
+        {users.map(({ id, name }) => (
+          <li key={id}>{name}</li>
+        ))}
+      </ul>
       <hr className="hr1" />
     </div>
   );

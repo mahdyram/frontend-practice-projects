@@ -1,44 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 
-function Child() {
-  const boxRef = useRef(null);
-
+export default function A16() {
   useEffect(() => {
-    const clickHandler = () => {
-      console.log("🖱 Box clicked");
-    };
+    const clickHandler = () => console.log("clicked window");
+    window.addEventListener("click", clickHandler);
 
-    const box = boxRef.current;
-    if (box) {
-      box.addEventListener("click", clickHandler);
-      console.log("🟢 Event listener added");
-    }
-
+    // Clean-up function
     return () => {
-      if (box) {
-        box.removeEventListener("click", clickHandler);
-        console.log("🔴 Event listener removed");
-      }
+      window.removeEventListener("click", clickHandler);
+      console.log("unmount");
     };
   }, []);
 
   return (
-    <div ref={boxRef} className="divBox1">
-      Click inside this box
-    </div>
-  );
-}
-
-export default function A16() {
-  const [show, setShow] = useState(true);
-
-  return (
     <div>
-      <h2>A16</h2>
-      <div style={{ display: "inline-block" }}>
-        <button onClick={() => setShow(!show)}>Toggle Child Component</button>
-        {show && <Child />}
-      </div>
+      <h2>with unmount - A16</h2>
       <hr className="hr1" />
     </div>
   );

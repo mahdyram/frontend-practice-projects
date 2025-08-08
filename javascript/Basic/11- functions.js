@@ -137,35 +137,103 @@ const result6 = addProduct6("Pen", 55);
 console.log(result6); // Title: Pen - Price: 55
 
 // =======================================
-// some operators
+// Destructuring
 
-// spread
-
-const names = ["ali", "mohammad", "reza", "saeed"];
-const test = ["first", "last"];
-
-test.splice(1, 0, names);
-console.log(test); // [ 'first', [ 'ali', 'mohammad', 'reza', 'saeed' ], 'last' ]
-
-// --------------------
-
-const names = ["ali", "mohammad", "reza", "saeed"];
-const test = ["first", "last"];
-
-for (let i of names.reverse()) {
-  test.splice(1, 0, i);
+function printFullName(person) {
+  console.log(`${person.fName} - ${person.lName}`);
 }
-console.log(test); // ['first', 'ali', 'mohammad', 'reza', 'saeed', 'last']
+
+const person = { fName: "ali", lName: "ram", age: 31 };
+printFullName(person); // ali - ram
 
 // --------------------
 
-const names2 = ["ali", "mohammad", "reza", "saeed"];
-const test2 = ["first", "last"];
+function printFullName(person) {
+  const { fName, lName } = person;
+  console.log(`${fName} - ${lName}`);
+}
 
-test2.splice(1, 0, ...names2);
-console.log(test2);
+const person = { fName: "ali", lName: "ram", age: 31 };
+printFullName(person); // ali - ram
 
 // --------------------
+
+function printFullName({ fName, lName }) {
+  console.log(`${fName} - ${lName}`);
+}
+
+const person1 = { fName: "ali", lName: "ram", age: 31 };
+const person2 = { fName: "negar" };
+
+printFullName(person1); // ali - ram
+printFullName(person2); // negar - undefined
+// printFullName(); // TypeError: Cannot destructure property 'fName' of 'undefined' as it is undefined.
+
+// --------------------
+
+function printFullName({ fName, lName }, message) {
+  console.log(`${fName} - ${lName} : ${message}`);
+}
+
+const person1 = { fName: "ali", lName: "ram", age: 31 };
+printFullName(person1, "is the best"); // ali - ram : is the best
+
+// --------------------
+
+function printFullName({ fName = "?", lName = "??" } = {}) {
+  console.log(`${fName} - ${lName}`);
+}
+
+const person1 = { fName: "ali", lName: "ram", age: 31 };
+const person2 = { fName: "negar" };
+const person3 = {};
+
+printFullName(person1); // ali - ram
+printFullName(person2); // negar - ??
+printFullName(person3); // ? - ??
+printFullName(); // ? - ??
+
+/*
+`= {}` bad az parameter dar tabe baes mishe agar kol argument `undefined` bood,
+ba ye object khali jaygozin beshe (va error destructuring rooye `undefined` pish nayad).
+*/
+
+// --------------------
+
+function printFullName({ fName = "?", lName = "??" } = {}, message) {
+  console.log(`${fName} - ${lName} : ${message}`);
+}
+
+const person1 = { fName: "ali", lName: "ram", age: 31 };
+const person2 = { fName: "negar" };
+
+printFullName(person1, "is the best"); // ali - ram : is the best
+printFullName(person2, "is greate"); // negar - ?? : is greate
+
+// --------------------
+
+const addTwoNumbers = ({ numOne = 3, numTwo = 4 } = {}) => {
+  console.log(numOne + numTwo);
+};
+
+addTwoNumbers({ numTwo: 7 }); // 10
+addTwoNumbers({ numOne: 5, numTwo: 7 }); // 12
+
+const obj = { numOne: 8, numTwo: 6 };
+addTwoNumbers({ ...obj }); // 14
+
+// --------------------
+
+function callbackFunc(e) {
+  // const firstName = e.target.elements.firstName;
+  // const lastName = e.target.elements.lastName;
+  // const age = e.target.elements.age;
+
+  const { firstName, lastName, age } = e.target.elements;
+}
+
+// ----------------------------------------
+// spread-operators
 
 const addTwoNumbers = (numOne = 3, numTwo = 4) => console.log(numOne + numTwo);
 
@@ -183,20 +251,20 @@ const nums1 = [5, 7, 2];
 const nums2 = [3, 6];
 addNumbers(...nums1, ...nums2); // 23
 
-// --------------------
-// Destructuring
-
-const addTwoNumbers = ({ numOne = 3, numTwo = 4 } = {}) =>
-  console.log(numOne + numTwo);
-
-addTwoNumbers({ numTwo: 7 }); // 10
-addTwoNumbers({ numOne: 5, numTwo: 7 }); // 12
-
-const obj = { numOne: 8, numTwo: 6 };
-addTwoNumbers({ ...obj }); // 14
-
 // ----------------------------------------
-// rest
+// rest-parameters
+
+const f = (a, b, ...args) => {
+  console.log("a: ", a);
+  console.log("b: ", b);
+  console.log("other args: ", args);
+};
+
+f(4);
+f(4, 7);
+f(4, 7, 8, 3, 4, 2);
+
+// --------------------
 
 const func = (...params) => console.log(params);
 

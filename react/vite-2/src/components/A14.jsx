@@ -1,25 +1,36 @@
-import { useEffect, useState } from "react";
-
-function Child() {
-  useEffect(() => {
-    console.log("🟢 Child mounted");
-
-    return () => {
-      console.log("🔴 Child unmounted");
-    };
-  }, []);
-
-  return <div>I'm the child</div>;
-}
+import { useState, useEffect } from "react";
 
 export default function A14() {
-  const [show, setShow] = useState(true);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true); // loading flag
+
+  useEffect(() => {
+    const getPosts = async () => {
+      try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const data = await res.json();
+        setPosts(data.slice(0, 10));
+      } catch (err) {
+        console.error("Fetch error:", err);
+      } finally {
+        setLoading(false); // success or failure, loading is over
+      }
+    };
+    getPosts();
+  }, []);
+
+  if (loading) return <h2>Loading data ...</h2>;
+
+  if (posts.length === 0) return <h2>No posts found.</h2>;
 
   return (
     <div>
-      <h2>A14</h2>
-      <button onClick={() => setShow(!show)}>Toggle Child Component</button>
-      {show && <Child />}
+      <h2>Posts List:</h2>
+      <ul>
+        {posts.map((item) => (
+          <li key={item.id}>{item.title}</li>
+        ))}
+      </ul>
       <hr className="hr1" />
     </div>
   );

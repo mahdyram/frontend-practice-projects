@@ -108,13 +108,38 @@ console.log(arr, test); // [ 30, 40, 50 ] 20
 
 // --------------------
 
-const arr = [1, 2, 3, 4, 5, 6, 7];
+const arr1 = [1, 3, 4];
+const arr2 = [5, 6, "ali"];
 
+console.log(arr1.concat(arr2)); // [ 1, 3, 4, 5, 6, 'ali' ]
+
+// --------------------
+
+const p1 = [10, 20, 30];
+const p2 = [40, 50, 60];
+
+const c1 = [p1 + p2];
+console.log(c1); // [ '10,20,3040,50,60' ]
+
+const c2 = [p1, p2];
+console.log(c2); // [ [ 10, 20, 30 ], [ 40, 50, 60 ] ]
+
+const c3 = p1.concat(p2);
+console.log(c3); // [ 10, 20, 30, 40, 50, 60 ]
+
+const c4 = [...p1, ...p2];
+console.log(c4); // [ 10, 20, 30, 40, 50, 60 ]
+
+// ----------------------------------------
+// splice(start, deleteCount?, ...add)
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
 arr.splice(2, 1);
 console.log(arr); // [ 1, 2, 4, 5, 6, 7 ]
 
+const arr = [1, 2, 3, 4, 5, 6, 7];
 let test = arr.splice(2, 3);
-console.log(arr, test); // [ 1, 2, 7 ] [ 4, 5, 6 ]
+console.log(arr, test); // [ 1, 2, 6, 7 ] [ 3, 4, 5 ]
 
 // --------------------
 
@@ -154,15 +179,136 @@ const arr3 = [1, 2, 3, 4, 5];
 arr3.splice(2, 1, "ali");
 console.log(arr3); // [ 1, 2, 'ali', 4, 5 ]
 
+// ========================================
+// Destructuring
+
+const product = ["book", 99, false];
+console.log(product);
+
+const name = product[0];
+const price = product[1];
+const valid = product[2];
+
+console.log(name); // book
+console.log(price); // 99
+console.log(valid); // false
+
 // --------------------
 
-const arr1 = [1, 3, 4];
-const arr2 = [5, 6, "ali"];
+const product = ["book", 99, false];
+console.log(product);
 
-console.log(arr1.concat(arr2)); // [ 1, 3, 4, 5, 6, 'ali' ]
+const [name, price, valid] = product;
 
-// ========================================
-// destructuring assignment
+console.log(name); // book
+console.log(price); // 99
+console.log(valid); // false
+
+// ----------------------------------------
+
+const product = ["book", 99, false];
+console.log(product);
+
+const [name1] = product;
+console.log(name1); // book
+
+const [name2, price2] = product;
+console.log(name2, price2); // book 99
+
+const [, price3] = product;
+console.log(price3); // 99
+
+const [name4, , valid4] = product;
+console.log(name4, valid4); // book false
+
+const [, , valid] = product;
+console.log(valid); // false
+
+const [name5, price5, valid5] = product;
+console.log(valid5); // false
+
+const [name6, ...other] = product;
+console.log(name6); // book
+console.log(other); // [ 99, false ]
+
+// ----------------------------------------
+// rest-operator
+
+const names = ["ali", "sara"];
+
+const [n1, ...rest] = names;
+console.log(n1, rest); // ali [ 'sara' ]
+
+// --------------------
+
+const names = ["ali", "sara", "amin"];
+
+const [n1, ...rest] = names;
+console.log(n1, rest); // ali [ 'sara', 'amin' ]
+
+// --------------------
+
+const names = ["ali", "sara", "amin"];
+
+const [n1, , ...rest] = names;
+console.log(n1, rest); // ali [ 'amin' ]
+// --------------------
+
+const names = ["ali", "sara", "amin"];
+
+const [, ...rest] = names;
+console.log(rest); // [ 'sara', 'amin' ]
+
+// --------------------
+
+const names = ["ali", "mohammad", "reza", "saeed"];
+
+const test1 = ["first", "last"];
+test1.splice(1, 0, names);
+console.log(test1); // [ 'first', [ 'ali', 'mohammad', 'reza', 'saeed' ], 'last' ]
+
+const test2 = ["first", "last"];
+for (let i of [...names].reverse()) {
+  test2.splice(1, 0, i);
+}
+console.log(test2); // ['first', 'ali', 'mohammad', 'reza', 'saeed', 'last']
+
+const test3 = ["first", "last"];
+test3.splice(1, 0, ...names);
+console.log(test3); // [ 'first', 'ali', 'mohammad', 'reza', 'saeed', 'last' ]
+
+// ----------------------------------------
+// default-value
+
+const names = ["ali", "sara", "amin"];
+
+const [n1, n2] = names;
+console.log(n1, n2); // ali sara
+
+const [i1 = "negar", i2] = names;
+console.log(i1, i2); // ali sara
+
+// --------------------
+
+const names = [undefined, "sara", "amin"];
+
+const [n1, n2] = names;
+console.log(n1, n2); // undefined sara
+
+const [i1 = "negar", i2] = names;
+console.log(i1, i2); // negar sara
+
+// --------------------
+
+const names = ["ali", "sara"];
+
+const [n1, n2, n3] = names;
+console.log(n1, n2, n3); // ali sara undefined
+
+const [i1, i2, i3 = "negar"] = names;
+console.log(i1, i2, i3); // ali sara negar
+
+// ----------------------------------------
 
 let x = 7;
 let y = 4;
@@ -180,41 +326,6 @@ console.log(f1, f2);
 
 [f1, f2] = [f2, f1];
 console.log(f1, f2);
-
-// --------------------
-
-const product2 = ["book", 99, false];
-console.log(product2);
-
-const [name1] = product2;
-console.log(name1); // book
-
-const [name2, price2] = product2;
-console.log(name2, price2); // book 99
-
-const [name3, price3, valid3] = product2;
-console.log(valid3); // false
-
-const [name4, ...other] = product2;
-console.log(name4); // book
-console.log(other); // [ 99, false ]
-
-// --------------------
-
-const p1 = [10, 20, 30];
-const p2 = [40, 50, 60];
-
-const c1 = [p1 + p2];
-console.log(c1);
-
-const c2 = [p1, p2];
-console.log(c2);
-
-const c3 = p1.concat(p2);
-console.log(c3);
-
-const c4 = [...p1, ...p2];
-console.log(c4);
 
 // ========================================
 // practice

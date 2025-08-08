@@ -1,16 +1,32 @@
-import { useState, useEffect } from "react";
+import { useRef, useState } from "react";
 
 export default function A8() {
-  const [count, setCount] = useState(0);
+  const inputRef = useRef(); // refrence to input (be jaye value va onChange dar input)
+  const [taskList, setTaskList] = useState([]);
 
-  useEffect(() => {
-    document.title = count;
-  }, [count]); // har bar ke count taghir kone, in ejra mishe.
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputRef.current.value.trim() === "") return;
+    setTaskList((prev) => [...prev, inputRef.current.value]);
+    inputRef.current.value = "";
+  };
 
   return (
     <div>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-      <p>You clicked -{count}- times</p>
+      <h2>Tasks List 3 (Form + useRef)</h2>
+
+      <form onSubmit={handleSubmit}>
+        <input type="text" ref={inputRef} />
+        <button type="submit">Add</button>
+      </form>
+      <br />
+
+      <ul>
+        {taskList.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+
       <hr className="hr1" />
     </div>
   );

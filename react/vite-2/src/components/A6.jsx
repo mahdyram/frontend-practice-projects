@@ -1,24 +1,24 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export default function A6() {
-  const inputRef = useRef(); // refrence to input (be jaye value va onChange dar input)
+  const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (inputRef.current.value.trim() === "") return;
-    setTaskList((prev) => [...prev, inputRef.current.value]);
-    inputRef.current.value = "";
+  const handleClick = () => {
+    if (task.trim() === "") return;
+    setTaskList((prev) => [...prev, task]);
+    setTask("");
   };
 
   return (
     <div>
-      <h2>Tasks List 3 (Form + useRef)</h2>
-
-      <form onSubmit={handleSubmit}>
-        <input type="text" ref={inputRef} />
-        <button type="submit">Add</button>
-      </form>
+      <h2>Tasks List 1 (without Form)</h2>
+      <input
+        type="text"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+      />
+      <button onClick={handleClick}>Add</button>
       <br />
 
       <ul>
@@ -26,7 +26,6 @@ export default function A6() {
           <li key={index}>{item}</li>
         ))}
       </ul>
-
       <hr className="hr1" />
     </div>
   );
