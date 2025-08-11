@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/frontend-practice-projects/Projects/intermediate-todo1/",
+  base: "/intermediate-todo1/",
   plugins: [react(), tailwindcss()],
 });

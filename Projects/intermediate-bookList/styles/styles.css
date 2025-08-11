@@ -25,8 +25,8 @@ body {
 /* -------------> container <-------------- */
 
 #container {
-  width: 90%;
-  max-width: 900px;
+  width: 70%;
+  max-width: 800px;
   margin: 30px auto 50px;
   border-radius: 7px;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
@@ -44,7 +44,7 @@ h2 {
 
 #header {
   background: #eee;
-  padding: 10px 0;
+  padding: 1px 0;
 }
 
 #header h1,
@@ -57,7 +57,7 @@ h2 {
 #header input {
   width: 90%;
   max-width: 300px;
-  margin: 20px auto;
+  margin: 10px auto;
   display: block;
   padding: 8px;
   border: 1px solid #ddd;
@@ -75,7 +75,7 @@ h2 {
 
 #book-list h2 {
   direction: rtl;
-  margin: 0 8px 40px 0;
+  margin: 0 8px 10px 0;
 }
 
 #book-list ul {
@@ -110,7 +110,7 @@ h2 {
 
 #hide-book {
   text-align: right;
-  padding: 20px 40px 20px 0;
+  padding: 10px 40px 20px 0;
 }
 
 #hide-book label,
@@ -133,7 +133,7 @@ h2 {
 
 #add-book {
   width: 400px;
-  margin: 30px auto;
+  margin: 20px auto;
   display: flex;
 }
 
