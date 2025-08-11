@@ -52,6 +52,14 @@ while (x > 2) {
 }
 console.log(f2); // 5
 
+// --------------------
+
+let i = 0;
+while (++i < 5) console.log(i);
+
+let j = 0;
+while (j++ < 5) console.log(j);
+
 // ----------------------------------------
 // do while
 
@@ -93,6 +101,7 @@ alert("correct input");
 // breake & contionue
 
 let x = 1;
+
 while (x < 10) {
   console.log(x);
   x++;
@@ -100,6 +109,18 @@ while (x < 10) {
     break;
   }
 }
+// --------------------
+
+let sum = 0;
+
+while (true) {
+  let value = +prompt("Enter a number", "");
+  if (!value) break;
+  sum += value;
+}
+
+alert("Sum: " + sum);
+
 // --------------------
 
 let x = 1;
@@ -150,6 +171,31 @@ let i = 0;
 for (; i < 3; i++) {
   console.log(`Item number is: ${i}`);
 }
+
+// or:
+let i = 0;
+for (; i < 3; ) {
+  console.log(`Item number is: ${i++}`);
+}
+// --------------------
+
+for (let i = 0; i < 3; i++) {
+  console.log(`Item number is: ${i}`);
+}
+console.log(i); // ReferenceError: i is not defined (i faghat dar shart taerif shode, na global)
+
+let i = 0;
+for (; i < 3; i++) {
+  console.log(`Item number is: ${i}`);
+}
+console.log(i); // 3
+
+// --------------------
+
+for (let i = 0; i < 5; ++i) console.log(i);
+
+for (let i = 0; i < 5; i++) console.log(i);
+
 // --------------------
 
 let a, b, c;
@@ -221,6 +267,7 @@ const alpha2 = ["a", "b", "c", "d", "e"];
 for (let i of alpha2) {
   console.log(i);
 }
+
 // --------------------
 
 const products = [
@@ -340,34 +387,25 @@ let userInfo = {
 let x = false,
   y = false;
 for (let key in userInfo) {
-  if (userInfo[key] === "ali") {
-    x = true;
-  }
-  if (userInfo[key] === "ram") {
-    y = true;
-  }
+  if (userInfo[key] === "ali") x = true;
+
+  if (userInfo[key] === "ram") y = true;
 }
-if (x && y) {
-  console.log("ali ram founded");
-} else {
-  console.log("not found");
-}
+
+if (x && y) console.log("ali ram founded");
+else console.log("not found");
 
 // ----------------------------------------
 // breake & continue
 
 for (let i = 1; i < 10; i++) {
   console.log(i);
-  if (i === 5) {
-    break;
-  }
+  if (i === 5) break;
 }
 // --------------------
 
 for (let i = 1; i < 10; i++) {
-  if (i === 5) {
-    continue;
-  }
+  if (i === 5) continue;
   console.log(i);
 }
 // --------------------
@@ -407,9 +445,7 @@ for (let i = 1, n = 6; i <= n; i++) {
   let row = "";
   for (let j = 1; j <= i; j++) {
     row += "* ";
-    if (j === 4) {
-      break;
-    }
+    if (j === 4) break;
   }
   console.log(row);
 }
@@ -417,9 +453,7 @@ for (let i = 1, n = 6; i <= n; i++) {
 // solotion-1
 for (let i = 1, n = 6; i <= n; i++) {
   let row = "";
-  if (i === 4) {
-    break;
-  }
+  if (i === 4) break;
   for (let j = 1; j <= i; j++) {
     row += "* ";
   }
@@ -431,9 +465,7 @@ first: for (let i = 1, n = 6; i <= n; i++) {
   let row = "";
   second: for (let j = 1; j <= i; j++) {
     row += "* ";
-    if (j === 4) {
-      break first;
-    }
+    if (j === 4) break first;
   }
   console.log(row);
 }

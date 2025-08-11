@@ -23,4 +23,5 @@ const element = (
 );
 
 const root = ReactDOM.createRoot(document.getElementById("app"));
+
 root.render(element);

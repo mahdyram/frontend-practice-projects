@@ -781,6 +781,11 @@ console.log("I love JS".includes("love")); // true
 console.log("JavaScript".startsWith("Java")); // true
 console.log("script.js".endsWith(".js")); // true
 
+console.log("Hello".at(1)); // 'e'
+console.log("Hello".at(4)); // '0'
+console.log("Hello".at(-1)); // 'o'
+console.log("Hello".at(5)); // undefined
+
 console.log("JS ".repeat(2)); // JS JS
 console.log("ha".repeat(3)); // hahaha
 console.log("★".repeat(5)); // ★★★★★

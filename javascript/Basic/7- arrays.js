@@ -66,6 +66,17 @@ console.log(str[str.length - 1]); // m
 // ========================================
 // some simple methods
 
+let arr = [10, 20, 30, 40, 50];
+
+console.log(arr.at(0)); // 10
+console.log(arr.at(2)); // 30
+console.log(arr.at(5)); // undefined
+
+console.log(arr.at(-1)); // 50
+console.log(arr.at(-2)); // 40
+
+// --------------------
+
 const product = ["book", 99];
 
 product[product.length] = false;

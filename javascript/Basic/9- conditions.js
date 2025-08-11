@@ -112,15 +112,18 @@ console.log(message);
 // ========================================
 // switch => (just for equality - not ><)
 
-// const weekday = 2;
-// if (weekday == 1) {
-//   console.log("saturday");
-// } else if (weekday == 2) {
-//   console.log("sunday");
-// } else if (weekday == 3) {
-//   console.log("monday");
-// }
-// ...
+/*
+const weekday = 2;
+if (weekday == 1) {
+  console.log("saturday");
+} else if (weekday == 2) {
+  console.log("sunday");
+} else if (weekday == 3) {
+  console.log("monday");
+} else {
+  console.log("wrong input!");
+}
+*/
 
 const weekday = 20;
 
@@ -187,6 +190,7 @@ switch (target) {
 }
 
 // --------------------
+// Grouping of “case”
 
 let answer;
 let randNumber = Math.random(); // 0 <= ? < 1
