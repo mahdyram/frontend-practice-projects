@@ -92,49 +92,6 @@ importers:
         specifier: ^7.0.0
         version: 7.1.1(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
-  react/todo-1:
-    dependencies:
-      '@tailwindcss/vite':
-        specifier: ^4.1.11
-        version: 4.1.11(vite@7.1.1(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0))
-      react:
-        specifier: ^19.1.0
-        version: 19.1.1
-      react-dom:
-        specifier: ^19.1.0
-        version: 19.1.1(react@19.1.1)
-      tailwindcss:
-        specifier: ^4.1.11
-        version: 4.1.11
-    devDependencies:
-      '@eslint/js':
-        specifier: ^9.29.0
-        version: 9.32.0
-      '@types/react':
-        specifier: ^19.1.8
-        version: 19.1.9
-      '@types/react-dom':
-        specifier: ^19.1.6
-        version: 19.1.7(@types/react@19.1.9)
-      '@vitejs/plugin-react':
-        specifier: ^4.5.2
-        version: 4.7.0(vite@7.1.1(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0))
-      eslint:
-        specifier: ^9.29.0
-        version: 9.32.0(jiti@2.4.2)
-      eslint-plugin-react-hooks:
-        specifier: ^5.2.0
-        version: 5.2.0(eslint@9.32.0(jiti@2.4.2))
-      eslint-plugin-react-refresh:
-        specifier: ^0.4.20
-        version: 0.4.20(eslint@9.32.0(jiti@2.4.2))
-      globals:
-        specifier: ^16.2.0
-        version: 16.3.0
-      vite:
-        specifier: ^7.0.0
-        version: 7.1.1(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
-
   react/vite-0:
     dependencies:
       react:
@@ -249,26 +206,26 @@ importers:
   react/vite-3:
     dependencies:
       react:
-        specifier: ^19.1.1
+        specifier: ^19.1.0
         version: 19.1.1
       react-dom:
-        specifier: ^19.1.1
+        specifier: ^19.1.0
         version: 19.1.1(react@19.1.1)
     devDependencies:
       '@eslint/js':
-        specifier: ^9.32.0
+        specifier: ^9.29.0
         version: 9.32.0
       '@types/react':
-        specifier: ^19.1.9
+        specifier: ^19.1.8
         version: 19.1.9
       '@types/react-dom':
-        specifier: ^19.1.7
+        specifier: ^19.1.6
         version: 19.1.7(@types/react@19.1.9)
       '@vitejs/plugin-react':
-        specifier: ^4.7.0
+        specifier: ^4.5.2
         version: 4.7.0(vite@7.1.1(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0))
       eslint:
-        specifier: ^9.32.0
+        specifier: ^9.29.0
         version: 9.32.0(jiti@2.4.2)
       eslint-plugin-react-hooks:
         specifier: ^5.2.0
@@ -277,10 +234,10 @@ importers:
         specifier: ^0.4.20
         version: 0.4.20(eslint@9.32.0(jiti@2.4.2))
       globals:
-        specifier: ^16.3.0
+        specifier: ^16.2.0
         version: 16.3.0
       vite:
-        specifier: ^7.1.0
+        specifier: ^7.0.0
         version: 7.1.1(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
 packages:
