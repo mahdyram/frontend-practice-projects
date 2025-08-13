@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-folder_path = r"D:\now\web\react-sharifi"
+folder_path = r"D:\now\web\7Learn\01. ورود به دنیای React\جلسات دوره"
 total_duration = 0
 
 for filename in os.listdir(folder_path):
@@ -19,10 +19,10 @@ for filename in os.listdir(folder_path):
             duration = float(output)
             total_duration += duration
         except subprocess.CalledProcessError as e:
-            print(f"خطا در فایل {filename}: {e.output.decode()}")
+            print(f"Error in faile {filename}: {e.output.decode()}")
 
 hours = int(total_duration // 3600)
 minutes = int((total_duration % 3600) // 60)
 seconds = int(total_duration % 60)
 
-print(f"مجموع زمان ویدیوها: {hours:02}:{minutes:02}:{seconds:02}")
+print(f"total video length: {hours:02}:{minutes:02}:{seconds:02}")

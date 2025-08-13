@@ -244,6 +244,14 @@ console.log(found); // 12
 
 // --------------------
 
+let numbers = [3, 8, 12, 5, 10];
+
+let found = numbers.find((num) => num > 15);
+
+console.log(found); // undefined
+
+// --------------------
+
 const arr = [1, 2, 3, 4, 5, 6, 7];
 
 const findValue = arr.find(function (num) {
@@ -253,6 +261,33 @@ console.log(findValue); // 6
 
 const findValue2 = arr.find((num) => num % 2 === 0);
 console.log(findValue2); // 2
+
+// ----------------------------------------
+// findIndex
+/*
+- peida kardane index avvalin onsor dar arraye ke sharte mara darad.
+- khororji darad: index yek onsor az arraye (ya -1)
+*/
+
+let numbers = [3, 8, 12, 5, 10];
+
+numbers.findIndex((num) => console.log(num > 9));
+
+// --------------------
+
+let numbers = [3, 8, 12, 5, 10];
+
+let found = numbers.findIndex((num) => num > 9);
+
+console.log(found); // 2
+
+// --------------------
+
+let numbers = [3, 8, 12, 5, 10];
+
+let found = numbers.findIndex((num) => num > 15);
+
+console.log(found); // -1
 
 // ----------------------------------------
 // every
