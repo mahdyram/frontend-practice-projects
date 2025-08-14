@@ -47,6 +47,13 @@ let age = 34;
 let obj = { fName, lName, age };
 console.log(obj); // { fName: 'ali', lName: 'ram', age: 34 }
 
+// --------------------
+// Bracket-Notation
+
+let key = "username";
+let obj = { [key]: "mahdi" };
+console.log(obj); // { username: "mahdi" }
+
 // ----------------------------------------
 // some methods of objects
 

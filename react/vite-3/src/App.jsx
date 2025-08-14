@@ -1,9 +1,17 @@
 import A1 from "./components/A1";
+import A2 from "./components/A2";
+import A3 from "./components/A3";
+import A4 from "./components/A4";
+import A5 from "./components/A5";
 
 function App() {
   return (
     <>
       <A1 />
+      <A2 />
+      <A3 />
+      <A4 />
+      <A5 />
     </>
   );
 }

@@ -54,7 +54,6 @@ button:disabled {
 }
 
 form {
-  display: flex;
   justify-content: center;
 }
 form input {
