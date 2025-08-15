@@ -420,3 +420,52 @@ setFormValues((prev) => ({
 ---
 
 ---
+
+تو جاوااسکریپت و تایپ‌اسکریپت این علامت سؤال در
+`nameRef.current?.value`
+بهش میگن **Optional chaining operator (`?.`)**.
+
+کارش اینه که قبل از دسترسی به یک property، بررسی می‌کنه که مقدار قبل از اون `null` یا `undefined` نباشه.
+
+---
+
+### مثال ساده
+
+فرض کن داریم:
+
+```js
+let user = null;
+console.log(user.name); // ❌ خطا: نمی‌توان به name از null دسترسی داشت
+```
+
+با optional chaining:
+
+```js
+let user = null;
+console.log(user?.name); // ✅ undefined برمی‌گردونه، بدون خطا
+```
+
+---
+
+### در مورد `nameRef.current?.value`
+
+در اینجا:
+
+- `nameRef.current` ممکنه **هنوز مقدار نگرفته باشه** (قبل از اینکه input توی DOM رندر بشه)
+- اگه مستقیم بنویسی `nameRef.current.value` و مقدارش null باشه، برنامه خطا میده.
+- وقتی `?.` بزاری:
+
+  - اگه `nameRef.current` وجود داشته باشه → میره سراغ `.value`
+  - اگه وجود نداشته باشه → همون جا `undefined` برمی‌گردونه و ادامه نمی‌ده.
+
+---
+
+### به زبان خودمونی
+
+میگه:
+
+> «اگه `current` خالی نبود، برو سراغ `.value`، وگرنه بی‌خیالش شو و undefined بده.»
+
+---
+
+---

@@ -13,6 +13,8 @@ export default function A2() {
     Controlled Name: ${nameControlled}
     Uncontrolled Name: ${nameUncontrolledRef.current.value}
     `);
+    setNameControlled("");
+    nameUncontrolledRef.current.value = "";
   };
 
   return (
