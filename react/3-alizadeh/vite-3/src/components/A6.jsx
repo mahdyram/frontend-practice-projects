@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function A6() {
   const [showForm, setShowForm] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({ name: "", pass: "" });
 
   let componentToRender;
 
@@ -38,6 +38,7 @@ function LoginButtonScreen({ setShowForm }) {
     <>
       <h3>Please log in</h3>
       <button onClick={() => setShowForm(true)}>LogIn</button>
+      <hr className="hr1" />
     </>
   );
 }

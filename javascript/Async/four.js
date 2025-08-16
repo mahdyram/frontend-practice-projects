@@ -146,3 +146,24 @@ async function fetchAllGeneral(urls) {
   }
 }
 fetchAllGeneral([url2, url3, url4]);
+
+// ========================================
+// herfe ei tarin ravesh:
+
+async function fetchData(url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error("Fetch failed:", err.message);
+    return null;
+  }
+}
+
+// use:
+(async () => {
+  const todo = await fetchData("https://jsonplaceholder.typicode.com/todos/8");
+  if (todo) console.log(todo);
+})();
