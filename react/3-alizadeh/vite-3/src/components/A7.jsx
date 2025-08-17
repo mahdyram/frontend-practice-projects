@@ -19,7 +19,7 @@ export default function A7() {
   //   setError(null);
 
   //   try {
-  //     const data = await getData("https://dummyjson.com/products");
+  //     const data = await getData("https://dummyjson.com/products?limit=60");
   //     const shuffled = [...data.products].sort(() => Math.random() - 0.5);
   //     setProducts(shuffled.slice(0, 18));
   //   } catch (err) {
@@ -33,8 +33,9 @@ export default function A7() {
   async function handleLoadProducts() {
     setLoading(true);
     setError(null);
+
     try {
-      const res = await fetch("https://dummyjson.com/products");
+      const res = await fetch("https://dummyjson.com/products?limit=60");
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
       const shuffled = [...data.products].sort(() => Math.random() - 0.5);

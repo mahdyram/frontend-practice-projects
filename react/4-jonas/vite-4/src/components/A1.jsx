@@ -6,35 +6,16 @@ export default function A1() {
   const [count, setCount] = useState(0);
 
   async function getAdvice() {
-    const res = await fetch("https://api.adviceslip.com/advice");
-    const data = await res.json();
-
-    setAdvice(data.slip.advice);
-    setCount((c) => c + 1);
+    try {
+      const res = await fetch("https://api.adviceslip.com/advice");
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      const data = await res.json();
+      setAdvice(data.slip.advice);
+      setCount((c) => c + 1);
+    } catch (err) {
+      console.error("Failed to fetch advice:", err.message);
+    }
   }
-
-  // async function getAdvice() {
-  //   try {
-  //     const res = await fetch("https://api.adviceslip.com/advice");
-  //     const data = await res.json();
-  //     setAdvice(data.slip.advice);
-  //     setCount((c) => c + 1);
-  //   } catch (err) {
-  //     console.error("Error fetching advice:", err);
-  //   }
-  // }
-
-  // async function getAdvice() {
-  //   try {
-  //     const res = await fetch("https://api.adviceslip.com/advice");
-  //     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-  //     const data = await res.json();
-  //     setAdvice(data.slip.advice);
-  //     setCount((c) => c + 1);
-  //   } catch (err) {
-  //     console.error("Failed to fetch advice:", err);
-  //   }
-  // }
 
   // useEffect(() => getAdvice(), []);  =>  error
 

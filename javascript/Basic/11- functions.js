@@ -353,20 +353,6 @@ f(); // ReferenceError: Cannot access 'test' before initialization
 // =======================================
 // some special functions
 
-// setTimeout function
-
-function one() {
-  console.log("Function one executed");
-}
-
-function two() {
-  console.log("Function two executed");
-}
-
-one();
-setTimeout(one, 1000); // After 1 second
-setTimeout(two, 3000); // After 3 seconds
-
 // ----------------------------------------
 // anonymous function
 
@@ -386,6 +372,55 @@ setTimeout(function () {
 setTimeout(() => {
   console.log("this is a anonymous arrow function");
 }, 2000);
+
+// ----------------------------------------
+// setTimeout function
+
+console.log("1");
+
+setTimeout(() => {
+  console.log("2");
+}, 1000);
+
+console.log("3");
+
+// --------------------
+
+console.log("1");
+
+setTimeout(() => {
+  console.log("2");
+}, 0);
+
+console.log("3");
+
+// --------------------
+
+console.log("1");
+
+setTimeout(() => {
+  console.log("2");
+}, 0);
+
+setTimeout(() => {
+  console.log("3");
+}, 0);
+
+console.log("4");
+
+// --------------------
+
+function one() {
+  console.log("Function one executed");
+}
+
+function two() {
+  console.log("Function two executed");
+}
+
+one();
+setTimeout(one, 1000); // After 1 second
+setTimeout(two, 3000); // After 3 seconds
 
 // ----------------------------------------
 // callback function
