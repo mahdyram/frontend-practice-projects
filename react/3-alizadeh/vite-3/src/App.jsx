@@ -11,6 +11,7 @@ import A10 from "./components/A10";
 import A11 from "./components/A11";
 import A12 from "./components/A12";
 import A13 from "./components/A13";
+import A14 from "./components/A14";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <A11 />
       <A12 />
       <A13 />
+      <A14 />
     </>
   );
 }
