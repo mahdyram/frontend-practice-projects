@@ -14,12 +14,12 @@ export default function A7() {
   //   return data;
   // }
 
-  // const handleLoadProducts = async () => {
+  // async function handleLoadProducts() {
   //   setLoading(true);
   //   setError(null);
 
   //   try {
-  //     const data = await getData("https://dummyjson.com/products?limit=60");
+  //     const data = await getData("https://dummyjson.com/products?limit=0");
   //     const shuffled = [...data.products].sort(() => Math.random() - 0.5);
   //     setProducts(shuffled.slice(0, 18));
   //   } catch (err) {
@@ -28,14 +28,14 @@ export default function A7() {
   //   } finally {
   //     setLoading(false);
   //   }
-  // };
+  // }
 
   async function handleLoadProducts() {
     setLoading(true);
     setError(null);
 
     try {
-      const res = await fetch("https://dummyjson.com/products?limit=60");
+      const res = await fetch("https://dummyjson.com/products?limit=0");
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
       const shuffled = [...data.products].sort(() => Math.random() - 0.5);
@@ -51,15 +51,16 @@ export default function A7() {
   return (
     <div>
       <Button type="dashed" onClick={handleLoadProducts} loading={loading}>
-        {loading ? "Loading..." : "Load data"}
+        {loading ? "Loading..." : "Load Products"}
       </Button>
 
       {!products.length && !loading && !error && <p>No products loaded</p>}
 
       {loading && (
-        <p>
-          Loading <Spin size="small" />
-        </p>
+        <div>
+          <p style={{ display: "inline" }}>Loading </p>
+          <Spin size="small" />
+        </div>
       )}
 
       {error && <p style={{ color: "red" }}>Error: {error}</p>}

@@ -5,7 +5,6 @@
 }
 body {
   margin: 0;
-  margin-bottom: 200px;
   text-align: center;
 }
 .hr1 {
@@ -14,14 +13,47 @@ body {
   margin-bottom: 40px;
 }
 
+header {
+  font-size: 30px;
+  height: 25vh;
+  align-content: center;
+  background-color: #111827;
+  color: #f8fafc;
+}
+
+main {
+  height: 50vh;
+  align-content: center;
+  font-size: larger;
+  background-color: #bed1f8;
+  color: #1f2937;
+}
+
+footer {
+  height: 25vh;
+  align-content: center;
+  background-color: #1c2530;
+  color: #f8fafc;
+}
+
 ul {
   display: inline-block;
+}
+ul li {
+  text-align: left;
+}
+
+.ul1 {
+  display: flex;
+  justify-content: center;
+  list-style: none;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #6f76ff;
   text-decoration: inherit;
+  padding-right: 30px;
 }
 a:hover {
   color: #121ef6;
@@ -70,12 +102,25 @@ form button {
   font-size: 1rem;
 }
 
-.countBox {
+.divBox1 {
+  width: 300px;
+  height: 150px;
+  line-height: 150px;
+  background-color: #ffddcc;
+  margin-top: 20px;
+  border: 2px dashed #333;
+  cursor: pointer;
+}
+
+.content-box {
   border: 2px solid #4a90e2;
   border-radius: 10px;
+  padding: 20px;
   background-color: #f0f8ff;
-  margin-inline: auto;
   margin-top: 20px;
-  padding-bottom: 10px;
-  width: 250px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-inline: auto;
 }

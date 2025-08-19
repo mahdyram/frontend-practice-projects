@@ -6,6 +6,11 @@ import A5 from "./components/A5";
 import A6 from "./components/A6";
 import A7 from "./components/A7";
 import A8 from "./components/A8";
+import A9 from "./components/A9";
+import A10 from "./components/A10";
+import A11 from "./components/A11";
+import A12 from "./components/A12";
+import A13 from "./components/A13";
 
 function App() {
   return (
@@ -17,7 +22,12 @@ function App() {
       <A5 />
       <A6 />
       <A7 />
-      <A8 />5
+      <A8 />
+      <A9 />
+      <A10 />
+      <A11 />
+      <A12 />
+      <A13 />
     </>
   );
 }
