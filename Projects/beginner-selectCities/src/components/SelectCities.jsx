@@ -79,8 +79,7 @@ export default function SelectCities({ originalCities, setOriginalCities }) {
         />
         <br />
       </div>
-
-      <p>{inputValue}</p>
+      <br />
 
       {showCities && (
         <ul className="popupList">
