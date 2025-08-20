@@ -41,12 +41,15 @@ export default function SelectCities({ originalCities, setOriginalCities }) {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (!wrapperRef.current.contains(e.target)) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
         setShowCities(false);
       }
     };
 
-    document.addEventListener("click", handleClickOutside, true);
+    document.addEventListener("click", handleClickOutside, true); // useCapture = true
+
+    return () =>
+      document.removeEventListener("click", handleClickOutside, true);
   }, []);
 
   return (
