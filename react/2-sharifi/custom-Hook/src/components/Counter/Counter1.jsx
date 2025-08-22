@@ -1,4 +1,4 @@
-import useCounter from "./useCounter";
+import useCounter from "../hooks/useCounter";
 
 export default function Counter1() {
   let test = useCounter();
@@ -12,7 +12,7 @@ export default function Counter1() {
       <h3>{count}</h3>
       <button onClick={decrease}>Decrease</button>
       <button onClick={increase}>Increase</button>
-      <hr className="hr1" />
+      <hr />
     </div>
   );
 }

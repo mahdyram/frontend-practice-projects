@@ -178,7 +178,7 @@ getAdvice();
 */
 
 // ----------------------------------------
-// try catch finally
+// try-catch-finally
 
 async function getAdvice() {
   try {
@@ -194,3 +194,63 @@ async function getAdvice() {
 }
 
 getAdvice();
+
+// --------------------
+
+(async () => {
+  try {
+    const res = await fetch("https://api.adviceslip.com/advice");
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    const advice = await res.json();
+    console.log(advice);
+  } catch (err) {
+    console.error(err.message);
+  } finally {
+    console.log("\n✅ Promise done");
+  }
+})();
+
+// ----------------------------------------
+// AbortController
+
+const controller = new AbortController(); // create a new controller
+const signal = controller.signal; // the signal that fetch listens to
+
+(async () => {
+  try {
+    const res = await fetch("https://api.advicdeslip.com/advice", { signal }); // give fetch the signal
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    const advice = await res.json();
+    console.log(advice);
+  } catch (err) {
+    if (err.name === "AbortError") console.log("Aborted:", err.message);
+    else console.error(err.message);
+  } finally {
+    console.log("\n✅ Promise done");
+  }
+})();
+
+// if you want to cancel the fetch:
+controller.abort(); // this causes the fetch promise to reject with an AbortError
+
+// --------------------
+
+const controller = new AbortController();
+
+(async () => {
+  try {
+    const res = await fetch("https://api.adviceslip.com/advice", {
+      signal: controller.signal,
+    });
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    const advice = await res.json();
+    console.log(advice);
+  } catch (err) {
+    if (err.name === "AbortError") console.log("Fetch was aborted!");
+    else console.error(err.message);
+  } finally {
+    console.log("\n✅ Promise done");
+  }
+})();
+
+setTimeout(() => controller.abort(), 8000); // or cancel fetch after 8s

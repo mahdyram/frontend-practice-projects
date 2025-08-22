@@ -1,4 +1,4 @@
-import useFetch from "./useFetch";
+import useFetch from "../hooks/useFetch";
 
 export default function Fetch1() {
   let { data, loading, error } = useFetch(
@@ -8,7 +8,7 @@ export default function Fetch1() {
   return (
     <div>
       <h2>Fetch 1</h2>
-      {loading && <h3>getting data ...</h3>}
+      {loading && <h3>getting data...</h3>}
       {error && <h3>{error}</h3>}
       {!loading && !error && (
         <>
@@ -20,7 +20,7 @@ export default function Fetch1() {
           </ul>
         </>
       )}
-      <hr className="hr1" />
+      <hr />
     </div>
   );
 }

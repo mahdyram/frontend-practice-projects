@@ -1,4 +1,4 @@
-import useCounter from "./useCounter";
+import useCounter from "../hooks/useCounter";
 
 export default function Counter2() {
   let { count, increase, decrease } = useCounter();

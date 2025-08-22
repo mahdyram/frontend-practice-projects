@@ -11,6 +11,9 @@ importers:
       '@tailwindcss/cli':
         specifier: ^4.1.11
         version: 4.1.11
+      axios:
+        specifier: ^1.11.0
+        version: 1.11.0
       dayjs:
         specifier: ^1.11.13
         version: 1.11.13
@@ -218,7 +221,7 @@ importers:
         specifier: ^6.3.5
         version: 6.3.5(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
-  react/2-sharifi/context-API:
+  react/2-sharifi/context-API(x):
     dependencies:
       react:
         specifier: ^19.1.1
@@ -255,7 +258,7 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
-  react/2-sharifi/custom-Hook:
+  react/2-sharifi/custom-hook:
     dependencies:
       react:
         specifier: ^19.1.1
@@ -292,7 +295,7 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
-  react/2-sharifi/react-Router:
+  react/2-sharifi/react-Router(x):
     dependencies:
       react:
         specifier: ^19.1.1
@@ -332,7 +335,7 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
-  react/2-sharifi/react-Router2:
+  react/2-sharifi/react-Router2(x):
     dependencies:
       react:
         specifier: ^19.1.1
@@ -409,7 +412,7 @@ importers:
         specifier: ^7.0.0
         version: 7.1.2(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
-  react/3-alizadeh/context-API:
+  react/3-alizadeh/context-api:
     dependencies:
       react:
         specifier: ^19.1.1
@@ -446,7 +449,7 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
-  react/3-alizadeh/context-API2:
+  react/3-alizadeh/context-api2:
     dependencies:
       react:
         specifier: ^19.1.1
@@ -483,7 +486,7 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
-  react/3-alizadeh/context-API3:
+  react/3-alizadeh/context-api3:
     dependencies:
       react:
         specifier: ^19.1.1
@@ -520,7 +523,47 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
-  react/3-alizadeh/react-Router:
+  react/3-alizadeh/custom-hook:
+    dependencies:
+      axios:
+        specifier: ^1.11.0
+        version: 1.11.0
+      react:
+        specifier: ^19.1.1
+        version: 19.1.1
+      react-dom:
+        specifier: ^19.1.1
+        version: 19.1.1(react@19.1.1)
+    devDependencies:
+      '@eslint/js':
+        specifier: ^9.33.0
+        version: 9.33.0
+      '@types/react':
+        specifier: ^19.1.10
+        version: 19.1.10
+      '@types/react-dom':
+        specifier: ^19.1.7
+        version: 19.1.7(@types/react@19.1.10)
+      '@vitejs/plugin-react':
+        specifier: ^5.0.0
+        version: 5.0.0(vite@7.1.2(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0))
+      eslint:
+        specifier: ^9.33.0
+        version: 9.33.0(jiti@2.4.2)
+      eslint-plugin-react-hooks:
+        specifier: ^5.2.0
+        version: 5.2.0(eslint@9.33.0(jiti@2.4.2))
+      eslint-plugin-react-refresh:
+        specifier: ^0.4.20
+        version: 0.4.20(eslint@9.33.0(jiti@2.4.2))
+      globals:
+        specifier: ^16.3.0
+        version: 16.3.0
+      vite:
+        specifier: ^7.1.2
+        version: 7.1.2(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
+
+  react/3-alizadeh/react-router:
     dependencies:
       react:
         specifier: ^19.1.1
@@ -560,7 +603,7 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0)
 
-  react/3-alizadeh/react-Router2:
+  react/3-alizadeh/react-router2:
     dependencies:
       react:
         specifier: ^19.1.1
