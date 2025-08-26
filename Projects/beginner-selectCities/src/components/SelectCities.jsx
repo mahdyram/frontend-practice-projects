@@ -3,19 +3,13 @@ import { useEffect, useRef, useState } from "react";
 export default function SelectCities({ originalCities, setOriginalCities }) {
   const [showCities, setShowCities] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const [cities, setCities] = useState(originalCities);
-  const [cityTags, setCityTags] = useState([]);
   const wrapperRef = useRef(null);
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
-    const filtered = originalCities.filter(({ name }) =>
-      name.startsWith(e.target.value.trim())
-    );
-    setCities(filtered);
   };
 
-  const handleSelectCity = (name) => {
+  const toggleSelectCity = (name) => {
     setInputValue("");
     setOriginalCities((prevCities) =>
       prevCities.map((city) =>
@@ -24,32 +18,18 @@ export default function SelectCities({ originalCities, setOriginalCities }) {
     );
   };
 
-  const handleDeselectCity = (name) => {
-    setOriginalCities((prevCities) =>
-      prevCities.map((city) =>
-        city.name === name ? { ...city, selected: false } : city
-      )
-    );
-  };
-
-  useEffect(() => {
-    setCities(originalCities);
-    setCityTags(
-      originalCities.filter(({ selected }) => selected).map((c) => c.name)
-    );
-  }, [originalCities]);
-
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+      if (!wrapperRef.current?.contains(e.target)) {
         setShowCities(false);
       }
     };
 
-    document.addEventListener("click", handleClickOutside, true); // useCapture = true
+    document.addEventListener("click", handleClickOutside);
 
-    return () =>
-      document.removeEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
   }, []);
 
   return (
@@ -61,15 +41,17 @@ export default function SelectCities({ originalCities, setOriginalCities }) {
 
       <div className="container">
         <div className="cityTags">
-          {cityTags.map((name) => (
-            <span
-              key={name}
-              className="cityTag"
-              onClick={() => handleDeselectCity(name)}
-            >
-              {name}
-            </span>
-          ))}
+          {originalCities
+            .filter(({ selected }) => selected)
+            .map(({ name }) => (
+              <span
+                key={name}
+                className="cityTag"
+                onClick={() => toggleSelectCity(name)}
+              >
+                {name}
+              </span>
+            ))}
         </div>
 
         <input
@@ -86,10 +68,15 @@ export default function SelectCities({ originalCities, setOriginalCities }) {
 
       {showCities && (
         <ul className="popupList">
-          {cities.map(({ name, selected }) => (
+          {(inputValue.trim()
+            ? originalCities.filter(({ name }) =>
+                name.startsWith(inputValue.trim())
+              )
+            : originalCities
+          ).map(({ name, selected }) => (
             <li
               key={name}
-              onClick={() => handleSelectCity(name, selected)}
+              onClick={() => toggleSelectCity(name)}
               className={selected ? "selectedCity" : ""}
             >
               {name}

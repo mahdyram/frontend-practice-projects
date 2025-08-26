@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-folder_path = r"D:\now\web\Jonas\all-in-one\part2"
+folder_path = r"D:\now\web\Jonas\all-in-one\part3"
 total_duration = 0
 
 for filename in os.listdir(folder_path):

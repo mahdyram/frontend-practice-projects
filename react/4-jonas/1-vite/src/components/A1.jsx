@@ -17,6 +17,17 @@ export default function A1() {
     }
   }
 
+  async function getAdvice() {
+    try {
+      const { data } = await axios.get("https://api.adviceslip.com/advice");
+      console.log(data.result);
+    } catch (err) {
+      console.error("Axios request failed:", err);
+    } finally {
+      console.log("\n✅ Promise done");
+    }
+  }
+
   // useEffect(() => getAdvice(), []);  =>  error
 
   useEffect(() => {

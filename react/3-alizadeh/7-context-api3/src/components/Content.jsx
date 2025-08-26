@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ProductsContext } from "../context/ProductsContext";
 import { useContext } from "react";
 
-export default function Main() {
+export default function Content() {
   const { setProducts } = useContext(ProductsContext);
   const [inputValue, setInputValue] = useState("");
 
@@ -14,7 +14,7 @@ export default function Main() {
 
   return (
     <div>
-      <h2>Main</h2>
+      <h2>Content</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

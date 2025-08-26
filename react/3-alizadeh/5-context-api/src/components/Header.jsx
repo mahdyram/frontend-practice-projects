@@ -6,8 +6,8 @@ export default function Header() {
 
   return (
     <div>
-      <h1>Header</h1>
-      <h2>Shopping Cart: {cartsCount}</h2>
+      <h2>Header</h2>
+      <h3>{cartsCount}</h3>
       <hr className="hr1" />
     </div>
   );
