@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  margin-top: 100px;
+  margin-bottom: 200px;
+  text-align: center;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  background-color: #051829;
+}
+.hr1 {
+  border: 2px solid rgb(103, 0, 0);
+  margin: 80px 0;
+}
+.hr2 {
+  border: 1px solid rgb(100, 252, 108);
+  margin: 40px 350px;
+  margin-bottom: 40px;
+}
+
+ul {
+  display: inline-block;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 100px;
+}
+li {
+  padding: 5px;
+  border-bottom: 1px solid rgb(218, 218, 218);
+  cursor: pointer;
+}
+li:hover {
+  color: red;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #121ef6;
+}
+
+button {
+  padding: 7px 15px;
+  background-color: #1e88e5;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 5px;
+}
+button:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+button:active {
+  transform: scale(0.95);
+}
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+form {
+  justify-content: center;
+}
+form input {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-bottom: 1px solid rgb(125, 123, 132);
+  border-radius: 8px;
+  background-color: #fcfcfc;
+}
+form button {
+  height: 30px;
+  line-height: 13px;
+  background-color: rgb(7, 71, 161);
+  font-size: 1rem;
+}
+
+.countBox {
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+  background-color: #f0f8ff;
+  margin-inline: auto;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  width: 250px;
+}
+
+.upbox1 {
+  background-color: rgb(252, 99, 99);
+  color: #051829;
+  margin: 30px;
+  padding: 10px;
+}
+.upbox2 {
+  background-color: rgb(116, 116, 116);
+  margin: 10px;
+  padding: 10px;
+}
+.upbox3 {
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+}
+
+.downbox1 {
+  background-color: rgb(104, 104, 255);
+  color: #051829;
+  margin: 30px;
+  padding: 10px;
+}
+.downbox2 {
+  background-color: rgb(116, 116, 116);
+  margin: 10px;
+  padding: 10px;
+}
+.downbox3 {
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+}
