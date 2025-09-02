@@ -7,29 +7,49 @@ body {
   color: #051829;
 }
 
-#root {
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #001e40;
+  color: #fff;
+  padding: 25px 30px;
+  margin-bottom: 10px;
+}
+
+.layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
-header {
-  display: flex;
-  padding: 30px 20px;
-  color: #fff;
-  background-color: #001e40;
-  justify-content: space-between;
-}
-
 main {
   flex: 1;
-  margin-top: 10px;
 }
 
-footer { 
+.cartPage {
+  flex: 1;
+}
+.cartPage header {
+  justify-content: center;
+
+}
+
+.productPage {
+  flex: 1;
+}
+.productPage header {
+  padding: 15px 30px;
+
+}
+
+footer {
+  position: relative;
   color: #fff;
-  margin-top: 20px;
   padding: 20px 0px;
   align-content: center;
   background-color: #00152d;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }
