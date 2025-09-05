@@ -1,11 +1,9 @@
-:root {
+body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: #ffffff;
-  color: #213547;
-}
-body {
   margin: 0;
-  margin-bottom: 200px;
+  margin-top: 50px;
+  color: #213547;
   text-align: center;
 }
 .hr1 {

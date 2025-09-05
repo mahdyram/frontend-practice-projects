@@ -1,35 +1,33 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import axios from "axios";
 
 export default function A1() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [advice, setAdvice] = useState("");
   const [count, setCount] = useState(0);
 
   async function getAdvice() {
+    setLoading(true);
+    setError(null);
+
     try {
-      const res = await fetch("https://api.adviceslip.com/advice");
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-      const data = await res.json();
+      const { data } = await axios.get(
+        `https://api.adviceslip.com/advice?timestamp=${Date.now()}`
+      );
+
       setAdvice(data.slip.advice);
       setCount((c) => c + 1);
     } catch (err) {
-      console.error("Failed to fetch advice:", err.message);
-    }
-  }
-
-  async function getAdvice() {
-    try {
-      const { data } = await axios.get("https://api.adviceslip.com/advice");
-      console.log(data.result);
-    } catch (err) {
-      console.error("Axios request failed:", err);
+      setError("Failed to fetch advice 😢");
+      console.error(err);
     } finally {
-      console.log("\n✅ Promise done");
+      setLoading(false);
     }
   }
 
-  // useEffect(() => getAdvice(), []);  =>  error
-
+  // useEffect(() => getAdvice(), []); // =>  error
   useEffect(() => {
     getAdvice();
   }, []);
@@ -37,10 +35,18 @@ export default function A1() {
   return (
     <div>
       <h2>do you want a advice?</h2>
-      <h3 style={{ color: "green" }}>{advice}</h3>
-      <button onClick={getAdvice}> Get advice </button>
 
       <Message count={count} />
+
+      <button onClick={getAdvice} disabled={loading}>
+        {loading ? "Loading..." : "Get advice"}
+      </button>
+
+      <h3 style={{ color: error ? "red" : "green" }}>
+        {error || (loading ? "....." : advice)}
+      </h3>
+
+      <hr className="hr1"/>
     </div>
   );
 }
@@ -49,9 +55,8 @@ function Message(props) {
   return (
     <>
       <p>
-        you have read <strong>{props.count}</strong> pieces of apvice
+        you have read <strong>{props.count}</strong> pieces of advice
       </p>
-      <hr className="hr1" />
     </>
   );
 }
