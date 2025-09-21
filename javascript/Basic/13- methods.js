@@ -452,10 +452,64 @@ console.log(naems2.sort()); // [ 'Ali', 'Sara', 'caren' ]
 // --------------------
 
 const age = [14, 4, 35, 56, 33, 24];
-console.log(age.sort()); // [ 14, 24, 33, 35, 4, 56 ]  =>  "14" < "24" < "33" < "35" < "4" < "56"
+age.sort();
+console.log(age); // [ 14, 24, 33, 35, 4, 56 ]  =>  "14" < "24" < "33" < "35" < "4" < "56"
 
-console.log(age.sort((a, b) => a - b)); // [ 4, 14, 24, 33, 35, 56 ]
-console.log(age.sort((a, b) => b - a)); // [ 56, 35, 33, 24, 14, 4 ]
+const age = [14, 4, 35, 56, 33, 24];
+age.sort((a, b) => a - b);
+console.log(age); // [ 4, 14, 24, 33, 35, 56 ]
+
+const age = [14, 4, 35, 56, 33, 24];
+age.sort((a, b) => b - a);
+console.log(age); // [ 56, 35, 33, 24, 14, 4 ]
+
+// --------------------
+
+const age = [14, 4, 35, 56, 33, 24];
+
+const arr = age.slice().sort((a, b) => b - a);
+
+console.log(age); // [ 14, 4, 35, 56, 33, 24 ]
+console.log(arr); // [ 56, 35, 33, 24, 14, 4 ]
+
+// --------------------
+
+const books = [
+  {
+    id: 1,
+    title: "The Lord of the Rings",
+    publicationDate: "1954-07-29",
+    pages: 1216,
+  },
+  {
+    id: 2,
+    title: "The Cyberiad",
+    publicationDate: "1965-01-01",
+    pages: 295,
+  },
+  {
+    id: 3,
+    title: "Dune",
+    publicationDate: "1965-01-01",
+    pages: 658,
+  },
+  {
+    id: 4,
+    title: "Harry Potter and the Philosopher's Stone",
+    publicationDate: "1997-06-26",
+    pages: 223,
+  },
+  {
+    id: 5,
+    title: "A Game of Thrones",
+    publicationDate: "1996-08-01",
+    pages: 835,
+  },
+];
+
+const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
+
+console.log(sortedByPages);
 
 // ----------------------------------------
 // from
@@ -477,7 +531,7 @@ console.log(arr1); // [ 2, 4, 6 ]
 // reduce
 /*
 array.reduce((accumulator, currentValue, currentIndex?, array?) => {
-  // code to combine the current value with the accumulated value
+  code to combine the current value with the accumulated value
 }, initialValue?);
 
 - estefade: jamebandi ya kaheshe array be yek meghdare vahed.
@@ -512,13 +566,13 @@ console.log(result2); // 10
 
 // --------------------
 
-let nums = [1, 2, 3, 4, 5, 5];
+let nums = [1, 2, 3, 4, 5];
 
 let sum = nums.reduce((acc, cur) => acc + cur);
-console.log(sum); // 20
+console.log(sum); // 15
 
 let sum2 = nums.reduce((acc, cur) => acc + cur, 7);
-console.log(sum2); // 27
+console.log(sum2); // 22
 
 // --------------------
 
@@ -526,7 +580,46 @@ let words = ["Hello", "world", "!"];
 
 let sentence = words.reduce((acc, cur) => acc + " " + cur);
 
-console.log(sentence); // "Hello world !"
+console.log(sentence); // Hello world !
+
+// --------------------
+
+const books = [
+  {
+    id: 1,
+    title: "The Lord of the Rings",
+    publicationDate: "1954-07-29",
+    pages: 1216,
+  },
+  {
+    id: 2,
+    title: "The Cyberiad",
+    publicationDate: "1965-01-01",
+    pages: 295,
+  },
+  {
+    id: 3,
+    title: "Dune",
+    publicationDate: "1965-01-01",
+    pages: 658,
+  },
+  {
+    id: 4,
+    title: "Harry Potter and the Philosopher's Stone",
+    publicationDate: "1997-06-26",
+    pages: 223,
+  },
+  {
+    id: 5,
+    title: "A Game of Thrones",
+    publicationDate: "1996-08-01",
+    pages: 835,
+  },
+];
+
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
+
+console.log(pagesAllBooks); // 3227
 
 // --------------------
 
@@ -547,7 +640,7 @@ let ageGroups = people.reduce((acc, person) => {
 console.log(ageGroups); // { '25': ['Ali', 'Reza'], '30': ['Sara'] }
 
 // ----------------------------------------
-// practice
+// practice-1
 
 const products = [
   {
@@ -624,6 +717,63 @@ const notExistId2 = products.reduce((acc, item) => {
 }, []);
 
 console.log(notExistId2); // [ 2, 3 ]
+
+// ----------------------------------------
+// practice-2
+
+const books = [
+  {
+    id: 1,
+    title: "The Lord of the Rings",
+    publicationDate: "1954-07-29",
+    pages: 1216,
+  },
+  {
+    id: 2,
+    title: "The Cyberiad",
+    publicationDate: "1965-01-01",
+    pages: 295,
+  },
+  {
+    id: 3,
+    title: "Dune",
+    publicationDate: "1965-01-01",
+    pages: 658,
+  },
+  {
+    id: 4,
+    title: "Harry Potter and the Philosopher's Stone",
+    publicationDate: "1997-06-26",
+    pages: 223,
+  },
+  {
+    id: 5,
+    title: "A Game of Thrones",
+    publicationDate: "1996-08-01",
+    pages: 835,
+  },
+];
+
+// 1) Add book object to array
+const newBook = {
+  id: 6,
+  title: "Harry Potter and the Chamber of Secrets",
+  author: "J. K. Rowling",
+};
+const booksAfterAdd = [...books, newBook];
+console.log(booksAfterAdd);
+console.log("=".repeat(20));
+
+// 2) Delete book object from array
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+console.log(booksAfterDelete);
+console.log("=".repeat(20));
+
+// 3) Update book object in the array
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 1210 } : book
+);
+console.log(booksAfterUpdate);
 
 // ========================================
 // string-methods

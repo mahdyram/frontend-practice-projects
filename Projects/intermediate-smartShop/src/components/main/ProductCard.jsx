@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 import Badge from "@mui/material/Badge";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export default function ProductCard(product) {
   const { id, title, price, thumbnail } = product;
@@ -27,7 +29,9 @@ export default function ProductCard(product) {
         flexDirection: "column",
       }}
     >
-      <CardMedia sx={{ height: 300 }} image={thumbnail} title={title} />
+      <CardMedia sx={{ height: 270 }}>
+        <LazyLoadImage src={thumbnail} alt={title} width="100%" effect="blur" />
+      </CardMedia>
 
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography gutterBottom variant="h6" component="div">

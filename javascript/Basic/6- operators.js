@@ -301,7 +301,7 @@ console.log(Boolean(null)); // false
 // "??" nullish-coalescing
 
 /*
-yek ebarat "taerif shodeh" ast hargah na 'null' bashad va na 'undefined'.
+yek ebarat "taerif shodeh" ast, hargah na 'null' bashad va na 'undefined'.
 
 natije 'a ?? b' :
 - agar a 'taerif shodeh' bashad, pas a ra barmigardanad
@@ -383,3 +383,84 @@ console.log(area); // 0
 
 let x = (1 && 2) ?? 3;
 console.log(x); // 2
+
+// ----------------------------------------
+// optional chaining "?"
+
+const data = [
+  {
+    id: 1,
+    title: "The Lord of the Rings",
+    publicationDate: "1954-07-29",
+    author: "J. R. R. Tolkien",
+    genres: [
+      "fantasy",
+      "high-fantasy",
+      "adventure",
+      "fiction",
+      "novels",
+      "literature",
+    ],
+    hasMovieAdaptation: true,
+    pages: 1216,
+    translations: {
+      spanish: "El señor de los anillos",
+      chinese: "魔戒",
+      french: "Le Seigneur des anneaux",
+    },
+    reviews: {
+      goodreads: {
+        rating: 4.52,
+        ratingsCount: 630994,
+        reviewsCount: 13417,
+      },
+      librarything: {
+        rating: 4.53,
+        ratingsCount: 47166,
+        reviewsCount: 452,
+      },
+    },
+  },
+  {
+    id: 2,
+    title: "The Cyberiad",
+    publicationDate: "1965-01-01",
+    author: "Stanislaw Lem",
+    genres: [
+      "science fiction",
+      "humor",
+      "speculative fiction",
+      "short stories",
+      "fantasy",
+    ],
+    hasMovieAdaptation: false,
+    pages: 295,
+    translations: {},
+    reviews: {
+      goodreads: {
+        rating: 4.16,
+        ratingsCount: 11663,
+        reviewsCount: 812,
+      },
+    },
+  },
+];
+
+function getBook(id) {
+  return data.find((d) => d.id === id);
+}
+
+const book = getBook(2);
+
+// console.log(book.reviews.librarything.reviewsCount); // TypeError: Cannot read properties of undefined (reading 'reviewsCount')
+console.log(book.reviews.librarything?.reviewsCount); // undefined
+console.log(book.reviews.librarything?.reviewsCount + 10); // NaN
+console.log((book.reviews.librarything?.reviewsCount ?? 0) + 10); // 10
+
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  librarything;
+  return goodreads + librarything;
+}
+console.log(getTotalReviewCount(book)); // 812
