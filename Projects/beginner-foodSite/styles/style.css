@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 2000px;
+    background-image: url("../images/home.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: orange;
+    width: 100%;
+    height: 70px;
+}
+
+nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    padding-left: 50px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: darkred;
+}
+
+#h1home {
+    margin: 187px 0 0 45px;
+    color: #ffd700;
+    font-size: 37px;
+}
+h2 {
+    margin: 40px 0 0 48px;
+    color: #ff3333;
+    font-size: 34px;
+}
+
+#log,
+#reg {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 45px;
+    font-size: 17px;
+}
+
+#log {
+    background-color: green;
+    padding: 12px 30px;
+    margin-left: 50px;
+}
+#reg {
+    background-color: grey;
+    padding: 12px 18px;
+    margin-left: 20px;
+}
+#log:hover,
+#reg:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.15s ease;
+    border: 2px solid darkorange;
+}
+
+#log:hover {
+    background-color: #006400;
+}
+
+#reg:hover {
+    background-color: #555555;
+}
+
+#log:active,
+#reg:active {
+    transform: scale(0.9);
+    transition: all 0.1s ease;
+    filter: brightness(0.8);
+}
+
+/* login.html */
+
+#log-form {
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 100px 0 0 20px;
+}
+#us {
+    margin-left: 30px;
+    margin-bottom: 3px;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 3px;
+}
+#pas {
+    margin-left: 34px;
+    margin-bottom: 10px;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 3px;
+}
+#but {
+    background-color: aqua;
+    margin-left: 124px;
+    margin-bottom: 10px;
+    /* padding: 7px 70px; */
+    width: 182px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+}
+#chb {
+    margin: 20px 0 0 123px;
+}
+
+/* blog.html */
+
+#blog {
+    width: 50%;
+    height: 1000px;
+    background-color: #ffff80;
+    margin: 15px 0 0 15px;
+    border-radius: 2px;
+}
+
+#food-blog {
+    width: 200px;
+    display: block;
+    margin: 0 auto 30px;
+    padding-top: 8px;
+}
+#la {
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+#list-aghlam {
+    display: grid;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.steps {
+    margin: 20px 10px 0 10px;
+}
+
+/* video.html */
+
+iframe {
+    display: grid;
+    margin: 20px 0 0 10px;
+}
+
+/* contactus.html */
+
+.container {
+    width: 50%;
+    height: 1000px;
+    background-color: #ffff80;
+    margin: 15px 0 0 15px;
+    padding: 20px;
+    border-radius: 2px;
+}
+
+.textinput,
+#contry,
+#subject {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 6px 0 16px 0;
+    resize: vertical;
+}
+
+#subm {
+    background-color: #04aa6d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#subm:hover {
+    background-color: #49f052;
+}
+
+/* aboutus.html */
+
+#abus {
+    width: 50%;
+    height: 1000px;
+    background-color: #ffff80;
+    margin: 15px 0 0 15px;
+    border-radius: 2px;
+    padding: 20px;
+    text-align: center;
+}
+#abus > p {
+    margin-top: 50px;
+}

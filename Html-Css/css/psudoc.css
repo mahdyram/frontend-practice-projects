@@ -1,0 +1,57 @@
+a {
+  color: coral;
+  text-decoration: none;
+  border: 1.5px solid brown;
+  padding: 2px;
+  margin-right: 20px;
+}
+a:hover {
+  color: rgb(68, 0, 255);
+  background-color: bisque;
+  cursor: grab;
+}
+a:active {
+  color: black;
+  background-color: rgb(200, 122, 20);
+}
+a:visited {
+  color: rgb(208, 27, 244);
+  background-color: rgb(0, 240, 248);
+  border: 2px red;
+}
+
+li:first-child {
+  color: cadetblue;
+}
+li:last-child {
+  color: brown;
+}
+li:nth-child(3) {
+  color: coral;
+  list-style-type: none;
+}
+li:nth-child(even) {
+  color: rgb(59, 42, 255);
+  text-decoration: line-through;
+}
+
+input:checked {
+  box-shadow: 0 0 8px red;
+}
+input:focus {
+  box-shadow: 0 0 8px red;
+}
+
+p {
+  display: none;
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  background-color: coral;
+}
+#d1:hover p {
+  display: flex;
+}

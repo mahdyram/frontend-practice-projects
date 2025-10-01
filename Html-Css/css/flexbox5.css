@@ -1,0 +1,107 @@
+/* *********************************** */
+/* order */
+
+#container1 {
+  background-color: blue;
+  margin-bottom: 100px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container1 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 150px;
+  height: 50px;
+}
+@media screen and (max-width: 400px) {
+  #container1 {
+    flex-flow: column;
+    background-color: brown;
+  }
+  #d1 {
+    order: 7;
+  }
+  #d2 {
+    order: 3;
+  }
+  #d3 {
+    order: 5;
+  }
+  #d4 {
+    order: 8;
+  }
+}
+
+hr {
+  border: 3px solid red;
+  margin: 50px 0 50px 0;
+}
+/* ********************************* */
+/* flex-grow */
+
+#container2 {
+  background-color: blue;
+  margin-bottom: 100px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#container2 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+/* ******************** */
+
+#container3 {
+  background-color: blue;
+  margin-bottom: 100px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#container3 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  flex-grow: 1;
+}
+/* ******************** */
+
+#container4 {
+  background-color: blue;
+  margin-bottom: 100px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#container4 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+#d11 {
+  flex-grow: 0;
+}
+#d12 {
+  flex-grow: 5;
+}
+#d13 {
+  flex-grow: 1;
+}
+#d14 {
+  flex-grow: 3;
+}
+
+/* chon flex-direction be soorate satri ast, flex-grow baese roshde satri mishavad. */

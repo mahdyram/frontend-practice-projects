@@ -1,0 +1,81 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #213547;
+}
+body {
+  margin: 0;
+  margin-bottom: 200px;
+  text-align: center;
+}
+.hr1 {
+  border: 2px solid black;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+ul {
+  display: inline-block;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #121ef6;
+}
+
+button {
+  padding: 7px 15px;
+  background-color: #1e88e5;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 5px;
+}
+button:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+button:active {
+  transform: scale(0.95);
+}
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+form {
+  justify-content: center;
+}
+form input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 8px;
+  margin-right: 20px;
+}
+form button {
+  height: 30px;
+  line-height: 13px;
+  background-color: rgb(7, 71, 161);
+  font-size: 1rem;
+}
+
+.countBox {
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+  background-color: #f0f8ff;
+  margin-inline: auto;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  width: 250px;
+}

@@ -1,0 +1,150 @@
+body {
+  height: 1000px;
+}
+hr {
+  margin: 70px auto 30px;
+}
+/* **************************************** */
+/* daroone hamdigar */
+
+#asli1 {
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  background-color: rgb(247, 185, 104);
+  position: relative;
+}
+#dron1 {
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0, 0, 255, 0.563);
+  position: absolute;
+}
+/* ********************* */
+
+#asli2 {
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  background-color: rgb(247, 185, 104);
+  position: relative;
+}
+#dron2 {
+  width: 60px;
+  height: 45px;
+  background-color: rgba(0, 0, 255, 0.563);
+  position: absolute;
+  top: 0;
+}
+/* ********************* */
+
+#asli3 {
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  background-color: rgb(247, 185, 104);
+  position: relative;
+  z-index: 5;
+}
+#dron3 {
+  width: 60px;
+  height: 45px;
+  background-color: rgba(0, 0, 255, 0.563);
+  position: absolute;
+  top: 0;
+  z-index: 2; /* bi tasir zira in tag droone tag asli3> gharar gerefte va be har hal roye an neshan dade mishavad */
+}
+/* ********************* */
+
+#asli4 {
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  background-color: rgb(247, 185, 104);
+  position: relative;
+  z-index: 5;
+}
+#dron4 {
+  width: 60px;
+  height: 45px;
+  background-color: rgba(0, 0, 255, 0.563);
+  position: absolute;
+  top: 0;
+  z-index: -1; /* baz ham kamel be zire div <asli4> naraft balke faghat be zire matne div <asli4> raft */
+}
+
+/* darvaghe #asli yek donyaye kochike ke dakhele in donya matne 'abd' va tag #dron gharar darand, matne 'abd' daraye zindx auto (shayad beshe goft 0) ast ke nemitonim taghiresh bdim, hala age zindx tag #dron ro manfi bedim mire zire matne 'abd' vli hichvaght nemire zire donyaye khodesh yani #asli */
+
+/* ********************* */
+
+#asli5 {
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  background-color: rgb(247, 185, 104);
+  position: relative;
+}
+#dron5 {
+  width: 60px;
+  height: 45px;
+  background-color: rgba(0, 0, 255, 0.563);
+  position: absolute;
+  top: 0;
+  z-index: -1; /* dar in halat ke #asli5 serfan position gerefte amma zindx nagerefte, kamel mire zire #asli5 */
+}
+
+/* serfan zamani ke yek element 'position' va 'z-index' dashte bashad yek "stacking context" jadid misazad, position tanha kafi nist, bayad z-indx adadi ham dashte bashad ta yek "donyai mostaghel" sakhte shavad */
+
+/* darvaghe vaghti #asli5 zindx nadare, dige donyaie jadid sakhte nemishe va bache hash (#dron5) miran to donyaie bozorgtar ke dar inja yani to khode body, hala vghti #dron5 zindx -1 dare, nsbat be kolle safhe mishe paiintar az #asli5 */
+
+/* **************************************** */
+/* joda az ham */
+
+#x1 {
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  background-color: rgb(247, 185, 104);
+  position: relative;
+  z-index: 5;
+}
+#y1 {
+  width: 60px;
+  height: 45px;
+  background-color: rgba(0, 0, 255, 0.563);
+  position: relative;
+  top: -40px;
+  z-index: 11;
+}
+/* ********************* */
+
+#x2 {
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  background-color: rgb(247, 185, 104);
+  position: relative;
+  z-index: 5;
+}
+#y2 {
+  width: 60px;
+  height: 45px;
+  background-color: rgba(0, 0, 255, 0.563);
+  position: relative;
+  top: -40px;
+  z-index: 3;
+}

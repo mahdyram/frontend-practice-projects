@@ -1,0 +1,82 @@
+ol {
+  list-style-type: lower-greek;
+}
+
+#ul1 {
+  list-style-type: circle;
+  padding: 6px;
+}
+
+#ul2 {
+  list-style-image: url("../images/litem.png");
+  margin-left: 10px;
+}
+
+/* **************** */
+
+#ul3 {
+  list-style-type: none;
+  padding-left: 30px;
+}
+#ul3 > li {
+  background-image: url("../images/litem.png");
+  background-repeat: no-repeat;
+  background-position: left 4px;
+  background-size: 10px 10px;
+  padding-left: 18px;
+  margin-bottom: 8px;
+}
+
+/* **************** */
+
+.ul35 {
+  border: 1px solid rgb(9, 93, 46);
+  border-radius: 7px;
+  width: 350px;
+  margin: 40px;
+}
+h3 {
+  text-align: center;
+}
+
+#ul3-5 {
+  list-style-type: none;
+  width: 280px;
+}
+#ul3-5 > li {
+  list-style-image: url(../images/Check-Logo.png);
+  background-color: aquamarine;
+  padding: 5px;
+  margin: 4px;
+  border: 1px solid rgb(38, 117, 34);
+  border-radius: 5px;
+}
+
+/* **************** */
+
+#ul4 {
+  text-align: center;
+  background-color: rgb(247, 217, 178);
+  margin: 40px;
+  border: 1px solid rgb(208, 120, 120);
+  border-radius: 3px;
+  padding: 20px;
+}
+#ul4 > li {
+  display: inline;
+  padding: 6px;
+  margin: 5px;
+  background-color: rgb(251, 121, 121);
+  border: 1px solid rgb(72, 13, 13);
+  border-radius: 5px;
+}
+
+/* **************** */
+
+#ul5 {
+  list-style-type: square;
+  list-style-position: inside;
+}
+#ul5 > li {
+  margin-bottom: 20px;
+}

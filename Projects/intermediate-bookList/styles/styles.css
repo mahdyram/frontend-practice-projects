@@ -1,0 +1,159 @@
+/* -------------> all <-------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+@font-face {
+  font-family: "Vazir-FD";
+  src: url("../fonts/Vazir-Regular-FD.woff");
+}
+body {
+  color: #071e2d;
+  font-family: "Vazir-FD";
+  background: linear-gradient(
+    to right,
+    rgba(45, 168, 115, 1) 0%,
+    rgba(30, 98, 125, 1) 100%
+  );
+}
+
+/* -------------> container <-------------- */
+
+#container {
+  width: 70%;
+  max-width: 800px;
+  margin: 30px auto 50px;
+  border-radius: 7px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  padding: 0 0 20px;
+  overflow: hidden;
+  border: 1px solid lightgray;
+  background-color: white;
+}
+h1,
+h2 {
+  font-weight: normal;
+}
+
+/* -------------> header <-------------- */
+
+#header {
+  background: #eee;
+  padding: 1px 0;
+}
+
+#header h1,
+#header p {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#header input {
+  width: 90%;
+  max-width: 300px;
+  margin: 10px auto;
+  display: block;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: inherit;
+  color: #444;
+  outline: none;
+}
+
+/* -------------> book-list <-------------- */
+
+#book-list {
+  margin: 30px;
+}
+
+#book-list h2 {
+  direction: rtl;
+  margin: 0 8px 10px 0;
+}
+
+#book-list ul {
+  list-style-type: none;
+}
+
+#book-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  border-right: 5px solid #ddd;
+  margin: 30px 10px;
+}
+#book-list li:hover {
+  border-color: #6161bf;
+  transition: 0.2s;
+}
+
+.delete {
+  background: #6161bf;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+.delete:hover {
+  background: crimson;
+  transition: 0.2s;
+}
+
+/* -------------> hide-book <-------------- */
+
+#hide-book {
+  text-align: right;
+  padding: 10px 40px 20px 0;
+}
+
+#hide-book label,
+#hide-book input {
+  cursor: pointer;
+  padding: 0 10px;
+}
+#hide-book label:hover {
+  color: rgb(2, 92, 2);
+}
+
+#hide-book span {
+  cursor: pointer;
+}
+#hide-book span:hover {
+  color: rgb(158, 2, 2);
+}
+
+/* -------------> add-book <-------------- */
+
+#add-book {
+  width: 400px;
+  margin: 20px auto;
+  display: flex;
+}
+
+#add-book input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: inherit;
+  border-radius: 4px 0 0 4px;
+  width: 300px;
+}
+
+#add-book .button {
+  background: #6161bf;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  width: 90px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font: inherit;
+}

@@ -1,0 +1,38 @@
+.flex-container {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap; /* age ja kam bood bre khatte ba'd */
+}
+
+.blok {
+  flex: 1 1 30%; /* grow=1, shrink=1, basis=30% */
+  border: 1px solid #666;
+  padding: 5px;
+  box-sizing: border-box;
+  min-width: 200px; /* barye jelogiri az kochik shodane ziad */
+}
+
+hr {
+  margin: 70px 0;
+}
+/* ********************************* */
+
+.flex-container2 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 200px;
+}
+
+#main-blok {
+  flex: 0 0 70%;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+#slidbar {
+  flex: 0 0 30%;
+  padding: 0 5px;
+  color: #fff;
+  background-color: #333;
+  box-sizing: border-box;
+}

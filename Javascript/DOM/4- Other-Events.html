@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Other Events</title>
+    <style>
+      body {
+        height: 4500px;
+      }
+      div {
+        width: 200px;
+        height: 80px;
+        color: white;
+        background-color: orange;
+        margin: 30px 50px;
+        text-align: center;
+        line-height: 80px;
+      }
+      p {
+        color: red;
+      }
+      .pBlack {
+        color: black;
+      }
+      hr {
+        margin: 30px 0;
+      }
+      .hr {
+        margin: 60px 0 0;
+        border: 2px solid;
+      }
+      .child {
+        position: absolute;
+        width: 80px;
+        height: 30px;
+        background-color: white;
+      }
+      #gameBox {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin: 150px auto;
+        position: relative;
+        background-color: blue;
+      }
+      .dragBox {
+        width: 60px;
+        height: 60px;
+        line-height: 20px;
+        position: absolute;
+        cursor: pointer;
+      }
+      .dragTarget {
+        width: 130px;
+        height: 130px;
+        line-height: 130px;
+        position: relative;
+        left: 120px;
+        background-color: rgb(194, 73, 73);
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Window Events:</h3>
+    <p>"load"</p>
+    <div id="t1">Waiting for load 1 ...</div>
+    <div id="t2">Waiting for load 2 ...</div>
+    <div id="t3">Waiting for load 3 ...</div>
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"resize"</p>
+    <div>Window size: <span id="t4"></span></div>
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"scroll"</p>
+    <div>Scroll position: <span id="t5"></span></div>
+    <hr class="hr" />
+
+    <!-- ---------------------------------------- -->
+
+    <h3>Form Events:</h3>
+    <p>"submit"</p>
+    <form id="myForm1">
+      <input type="text" name="name" placeholder="Enter your name" required />
+      <button type="submit">Submit</button>
+    </form>
+    <p id="wait" class="pBlack">waiting submit ...</p>
+    <hr />
+    <!-- -------------------- -->
+
+    <form id="myForm2">
+      <input type="text" name="firstname" placeholder="First Name" required />
+      <input type="text" name="lastname" placeholder="Last Name" required />
+      <button type="submit" id="submit">Submit</button>
+    </form>
+    <p id="wel" class="pBlack">Welcom ...</p>
+    <p id="hel" class="pBlack">Hello ...</p>
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"change"</p>
+    <p id="lan" class="pBlack">? is great</p>
+    <select id="language">
+      <option value="Js">JavaScript</option>
+      <option value="Py">Python</option>
+    </select>
+    <hr />
+    <!-- -------------------- -->
+
+    <p id="output0" class="pBlack">You typed:</p>
+    <input type="text" id="liveInput0" placeholder="Type something..." />
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"input"</p>
+    <p id="output" class="pBlack">You typed:</p>
+    <input type="text" id="liveInput" placeholder="Type something..." />
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"blur"</p>
+    <p id="output2" class="pBlack">You typed:</p>
+    <input type="text" id="liveInput2" placeholder="Type something..." />
+    <hr class="hr" />
+
+    <!-- ---------------------------------------- -->
+
+    <h3>Keyboard Events:</h3>
+    <p>"keydown"</p>
+    <input id="keyd" type="text" name="name" placeholder="Enter your name" />
+    <hr />
+    <!-- -------------------- -->
+
+    <p class="pBlack">You typed: <span id="output3"></span></p>
+    <input id="keyd2" type="text" name="name" placeholder="Enter your name" />
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"keyup"</p>
+    <input id="keyu" type="text" name="name" placeholder="Enter your name" />
+    <hr />
+    <!-- -------------------- -->
+
+    <p class="pBlack">You typed: <span id="output4"></span></p>
+    <input id="key1" type="text" name="name" placeholder="Enter your name" />
+    <hr />
+    <!-- -------------------- -->
+
+    <p class="pBlack">Your arrow is: <span id="output5"></span></p>
+    <hr />
+    <!-- -------------------- -->
+
+    <input id="gamePad" type="text" placeholder="Keys: ↑ ↓ ← →" />
+    <div id="gameBox">A</div>
+    <hr class="hr" />
+
+    <!-- ---------------------------------------- -->
+
+    <h3>Drag & Drop Events:</h3>
+    <p>"dragstart"</p>
+    <div id="box1" draggable="true"></div>
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"dragend"</p>
+    <div id="box2" draggable="true"></div>
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"dragover-drop"</p>
+    <div id="box3" class="dragBox" draggable="true"></div>
+    <div id="target3" class="dragTarget"></div>
+    <hr />
+    <!-- -------------------- -->
+
+    <div id="box4" class="dragBox" draggable="true"></div>
+    <div id="target4" class="dragTarget"></div>
+    <hr />
+    <!-- -------------------- -->
+
+    <div id="box5" class="dragBox" draggable="true"></div>
+    <div id="target5" class="dragTarget"></div>
+    <hr />
+    <!-- -------------------- -->
+
+    <div id="box6" class="dragBox" draggable="true">mano bekesh 😎</div>
+    <div id="target6" class="dragTarget">bendazesh inja 🧐</div>
+
+    <script src="four.js"></script>
+  </body>
+</html>
+
+<!-- div.test{test$}*5 -->
+<!-- div#test$*5{test$} -->

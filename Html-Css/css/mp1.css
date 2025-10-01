@@ -1,0 +1,27 @@
+ul {
+  text-align: center;
+  padding: 5px;
+  border-bottom: dashed 4px;
+}
+li {
+  display: inline;
+  padding: 15px;
+}
+ul > li > a {
+  text-decoration: none;
+  color: #333;
+}
+p {
+  text-align: center;
+  font: bold 30px arial;
+  text-shadow: 6px 7px 10px;
+  border-bottom: solid 3px;
+  padding-bottom: 15px;
+  margin-bottom: 50px;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 10px -5px 10px #444;
+}

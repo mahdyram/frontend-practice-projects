@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "Courses": true,
+      "node_modules": true,
+      ".pnpm-store": true,
+      ".gitattributes": true,
+      ".gitignore": true,
+      "eslint.config.mjs": true,
+      "package.json": true,
+      "package-lock.json": true,
+      "LICENSE": true,
+      "README.md": true,
+      "pnpm-workspace.yaml": true,
+      "pnpm-lock.yaml": true
+    }
+  }
+}

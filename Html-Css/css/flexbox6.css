@@ -1,0 +1,139 @@
+/* flex-shrink */
+
+/* dar halate normal vghti andaze bishtar az fazaye mojood ast, hame item ha be yek mizan koochak mishavand ta dar safhe ja shavand(albate braye halati ke az wrap estfade nkonim) */
+
+#container1 {
+  background-color: blue;
+  margin-bottom: 50px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container1 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+/* ******************** */
+
+/* yki az rah ha in ast ke yki az item hara koochak knim ta ja braye sayere item ha baz shavad: 
+->flex shrinke sefr braye yek item baes mishavad an item be saize morede nazar beresad va baghie ra kochak konad
+->flex shrinke bishtar az yek baes mishavad ta an item kochak shavad ta bghie bozorg shavand*/
+
+#container2 {
+  background-color: blue;
+  margin-bottom: 50px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container2 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 150px;
+  height: 50px;
+}
+#d23 {
+  flex-shrink: 0;
+}
+/* ******************** */
+
+#container3 {
+  background-color: blue;
+  margin-bottom: 10px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container3 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 150px;
+  height: 50px;
+}
+#d33 {
+  flex-shrink: 4;
+}
+#d31 {
+  flex-shrink: 2;
+}
+
+hr {
+  border: 3px solid red;
+  margin: 50px 0 50px 0;
+}
+/* ********************************* */
+/* flex-basic */
+
+#container4 {
+  background-color: blue;
+  margin-bottom: 50px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#container4 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+#d42 {
+  flex-basis: 150px;
+}
+/* ******************** */
+
+#container5 {
+  background-color: blue;
+  margin-bottom: 50px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container5 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+#d52 {
+  flex-basis: 150px; /*ba tavajoh be mehvar asli(ke ba flex-direction taein mishavad) moshakhas mishavad ke dar che jahati bozorg shavad*/
+}
+/* ******************** */
+
+#container6 {
+  background-color: blue;
+  margin-bottom: 200px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container6 > div {
+  background-color: beige;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+#d61 {
+  flex-grow: 1;
+}
+#d62 {
+  flex-grow: 0;
+  flex-basis: 100px;
+}
+#d63 {
+  flex-grow: 1;
+}
+#d64 {
+  flex-grow: 1;
+}
+
+/* flex: <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> */

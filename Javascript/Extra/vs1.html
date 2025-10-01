@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <title>differnce textContent & innerText</title>
+    <style>
+      #hiddenText {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="example">hello <span id="hiddenText">'hide'</span> world!</div>
+    <hr>
+
+    <p id="p1">textContent --></p>
+    <p id="p2">innerText --></p>
+    <p id="p3">innerHTML --></p>
+    <button id="btn">dokme</button>
+    <hr>
+
+    <p id="p11">textContent --></p>
+    <p id="p12">innerText --></p>
+    <p id="p13">innerHTML --></p>
+    <button id="btn1">dokme</button>
+
+    <script>
+      alert("see results in console (F12)");
+
+      const example = document.getElementById("example");
+      console.log("textContent:", example.textContent);
+      console.log("innerText:", example.innerText);
+      console.log("innerHTML:", example.innerHTML);
+
+      let butt = document.getElementById("btn");
+      butt.addEventListener("click", function () {
+        document.getElementById("p1").textContent +=
+          "hello <span id='hiddenText'>'hide'</span> world!";
+        document.getElementById("p2").innerText +=
+          "hello <span id='hiddenText'>'hide'</span> world!";
+        document.getElementById("p3").innerHTML +=
+          "hello <span id='hiddenText'>'hide'</span> world!";
+      });
+
+      const butt1 = document.getElementById("btn1");
+      const example1 = document.getElementById("example");
+      butt1.addEventListener("click", function () {
+        document.getElementById("p11").textContent += example1.textContent;
+        document.getElementById("p12").textContent += example1.innerText;
+        document.getElementById("p13").textContent += example1.innerHTML;
+      });
+    </script>
+  </body>
+</html>

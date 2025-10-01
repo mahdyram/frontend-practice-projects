@@ -1,0 +1,107 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #213547;
+  background-color: #ffffff;
+}
+body {
+  margin: 0;
+  margin-bottom: 200px;
+  text-align: center;
+}
+hr {
+  border: 1px solid black;
+  margin: 30px 0;
+}
+.hr1 {
+  border: 2px solid black;
+  margin: 30px 0;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #121ef6;
+}
+
+.CBoxs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px;
+  gap: 20px;
+}
+.CBox {
+  width: 300px;
+  padding: 20px;
+  color: black;
+}
+.CBox1 {
+  background-color: aquamarine;
+}
+.CBox2 {
+  background-color: rgb(133, 141, 252);
+}
+.CBox3 {
+  background-color: rgb(251, 127, 111);
+}
+.CBox4 {
+  background-color: rgb(202, 251, 111);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #1e88e5;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 5px;
+}
+button:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+button:active {
+  transform: scale(0.95);
+}
+
+.redText {
+  color: red;
+}
+.normalText {
+  color: black;
+}
+
+.form1 {
+  display: flex;
+  justify-content: center;
+}
+
+.form1 input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+}
+
+.form1 button {
+  height: 30px;
+  line-height: 13px;
+  background-color: darkred;
+  font-size: 1rem;
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}

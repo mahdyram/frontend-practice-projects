@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+}
+
+body {
+  height: 1300px;
+  background-color: #f4f4f4;
+  color: #555;
+  font: normal 15px arial;
+  line-height: 20px;
+  margin: 10px 0; /* first-par: mortabet ba khatte avval -- second-par: labe haye chap va rast */
+}
+
+h1 {
+  font: italic bold 27px tahoma;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.box-1 {
+  background-color: #333;
+  color: #fff;
+  padding: 0 8px;
+  margin-top: 10px; /* mortabet v moasser ba parametre khatte avval(*{}) */
+}
+
+.container {
+  width: 400px;
+  margin: 30px auto;
+}
+
+.container2 {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.container3 {
+  width: 80%;
+  max-width: 550px;
+  margin: auto;
+}

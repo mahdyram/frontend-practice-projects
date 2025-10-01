@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>local Storage</title>
+  </head>
+  <body>
+    <script>
+      // ----------------------------------------
+      // storing string
+
+      // setItem:
+      localStorage.setItem("firstName", "Ali");
+      localStorage.setItem("lastName", "Ram");
+
+      // getItem:
+      const fName = localStorage.getItem("firstName");
+      console.log(`first name : ${fName}`);
+
+      // removeItem:
+      localStorage.removeItem("firstName");
+
+      // clear:
+      // localStorage.clear();
+
+      // ----------------------------------------
+      // storing array & object
+
+      // array:
+      const arr = ["ali", 23];
+      localStorage.setItem("array1", arr);
+      console.log(localStorage.getItem("array1")); // ali,23
+
+      // object
+      const obj = { name: "ali", age: 23 };
+      localStorage.setItem("object1", obj);
+      console.log(localStorage.getItem("object1")); // [object Object]
+
+      // ----------------------------------------
+      // storing array & object with JSON
+
+      // array:
+      const arr2 = ["ali2", 25];
+      localStorage.setItem("array2", JSON.stringify(arr2));
+      console.log(JSON.parse(localStorage.getItem("array2"))); // > (2) ['ali2', 25]
+
+      // object
+      const obj2 = { name: "ali2", age: 25 };
+      localStorage.setItem("object2", JSON.stringify(obj2));
+      console.log(JSON.parse(localStorage.getItem("object2"))); // > {name: 'ali2', age: 25}
+    </script>
+  </body>
+</html>

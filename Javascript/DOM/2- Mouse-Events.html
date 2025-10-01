@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Events</title>
+    <style>
+      body {
+        height: 3000px;
+      }
+      div,
+      p {
+        width: 180px;
+        height: 70px;
+        background-color: orange;
+        margin: 30px 50px;
+        text-align: center;
+        line-height: 70px;
+      }
+      button {
+        position: relative;
+        left: 50px;
+        bottom: 20px;
+      }
+      .active {
+        background-color: deeppink;
+      }
+    </style>
+  </head>
+  <body>
+    <div onclick="alert('clicked-1')">Test-1</div>
+
+    <div onclick="clickHandler()">Test-2</div>
+    <hr />
+    <!-- -------------------- -->
+
+    <div onclick="changeBColor1(this)">Test-3.1</div>
+
+    <div id="t3.2" onclick="changeBColor2()">Test-3.2</div>
+
+    <div id="t4">Test-4</div>
+    <button onclick="toggleShow4()">Toggle</button>
+    <hr />
+    <!-- -------------------- -->
+
+    <div id="t5">Test-5</div>
+    <button onclick="toggleShow5()">Toggle</button>
+
+    <div id="t6">Test-6</div>
+    <button onclick="toggleShow6()">Toggle</button>
+
+    <div id="t7">Test-7</div>
+    <button onclick="toggleShow7()">Toggle</button>
+    <hr />
+    <!-- -------------------- -->
+
+    <div class="tC1">Test-8</div>
+    <button onclick="toggleShow8()">Toggle</button>
+
+    <div class="tC1">Test-9</div>
+    <button onclick="toggleShow9()">Toggle</button>
+    <hr />
+    <!-- -------------------- -->
+
+    <div class="tC2 active">Test-10</div>
+    <button onclick="toggleShow10()">Toggle</button>
+    <hr />
+    <!-- -------------------- -->
+
+    <div class="tC3 active">Test-11</div>
+    <button onclick="toggleShow11()">Toggle</button>
+
+    <div class="tC3 active">Test-12</div>
+    <button onclick="toggleShow12()">Toggle</button>
+    <hr />
+    <!-- -------------------- -->
+
+    <div id="t13" class="active" style="color: white">Test-13</div>
+    <button onclick="toggleShow13()">Toggle</button>
+
+    <div class="t14">Test-14</div>
+    <button onclick="toggleShow14()">Toggle</button>
+    <hr />
+    <!-- -------------------- -->
+
+    <div id="t15">Test-15</div>
+
+    <div id="t16">Test-16</div>
+
+    <div id="t17">Test-17</div>
+    <button id="btn17">Toggle</button>
+    <hr />
+    <!-- -------------------- -->
+    
+    <div id="t18">Test-18</div>
+    
+    <div id="t19">Test-19</div>
+    <button id="btn19">Toggle</button>
+    <hr />
+    <!-- -------------------- -->
+
+    <script src="two.js"></script>
+  </body>
+</html>
+
+<!-- div.test{test$}*5 -->
+<!-- div#test$*5{test$} -->

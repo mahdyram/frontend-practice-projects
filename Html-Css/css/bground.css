@@ -1,0 +1,144 @@
+body {
+  height: 3000px;
+  background-image: url("../images/paiiz.jpg");
+  background-size: 1000px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  /* or: background: url("../images/paiiz.jpg") no-repeat center fixed; */
+}
+
+.parent {
+  width: 200px;
+  height: 380px;
+  font-size: 20px;
+  color: black;
+  border: 5px dashed currentColor;
+  background-color: transparent;
+  position: absolute;
+  top: 200px;
+  left: 700px;
+  padding: 10px;
+}
+.child {
+  width: 80px;
+  height: 80px;
+  padding: 5px;
+  color: inherit;
+  border: inherit;
+  background-color: rgb(0, 255, 255, 0.5);
+}
+/* ********************************** */
+
+#test1 {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(red, darkblue);
+}
+#test2 {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(to right, red, blue);
+}
+#test3 {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(red, orange, blue);
+}
+#test4 {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(45deg, red, orange, blue);
+}
+/* ********************************** */
+
+#test5 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-image: radial-gradient(red, blue);
+}
+#test6 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-image: radial-gradient(red 5%, yellow 25%, blue 70%);
+}
+/* ********************************** */
+
+#test7 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-image: conic-gradient(red, yellow, blue);
+}
+#test8 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-image: conic-gradient(yellow 30deg, red 60deg, blue 270deg);
+}
+#test9 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-image: conic-gradient(
+    from 90deg,
+    yellow 30deg,
+    red 60deg,
+    blue 270deg
+  );
+}
+#test10 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-image: conic-gradient(
+    from 90deg,
+    yellow 0deg 30deg,
+    red 30deg 60deg,
+    blue 60deg 270deg
+  );
+}
+/* ********************************** */
+
+#test11 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-image: repeating-conic-gradient(red 0deg 20deg, blue 20deg 40deg);
+}
+/* ********************************** */
+/* clipPath */
+
+#test12 {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(45deg, red, orange, blue);
+
+  clip-path: polygon(
+    20% 0%,
+    0% 20%,
+    44% 51%,
+    0% 80%,
+    20% 100%,
+    50% 70%,
+    80% 100%,
+    100% 80%,
+    100% 20%,
+    80% 0%,
+    50% 30%
+  );
+}

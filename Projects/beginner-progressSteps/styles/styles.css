@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Vazir-FD";
+  src: url("../fonts/Vazir-Regular-FD.woff");
+}
+body {
+  background-color: #f6f7fb;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.progress-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 6vw;
+  margin-bottom: 40px;
+}
+#progress {
+  position: absolute;
+  left: 0px;
+  top: 15px;
+  width: 1%;
+  height: 4px;
+  background-color: rgb(0, 170, 255);
+  z-index: 3;
+  transition: 0.4s;
+}
+#progress-bg {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: rgb(210, 210, 210);
+}
+.circle {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  color: rgb(128, 128, 128);
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  border: 3px solid rgb(210, 210, 210);
+  z-index: 5;
+  transition: 0.4s;
+  font-family: "Vazir-FD";
+}
+.btn {
+  width: 90px;
+  height: 35px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+  background-color: rgb(0, 170, 255);
+  font-family: "Vazir-FD";
+}
+.disable {
+  cursor: not-allowed;
+  background-color: rgb(210, 210, 210);
+}
+.active {
+  border-color: rgb(0, 170, 255);
+  transition: 0.4s;
+}

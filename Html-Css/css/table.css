@@ -1,0 +1,32 @@
+table {
+  width: 600px;
+  background-color: rgb(212, 249, 237);
+  padding: 7px;
+  border: 2px groove rgb(6, 184, 224);
+  border-radius: 7px;
+  margin: auto;
+  border-spacing: 2px 3px;
+  border-collapse: separate;
+}
+th,
+td {
+  padding: 5px;
+}
+th {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px double;
+}
+tr.even {
+  background-color: rgb(126, 231, 196);
+}
+tbody tr:nth-child(even) {
+  color: rgb(3, 91, 61);
+}
+.money {
+  text-align: center;
+}
+td {
+  border: 2px solid rgb(43, 174, 250);
+  border-radius: 9px;
+}

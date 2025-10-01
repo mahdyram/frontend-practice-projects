@@ -1,0 +1,48 @@
+body {
+  height: 1500px;
+}
+.container1 {
+  background-color: coral;
+  width: 250px;
+  height: 200px;
+  padding: 5px;
+  margin-bottom: 130px;
+}
+.container2 {
+  background-color: coral;
+  width: 250px;
+  height: 200px;
+  padding: 5px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.container3 {
+  background-color: coral;
+  width: 250px;
+  height: 200px;
+  padding: 5px;
+  margin-bottom: 50px;
+  overflow: auto;
+}
+/* ******************************** */
+/* min(max)-width(height) */
+
+#d1 {
+  background-color: rgb(162, 252, 73);
+  margin-bottom: 10px;
+}
+#d2 {
+  background-color: rgb(115, 148, 81);
+  margin-bottom: 10px;
+  width: 500px;
+}
+#d3 {
+  background-color: rgb(160, 235, 85);
+  margin-bottom: 10px;
+  max-width: 500px;
+}
+#d4 {
+  background-color: rgb(91, 146, 36);
+  margin-bottom: 10px;
+  min-width: 500px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>this vs e.target</title>
+    <style>
+      #outer {
+        width: 300px;
+        height: 200px;
+        background-color: lightblue;
+        padding: 20px;
+      }
+
+      #inner {
+        width: 100px;
+        height: 100px;
+        background-color: coral;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      Outer
+      <div id="inner">Inner</div>
+    </div>
+    <p id="p1">p1:</p>
+    <hr />
+    <p id="p2">p2:</p>
+
+    <script>
+      const outer1 = document.getElementById("outer");
+
+      outer1.addEventListener("click", function (e) {
+        // this → outer1
+        this.style.backgroundColor = "lightgreen";
+
+        // e.target → everything that realy clicked
+        e.target.style.backgroundColor = "yellow";
+
+        document.getElementById(
+          "p1"
+        ).innerText = `get: outer1  =>  this: ${this.id} | e.target: ${e.target.id}`;
+      });
+
+      const inner1 = document.getElementById("inner");
+      inner1.addEventListener("click", function (e) {
+        document.getElementById(
+          "p2"
+        ).innerText = `get: inner2  =>  this: ${this.id} | e.target: ${e.target.id}`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+.divv > div {
+  background-color: beige;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+/* ******************************** */
+/* media => screen */
+
+#container1 {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  margin-bottom: 10px;
+  background-color: blue;
+}
+
+@media screen and (min-width: 401px) {
+  #container1 {
+    flex-direction: row-reverse;
+    background-color: brown;
+  }
+}
+/* ******************************* */
+
+#container2 {
+  display: flex;
+  flex-flow: column wrap;
+  height: 400px;
+  background-color: blue;
+}
+
+@media screen and (min-width: 401px) {
+  #container2 {
+    flex-direction: row-reverse;
+    background-color: brown;
+  }
+}

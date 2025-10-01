@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ali: "#33d2ee",
+            },
+          },
+        },
+        darkMode: "class",
+      };
+    </script>
+    <title>Tailwind-1</title>
+  </head>
+  <body class="bg-slate-900 text-white">
+    <!------------ >belabela< ------------>
+    <p class="text-lg text-white font-bold">Hello world!</p>
+    <p class="text-3xl text-yellow-300 underline">Hello world!</p>
+    <p class="text-[#33d2ee]">custom color</p>
+    <div class="border-4 border-red-500">
+      <p>div</p>
+    </div>
+
+    <!------------ >margin-padding< ------------>
+    <div class="container mx-auto">
+      <p class="bg-amber-300">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      </p>
+      <div class="m-6 bg-amber-500">margin-6</div>
+      <hr class="border-2 my-1" />
+
+      <div class="mx-6 bg-amber-500">margin-x-6</div>
+      <hr class="border-2 my-1" />
+
+      <div class="my-6 bg-amber-500">my6</div>
+      <hr class="border-2 my-1" />
+
+      <div class="mt-6 bg-amber-500">margin-top-6</div>
+      <hr class="border-2 my-1" />
+
+      <div class="ml-6 bg-amber-500">margin-left-6</div>
+      <hr class="border-2 my-1" />
+
+      <div class="ml-[200px] bg-amber-500">ml200px</div>
+      <hr class="border-2 my-1" />
+
+      <div class="p-6 bg-amber-500">ml200px</div>
+      <hr class="border-2 my-1" />
+
+      <div class="py-6 bg-amber-500">ml200px</div>
+      <hr class="border-2 my-1" />
+
+      <div class="pt-6 bg-amber-500">ml200px</div>
+      <hr class="border-2 my-1 mb-30" />
+    </div>
+
+    <!------------ >typografy< ------------>
+
+    <!-- font-size -->
+    <p class="text-xs">text</p>
+    <p class="text-sm">text</p>
+    <p class="text-base">text</p>
+    <p class="text-lg">text</p>
+    <p class="text-xl">text</p>
+    <p class="text-2xl">text</p>
+    <p class="text-3xl">text</p>
+    <p class="text-9xl">text</p>
+    <hr class="border-2 my-20" />
+
+    <!-- font-weight -->
+    <p class="font-light">sampleText</p>
+    <p class="font-normal">sampleText</p>
+    <p class="font-medium">sampleText</p>
+    <p class="font-semibold">sampleText</p>
+    <p class="font-bold">sampleText</p>
+    <hr class="border-2 my-20" />
+
+    <!-- letter-spacing -->
+    <p class="tracking-tight">sampleText</p>
+    <p class="tracking-normal">sampleText</p>
+    <p class="tracking-wide">sampleText</p>
+    <p class="tracking-wider">sampleText</p>
+    <p class="tracking-widest">sampleText</p>
+    <hr class="border-2 my-20" />
+
+    <!-- text-align -->
+    <p class="text-left">sampleText</p>
+    <p class="text-right">sampleText</p>
+    <p class="text-center">sampleText</p>
+    <hr class="border-2 my-20" />
+
+    <!-- text-decoration -->
+    <p class="underline">sampleText</p>
+    <p class="line-through">sampleText</p>
+    <p class="overline">sampleText</p>
+    <p class="no-underline">sampleText</p>
+    <hr class="border-2 my-20" />
+
+    <!-- otc -->
+    <p class="normal-case">sampleText</p>
+    <p class="uppercase">sampleText</p>
+    <p class="lowercase">sampleText</p>
+    <p class="capitalize">sampleText</p>
+    <hr class="border-2 my-20" />
+
+    <!------------ >width-height< ------------>
+
+    <div class="mb-2 bg-slate-500">width</div>
+    <div class="mb-2 bg-slate-500 w-0">width</div>
+    <div class="mb-2 bg-slate-500 w-1">width</div>
+    <div class="mb-2 bg-slate-500 w-5.5">width</div>
+    <div class="mb-2 bg-slate-500 w-60">width</div>
+    <div class="mb-2 bg-slate-500 w-1/4">width</div>
+    <div class="mb-2 bg-slate-500 w-1/3">width</div>
+    <div class="mb-2 bg-slate-500 w-2/5">width</div>
+    <div class="mb-2 bg-slate-500 w-[100px]">width</div>
+    <div class="mb-2 bg-slate-500 w-min">width</div>
+    <div class="mb-2 bg-slate-500 w-max">width</div>
+    <div class="mb-2 bg-slate-500 w-auto">width</div>
+    <div class="mb-2 bg-slate-500 w-screen">width</div>
+    <div class="mb-2 bg-slate-500 w-full">width</div>
+
+    <div class="mb-2 bg-slate-500 w-20 h-10">width</div>
+    <div class="mb-2 bg-slate-500 w-20 h-20">width</div>
+    <div class="mb-2 bg-slate-500 w-20 h-30">width</div>
+
+    <div class="h-30 bg-slate-500">
+      <div class="bg-slate-700 h-15 max-h-full">dfs</div>
+    </div>
+    <hr class="border-2 my-20" />
+
+    <!------------ >position< ------------>
+
+    <div class="w-2/3 h-20 bg-emerald-700 relative">
+      <p>relative parent</p>
+      <div class="bottom-0 right-0 absolute">
+        <p>absolute child</p>
+      </div>
+    </div>
+    <hr class="border-2 my-20" />
+
+    <!------------ >border< ------------>
+
+    <div class="w-40 h-20 bg-emerald-700 m-5 border-2 border-red-600"></div>
+    <div class="w-40 h-20 bg-emerald-700 m-5 border-x-2 border-red-600"></div>
+    <div class="w-40 h-20 bg-emerald-700 m-5 border-y-2 border-red-600"></div>
+    <div class="w-40 h-20 bg-emerald-700 m-5 border-r-2 border-red-600"></div>
+    <div class="w-40 h-20 bg-emerald-700 m-5 border-t-2 border-red-600"></div>
+
+    <div class="w-40 h-20 bg-emerald-700 m-5 rounded"></div>
+    <div class="w-40 h-20 bg-emerald-700 m-5 rounded-full"></div>
+    <div class="w-40 h-20 bg-emerald-700 m-5 rounded-3xl"></div>
+    <div class="w-40 h-20 bg-emerald-700 m-5 rounded-b-2xl"></div>
+    <div class="w-40 h-20 bg-emerald-700 m-5 rounded-tr-4xl"></div>
+    <hr class="border-2 my-20" />
+
+    <!------------ >breakepoint(media)< ------------>
+
+    <div
+      class="w-screen h-50 bg-amber-600 sm:bg-blue-600 md:bg-emerald-600 lg:bg-fuchsia-600"
+    >
+      screen size
+    </div>
+    <hr class="border-2 my-20" />
+
+    <!------------ >flexbox< ------------>
+
+    <div class="w-80 ml-10 mb-10">
+      <div class="p-10 rounded-md bg-slate-600">01</div>
+      <div class="p-10 rounded-md bg-slate-600">02</div>
+      <div class="p-10 rounded-md bg-slate-600">03</div>
+      <div class="p-10 rounded-md bg-slate-600">04</div>
+    </div>
+
+    <div class="w-80 ml-10 flex flex-col gap-4 items-center justify-around">
+      <div class="p-10 rounded-md bg-slate-600 order-2">01</div>
+      <div class="p-10 rounded-md bg-slate-600 order-3">02</div>
+      <div class="p-10 rounded-md bg-slate-600 order-1">03</div>
+      <div class="p-10 rounded-md bg-slate-600 order-4">04</div>
+    </div>
+    <hr class="border-2 my-20" />
+
+    <!------------ >grid< ------------>
+
+    <div class="w-80 ml-10 mb-10 grid grid-cols-3 gap-3">
+      <div class="p-10 rounded-md bg-slate-600">01</div>
+      <div class="p-10 rounded-md bg-slate-600">02</div>
+      <div class="p-10 rounded-md bg-slate-600">03</div>
+      <div class="p-10 rounded-md bg-slate-600">04</div>
+      <div class="p-10 rounded-md bg-slate-600">05</div>
+      <div class="p-10 rounded-md bg-slate-600">06</div>
+    </div>
+    <hr class="border-2 my-20" />
+
+    <!------------ >customization< ------------>
+
+    <p class="text-ali">text with ali color</p>
+    <hr class="border-2 my-20" />
+
+    <!------------ >darkmode< ------------>
+
+    <div
+      class="container bg-blue-200 w-3/4 mx-auto p-4 text-center rounded-xl dark:bg-slate-700"
+    >
+      <p class="text-slate-800 font-bold dark:text-amber-200">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque cumque
+        commodi dignissimos incidunt voluptas porro non rem assumenda corporis,
+        laudantium quis excepturi iusto nulla quia explicabo similique numquam
+        quos nisi!
+      </p>
+    </div>
+
+    <div class="flex justify-center mt-4 mb-20">
+      <input type="checkbox" id="toggle" class="w-5 mr-2 cursor-pointer" />
+      <span>darkmode</span>
+    </div>
+
+    <script>
+      document.getElementById("toggle").addEventListener("change", function () {
+        document.documentElement.classList.toggle("dark", this.checked);
+      });
+    </script>
+  </body>
+</html>

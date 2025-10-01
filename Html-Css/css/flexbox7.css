@@ -1,0 +1,39 @@
+.container1 {
+    margin-top: 210px;
+  border: 3px solid black;
+}
+.container1 div {
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.search {
+  background-color: rgb(218, 86, 130);
+}
+.home {
+  background-color: rgb(99, 194, 65);
+}
+.login {
+  background-color: rgb(220, 85, 54);
+}
+/* ********************************************* */
+
+.container1 {
+  display: flex;
+}
+.search {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 200px;
+}
+.home {
+  flex-grow: 8;
+  flex-shrink: 8;
+  flex-basis: 200px;
+}
+.login {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 200px;
+  /* flex: 1 1 200px; */
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="styles/styles.css" rel="stylesheet" />
+    <title>my book list</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h1 class="title">My Books</h1>
+        <form id="search-books">
+          <input type="text" placeholder="Search books..." />
+        </form>
+      </div>
+
+      <div id="book-list">
+        <h2 class="title">کتاب های اخیر</h2>
+        <ul></ul>
+      </div>
+
+      <form id="hide-book">
+        <label for="chb">مخفی کردن کتاب ها</label>|<span> بازنشانی</span>
+        <input id="chb" type="checkbox" />
+      </form>
+
+      <form id="add-book">
+        <input type="text" name="bookName" placeholder="Add a book..." />
+        <button type="submit" class="button">افزودن</button>
+      </form>
+    </div>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

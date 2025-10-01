@@ -1,0 +1,69 @@
+body {
+  height: 2000px;
+}
+img {
+  padding: 5px;
+  float: right;
+}
+hr {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+/* ********************************* */
+
+.divv {
+  width: 100px;
+  height: 100px;
+}
+#d1 {
+  background-color: brown;
+  float: left;
+}
+#d2 {
+  background-color: blue;
+  float: left;
+}
+#d3 {
+  background-color: coral;
+  float: right;
+}
+#d4 {
+  background-color: aquamarine;
+  width: 300px;
+  height: 200px;
+}
+/* ********************************* */
+
+.blok {
+  float: left;
+  width: 30%;
+  margin-right: 10px;
+  margin-bottom: 3px;
+  border: 1px solid #666;
+  padding: 5px;
+  box-sizing: border-box;
+}
+#hr3 {
+  margin: 400px 0;
+}
+
+.clr {
+  clear: both; /* raveshi kelasik braye paksazi anasore shenavar*/
+}
+/* ********************************* */
+
+#main-blok {
+  float: left;
+  width: 68%;
+  padding: 0 5px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+#slidbar {
+  float: right;
+  width: 30%;
+  color: #fff;
+  background-color: #333;
+  padding: 0 5px;
+  box-sizing: border-box;
+}

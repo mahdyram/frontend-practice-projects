@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro DOM</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        height: 1000px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      hr {
+        margin: 50px 0;
+      }
+      p {
+        width: 100px;
+        padding: 10px;
+        margin: 20px auto;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../images/dom.gif" alt="" />
+    <hr />
+
+    <p onclick="changeText(this)">Hello</p>
+    <hr />
+
+    <p id="p1" onclick="changeText1()">Hello</p>
+    <hr />
+
+    <p id="p2">Hello</p>
+    <button onclick="changeText2()">changing text</button>
+    <hr />
+
+    <p id="p3">Hello</p>
+    <button onclick="toggleText()">changing text</button>
+
+    <script>
+      const changeText = (x) => {
+        x.innerText = "Text changed!";
+      };
+
+      const changeText1 = () => {
+        document.getElementById("p1").innerText = "Text changed!";
+      };
+
+      function changeText2() {
+        const msg = document.getElementById("p2");
+        msg.innerText = "Text changed!";
+      }
+
+      function toggleText() {
+        const msg = document.getElementById("p3");
+        if (msg.innerText === "Hello") {
+          msg.innerText = "Text changed!";
+        } else {
+          msg.innerText = "Hello";
+        }
+      }
+    </script>
+  </body>
+</html>

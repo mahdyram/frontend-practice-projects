@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>appendChild</title>
+    <style>
+      body {
+        text-align: center;
+        margin-top: 50px;
+      }
+      #box {
+        width: 300px;
+        height: auto;
+        min-height: 100px;
+        border: 2px dashed gray;
+        margin: 20px auto;
+        padding: 10px;
+      }
+      .item {
+        background-color: lightgreen;
+        margin: 5px;
+        padding: 8px;
+        border-radius: 5px;
+      }
+      button {
+        margin: 5px;
+        padding: 8px 16px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>appendChild & removeChild</h2>
+
+    <div id="box"></div>
+
+    <button onclick="addItem()">➕ افزودن آیتم</button>
+    <button onclick="removeItem()">❌ حذف آخرین آیتم</button>
+
+    <script>
+      let count = 1;
+      const box = document.getElementById("box");
+
+      function addItem() {
+        const newItem = document.createElement("div");  
+        newItem.className = "item";
+        newItem.textContent = "آیتم " + count++;
+        box.appendChild(newItem);  
+      }
+
+      function removeItem() {
+        if (box.lastChild) {
+          box.removeChild(box.lastChild);  
+          count--;
+        }
+      }
+    </script>
+  </body>
+</html>

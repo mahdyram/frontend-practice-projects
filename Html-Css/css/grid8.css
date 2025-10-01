@@ -1,0 +1,115 @@
+hr {
+  margin: 30px auto;
+}
+/* ******************************** */
+/* grid-area  =>  'row-start', 'column-start', 'row-end', 'column-end'. */
+
+.container {
+  height: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: aqua;
+  padding: 5px;
+  gap: 5px;
+}
+.item {
+  width: 100%;
+  color: white;
+  background-color: rgb(26, 60, 210);
+}
+/* ********************** */
+
+.container1 {
+  height: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: aqua;
+  padding: 5px;
+  gap: 5px;
+}
+.item1 {
+  width: 100%;
+  color: white;
+  background-color: rgb(26, 60, 210);
+}
+
+.i19 {
+  grid-area: 1 / 1 / 1 / 1;
+}
+/* ********************** */
+
+.container2 {
+  height: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: aqua;
+  padding: 5px;
+  gap: 5px;
+}
+.item2 {
+  width: 100%;
+  color: white;
+  background-color: rgb(26, 60, 210);
+}
+
+.i29 {
+  grid-area: 1 / 1 / 1 / 3;
+}
+/* ********************** */
+
+.container3 {
+  height: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: aqua;
+  padding: 5px;
+  gap: 5px;
+}
+.item3 {
+  width: 100%;
+  color: white;
+  background-color: rgb(26, 60, 210);
+}
+
+.i39 {
+  grid-area: 1 / 1 / 4 / 3;
+}
+
+/* ********************** */
+
+.container4 {
+  height: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: aqua;
+  padding: 5px;
+  gap: 5px;
+}
+.item4 {
+  width: 100%;
+  color: white;
+  background-color: rgb(26, 60, 210);
+}
+
+.i49 {
+  grid-area: 2 / 1 / 3 / 2; /* tarjome: satri(ofoghi - row): az line 2 ta line 3 ke mishavad satre dovvom -- sotooni(amoodi - column): az line 1 ta line 2 ke mishavad sotoone avval */
+}
+/* ********************** */
+
+.container5 {
+  height: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: aqua;
+  padding: 5px;
+  gap: 5px;
+}
+.item5 {
+  width: 100%;
+  color: white;
+  background-color: rgb(26, 60, 210);
+}
+
+.i59 {
+  grid-area: 2 / 1 / span 2 / span 2;
+}

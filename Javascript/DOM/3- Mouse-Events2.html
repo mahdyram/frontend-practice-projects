@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Events 2</title>
+    <style>
+      body {
+        height: 3000px;
+      }
+      div {
+        width: 200px;
+        height: 70px;
+        background-color: orange;
+        margin: 30px 50px;
+        text-align: center;
+        line-height: 70px;
+      }
+      .child {
+        position: absolute;
+        width: 80px;
+        height: 30px;
+        background-color: white;
+      }
+      button {
+        position: relative;
+        left: 50px;
+        bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>"dbclick"</p>
+    <div id="t1">Test-1</div>
+    <div id="t2">Test-2</div>
+    <div id="t3">Test-3</div>
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"down-up"</p>
+    <div id="t4">Test-4</div>
+    <div id="t5">Test-5</div>
+    <div id="t6">Test-6</div>
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"enter-leave"</p>
+    <div id="t7">Test-7</div>
+    <div id="t8">Test-8</div>
+    <div id="t9">Test-9</div>
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"move"</p>
+    <div id="t10">Test-10</div>
+    <div id="xy"></div>
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"out"</p>
+    <div id="t11">
+      <div class="child"></div>
+    </div>
+
+    <p>"leave"</p>
+    <div id="t12">
+      <div class="child"></div>
+    </div>
+    <hr />
+    <!-- -------------------- -->
+
+    <p>"over"</p>
+    <div id="t13">
+      <div class="child"></div>
+    </div>
+
+    <p>"enter"</p>
+    <div id="t14">
+      <div class="child"></div>
+    </div>
+
+    <script src="three.js"></script>
+  </body>
+</html>
+
+<!-- div.test{test$}*5 -->
+<!-- div#test$*5{test$} -->

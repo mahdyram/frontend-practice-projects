@@ -1,0 +1,118 @@
+body {
+  height: 1500px;
+}
+table {
+  height: 100px;
+}
+.to {
+  vertical-align: top;
+}
+.ce {
+  vertical-align: middle;
+}
+.bo {
+  vertical-align: bottom;
+}
+a {
+  color: brown;
+}
+#li {
+  text-decoration: none;
+  text-shadow: 3px 3px 1.7px #f78a06;
+}
+
+h2 {
+  display: inline;
+  margin-right: 30px;
+}
+#h21 {
+  color: rgb(204, 90, 109);
+  text-shadow: 2px 3px 6px blue, 2px 1px 3px black;
+}
+#h22 {
+  text-shadow: 3px 2px 5px blue, -3px -2px 5px red;
+}
+#h23 {
+  color: white;
+  text-shadow: -1px 0px black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+div {
+  background-color: chartreuse;
+}
+#test2 {
+  font-size: 30px;
+}
+#test3 {
+  line-height: 35px;
+}
+p {
+  background-color: rgb(168, 252, 224);
+}
+span {
+  background-color: brown;
+  color: white;
+}
+
+/* display */
+
+#s0 {
+}
+#s1 {
+  display: inline;
+}
+#s2 {
+  display: none;
+}
+#s3 {
+  display: block;
+}
+#s4 {
+  display: table;
+}
+
+/* visibility */
+
+#s5 {
+  visibility: hidden;
+}
+#s6 {
+  visibility: visible;
+}
+
+/* inline-block */
+
+.divv1 {
+  width: 50px;
+  height: 50px;
+  display: inline;
+  background-color: #f78a06;
+}
+
+.divv2 {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-color: #f78a06;
+}
+
+/* alline text */
+
+#p2 {
+  text-align: center;
+}
+#p3 {
+  text-align: right;
+}
+
+#sp1 {
+  text-align: center; /* az shekl moshakhas ast ke fazaii brai jabejaii be vasat ya rast nadarad*/
+}
+#sp2 {
+  display: block;
+  text-align: center;
+}
+
+#di1 {
+  text-align: center;
+}

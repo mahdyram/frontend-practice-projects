@@ -1,0 +1,20 @@
+Courses/
+node_modules/
+.pnpm-store/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+
+# Logs & backups
+*.log
+*.bak
+
+# Build output
+build/
+dist/
+
+test.py
